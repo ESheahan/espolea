@@ -9,9 +9,9 @@ Feature: Non-admin users not able to add/edit/delete clinics
 	And I am on the clinics listing page
 
 Scenario: Should not have add option
-	Then I should not see “Add Clinic”
+	Then I should not see "Add Clinic"
 
 Scenario: Should not have edit or delete option
-	When I follow “Clinic 1”
-	Then I should not see “Edit Clinic”
-	And I should not see “Delete Clinic”
+	When I follow "Clinic 1"
+	Then I should not see "Edit Clinic"
+	And I should not see "Delete Clinic"

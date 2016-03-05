@@ -1,0 +1,20 @@
+<h1> Register to become a member of Espolea today! </h4>
+
+<%= form_tag confirm_registration_path do %>
+    <%= label_tag(:first_name, 'First Name') %>
+    <%= text_field_tag(:first_name) %>
+
+    <%= label_tag(:last_name, 'Last Name') %>
+    <%= text_field_tag(:last_name) %>
+
+    <%= label_tag(:email, 'Email') %>
+    <%= text_field_tag(:email) %>
+
+    <%= label_tag(:password, 'Password') %>
+    <%= text_field_tag(:password) %>
+
+    <%= label_tag(:confirm_password, 'Confirm Password') %>
+    <%= text_field_tag(:confirm_password) %>
+
+    <%= submit_tag("Register") %>
+<% end %>

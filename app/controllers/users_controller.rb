@@ -61,10 +61,56 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+      @user = User.where(email: params[:email]).take
+  end
+
+  def signin
+      @user = User.where(email: params[:email]).take
+
+      #Check whether user exists first
+      if @user.blank?
+          flash[:message] = "No user found with that email"
+          redirect_to login_path
+      end
+
+      if @user.password == params[:password]
+          #User successfully logged in
+          add_user_to_session(@user.id)   
+          redirect_to user_path
+      else
+          flash[:message] = "Incorrect Password" 
+          redirect_to login_path
+      end
+  end
+
+  def register
+  end
+
+  def confirm_registration
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      if not params[:id]
+        @user = User.find(params[:id])
+      else
+          flash[:message] = "Please login to continue"
+          redirect_to login_path
+      end
+    end
+
+    def add_user_to_session(id)
+        the_user = User.find(id).take
+
+        if the_user != nil
+            session[:user_id] = the_user.id 
+        else
+            flash[:message] = "Unable to add user to the session"
+            redirect_to login_path
+        end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

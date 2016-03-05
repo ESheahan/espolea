@@ -10,8 +10,8 @@ Background:
 	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
 
 Scenario: navigate from clinics listing to a clinics detail page
-	Given that I am on the clinics listing page
-	When I follow “Clinic 1”
-	Then I should see “Clinic 1”
-	And I should see “(123) 456-7890”
-	And I should see “clinic1@gmail.com”
+	Given I am on the clinics listing page
+	When I follow "Clinic 1"
+	Then I should see "Clinic 1"
+	And I should see "(123) 456-7890"
+	And I should see "clinic1@gmail.com"

@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'pages/show'
+
+  get '/login', to: 'users#login', as: 'login'
+  post '/signin', to: 'users#signin', as: 'signin'
+  get '/register', to: 'users#register', as: 'register'
+  post '/register', to: 'users#confirm_registration', as: 'confirm_registration'
+
   resources :reviews
   resources :clinics
   resources :users
+  root "pages#show", page: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

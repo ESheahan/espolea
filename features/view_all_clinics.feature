@@ -10,9 +10,9 @@ Background:
 	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
 
 Scenario: navigate from home page to clinics index
-	Given that I am on the home page
-	When I follow “Clinics”
+	Given I am on the home page
+	When I follow "Clinics"
 	Then I should be on the clinics listing page
-	And I should see “Clinic 1”
-	And I should see “Clinic 2”
-	And I should not see “Clinic 3”
+	And I should see "Clinic 1"
+	And I should see "Clinic 2"
+	And I should not see "Clinic 3"
