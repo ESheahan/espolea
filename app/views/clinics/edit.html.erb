@@ -1,6 +1,11 @@
-<h1>Editing Clinic</h1>
+<h1>Editing Clinic: <%= @clinic.name %></h1>
+<p><%= flash[:warning] %>
 
 <%= render 'form' %>
+
+<%= form_tag("/clinics/confirm/#{@clinic.id}", method: "get") do %>
+    <%= submit_tag("Delete Clinic") %>
+<% end %>
 
 <%= link_to 'Show', @clinic %> |
 <%= link_to 'Back', clinics_path %>

@@ -22,6 +22,37 @@ module NavigationHelpers
     when /^the clinics listing page$/
         clinics_path
 
+    when /^the Create Profile page$/
+        register_path
+
+    when /^profile page ([\d])$/
+        "/users/#{$1}"
+
+    when /^the clinics listing page for "(.*)"$/
+        clinic_id = Clinic.find_by(name: $1).id
+        "/clinics/#{clinic_id}"
+
+    when /^the "Add Clinic" Page$/
+        "/clinics/new"
+
+    when /^the edit clinics page for "(.*)"$/
+        clinic_id = Clinic.find_by(name: $1).id
+        "/clinics/#{clinic_id}/edit"
+
+    when /^the edit profile page for "(.*)"$/
+        user_id = User.find_by(email: $1).id
+        "/users/#{user_id}/edit"
+
+    when /^the profile page for "(.*)"$/
+        #byebug
+        puts "Email: #{$1}"
+        user_id = User.find_by(email: $1).id
+        "/users/#{user_id}"
+
+    when /^the confirm deletion page for "(.*)"$/
+        clinic_id = Clinic.find_by(name: $1).id
+        "/clinics/confirm/#{clinic_id}"
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

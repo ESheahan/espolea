@@ -1,6 +1,9 @@
 <h1> Register to become a member of Espolea today! </h4>
 
-<%= form_tag confirm_registration_path do %>
+<%= flash[:warning] %>
+
+<%= render 'form' %>
+<!-- <%= form_tag '/users' do %>
     <%= label_tag(:first_name, 'First Name') %>
     <%= text_field_tag(:first_name) %>
 
@@ -17,4 +20,4 @@
     <%= text_field_tag(:confirm_password) %>
 
     <%= submit_tag("Register") %>
-<% end %>
+<% end %> -->

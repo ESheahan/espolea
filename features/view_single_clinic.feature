@@ -5,7 +5,7 @@ Feature: View a Particular Clinic
 
 Background:
 	Given the following clinics exist:
-	| name       | phone          | email             |
+	| name       | phone_number   | email             |
 	| Clinic 1   | (123) 456-7890 | clinic1@gmail.com |
 	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
 

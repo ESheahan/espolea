@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/signin', to: 'users#signin', as: 'signin'
   get '/register', to: 'users#register', as: 'register'
   post '/register', to: 'users#confirm_registration', as: 'confirm_registration'
+  
+  get '/clinics/confirm/:id', to: 'clinics#confirm'
 
   resources :reviews
   resources :clinics

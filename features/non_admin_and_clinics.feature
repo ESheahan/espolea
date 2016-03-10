@@ -5,7 +5,11 @@ Feature: Non-admin users not able to add/edit/delete clinics
 	| Clinic 1   | (123) 456-7890 | clinic1@gmail.com |
 	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
 
-	Given that I am not an administrator
+    Given the following users exist:
+    | first name | last name | email                | password | admin |
+    | Daniel     | Ahrens    | dahrens@berkeley.edu | password | false |
+
+    Given I login as "dahrens@berkeley.edu" with "password"
 	And I am on the clinics listing page
 
 Scenario: Should not have add option

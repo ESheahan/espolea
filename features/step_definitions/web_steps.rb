@@ -46,9 +46,10 @@ end
 
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
+    puts user
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    User.create!(first_name: user[:fist_name], last_name: user[:last_name], email: user[:email], password: user[:password])
+    User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password])
   end
   true
 end
@@ -68,6 +69,13 @@ Then(/^I should see the error message "([^"]*)"$/) do |message|
   else
     assert page.has_content?(message)
   end
+end
+
+Given(/^I login as "(.*)" with "(.*)"$/) do |email, password|
+    visit("/login")
+    fill_in("Email", :with => email)
+    fill_in("Password", :with => password)
+    click_button("Submit")
 end
 
 # Single-line step scoper

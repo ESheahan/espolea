@@ -5,26 +5,26 @@ Feature: Edit a profile
 
 Background:
 	Given the following users exist:
-	| first name     |  last name     | email                | password  |
+	| first_name     |  last_name     | email                | password  |
 	| Daniel         |  Ahrens        | dahrens@berkeley.edu | password  |
 
 	Given I am on the Login page
 	And I fill in "Email" with "dahrens@berkeley.edu"
 	And I fill in "Password" with "password"
 	And I press "Submit"
-	Then I should see "Daniel Ahrens"
-	And I should see "Edit Profile"
-	When I follow "Edit Profile"
-	Then I should be on my edit profile page
+	Then I should see "dahrens@berkeley.edu"
+	And I should see "Edit"
+	When I follow "Edit"
+	Then I should be on the edit profile page for "dahrens@berkeley.edu"
 	
 Scenario: adding valid information
 		When I fill in "Email" with "ahrens.danielj@gmail.com"
-		And I press "Confirm Changes"
-		Then I should be on my profile page
+		And I press "Update User"
+		Then I should be on the profile page for "ahrens.danielj@gmail.com"
 		And I should see "ahrens.danielj@gmail.com"
 
 Scenario: adding invalid information
 		When I fill in "Email" with ""
-		And I press "Confirm Changes"
-		Then I should be on my edit profile page
-		And I should see the error message "Invalid Email"
+		And I press "Update User"
+		Then I should be on the edit profile page for "dahrens@berkeley.edu"
+		And I should see the error message "Email field required"

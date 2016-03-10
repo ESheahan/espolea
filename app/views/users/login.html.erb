@@ -1,5 +1,7 @@
 <h1> Login to Espolea Here! </h1>
 
+<%= flash[:warning] %>
+
 <%= form_tag signin_path do %>
     <%= label_tag(:email, "Email") %>
     <%= email_field(:user, :email, id: "Email") %>
