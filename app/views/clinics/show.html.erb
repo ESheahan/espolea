@@ -19,6 +19,14 @@
   <strong>Website:</strong>
   <%= @clinic.website %>
 </p>
+<p>
+  <strong>State:</strong>
+  <%= @clinic.state %>
+</p>
+<p>
+  <strong>Municipality:</strong>
+  <%= @clinic.municipality %>
+</p>
 
 <%= link_to 'Edit', edit_clinic_path(@clinic) %> |
 <%= link_to 'Back', clinics_path %>

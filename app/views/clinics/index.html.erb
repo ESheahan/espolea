@@ -9,6 +9,8 @@
       <th>Phone number</th>
       <th>Email</th>
       <th>Website</th>
+      <th>State</th>
+      <th>Municipality</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
         <td><%= clinic.phone_number %></td>
         <td><%= clinic.email %></td>
         <td><%= clinic.website %></td>
+        <td><%= clinic.state %></td>
+        <td><%= clinic.municipality %></td>
         <td><%= link_to 'Show', clinic %></td>
         <td><%= link_to 'Edit', edit_clinic_path(clinic) %></td>
         <td><%= link_to 'Destroy', clinic, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -5342,3 +5342,430 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-10 11:20:18 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStateColumnToClinics (20160311023445)
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (4.0ms)[0m  [1mALTER TABLE "clinics" ADD "state" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160311023445"]]
+  [1m[36m (99.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddMunicipioColumnToClinics (20160311023522)
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (54.8ms)[0m  [1mALTER TABLE "clinics" ADD "municipio" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160311023522"]]
+  [1m[36m (115.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2016-03-10 20:38:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 1635ms (Views: 1537.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/scaffolds.self-7fe90527465b73b5cb02af7b3688c18132f814157d8090b3c96c79edf1d25860.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-10 20:38:46 -0600
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:38:51 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 223ms (Views: 216.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clinics/new" for ::1 at 2016-03-10 20:38:55 -0600
+Processing by ClinicsController#new as HTML
+  Rendered clinics/_form.html.erb (102.7ms)
+  Rendered clinics/new.html.erb within layouts/application (170.8ms)
+Completed 200 OK in 308ms (Views: 307.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:39:00 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 153ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics/2" for ::1 at 2016-03-10 20:39:03 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClinic Load (0.0ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered clinics/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 222ms (Views: 145.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:39:07 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (1.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 146ms (Views: 144.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clinics/3" for ::1 at 2016-03-10 20:39:09 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered clinics/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 142ms (Views: 136.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:39:11 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 143ms (Views: 142.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:40:28 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (1.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 466ms (Views: 442.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:40:29 -0600
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/scaffolds.self-7fe90527465b73b5cb02af7b3688c18132f814157d8090b3c96c79edf1d25860.css?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-10 20:40:30 -0600
+
+
+Started GET "/clinics/3" for ::1 at 2016-03-10 20:40:36 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered clinics/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 186ms (Views: 162.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:40:38 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 167ms (Views: 166.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics/new" for ::1 at 2016-03-10 20:40:45 -0600
+Processing by ClinicsController#new as HTML
+  Rendered clinics/_form.html.erb (18.5ms)
+  Rendered clinics/new.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 195ms (Views: 194.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:40:59 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (1.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 139ms (Views: 137.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:41:49 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (1.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 471ms (Views: 449.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/scaffolds.self-7fe90527465b73b5cb02af7b3688c18132f814157d8090b3c96c79edf1d25860.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:41:50 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:41:51 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-10 20:41:51 -0600
+
+
+Started GET "/clinics/2" for ::1 at 2016-03-10 20:41:55 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered clinics/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 189ms (Views: 166.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:41:57 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.5ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 169ms (Views: 168.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-03-10 20:42:02 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 136ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-03-10 20:42:05 -0600
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered users/login.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 223ms (Views: 200.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:42:09 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 143ms (Views: 142.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-10 20:45:28 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 454ms (Views: 438.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/scaffolds.self-7fe90527465b73b5cb02af7b3688c18132f814157d8090b3c96c79edf1d25860.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-10 20:45:29 -0600
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:45:31 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 215ms (Views: 212.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics/3/edit" for ::1 at 2016-03-10 20:45:41 -0600
+Processing by ClinicsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mClinic Load (1.0ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered clinics/_form.html.erb (30.5ms)
+  Rendered clinics/edit.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 268ms (Views: 243.9ms | ActiveRecord: 1.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameColumnMunicipioInClinicsToMunicipality (20160311024855)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160311024855"]]
+  [1m[35m (115.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameColumnMunicipioInClinicsToMunicipality (20160311025303)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TEMPORARY TABLE "aclinics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone_number" varchar, "email" varchar, "website" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state" varchar, "municipality" varchar) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "clinics"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "aclinics" ("id","name","phone_number","email","website","created_at","updated_at","state","municipality") VALUES (2, 'New Clinic', '888 888 8888', 'new@gmail.com', '', '2016-03-10 01:59:27.405948', '2016-03-10 01:59:27.405948', NULL, NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "aclinics" ("id","name","phone_number","email","website","created_at","updated_at","state","municipality") VALUES (3, 'Clinic 1', '888 8', 'new@gmail.com', 'new.com', '2016-03-10 18:22:18.726341', '2016-03-10 18:25:08.340303', NULL, NULL)
+  [1m[36m (1.5ms)[0m  [1mDROP TABLE "clinics"[0m
+  [1m[35m (0.0ms)[0m  CREATE TABLE "clinics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone_number" varchar, "email" varchar, "website" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "state" varchar, "municipality" varchar) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "aclinics"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "clinics" ("id","name","phone_number","email","website","created_at","updated_at","state","municipality") VALUES (2, 'New Clinic', '888 888 8888', 'new@gmail.com', '', '2016-03-10 01:59:27.405948', '2016-03-10 01:59:27.405948', NULL, NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "clinics" ("id","name","phone_number","email","website","created_at","updated_at","state","municipality") VALUES (3, 'Clinic 1', '888 8', 'new@gmail.com', 'new.com', '2016-03-10 18:22:18.726341', '2016-03-10 18:25:08.340303', NULL, NULL)[0m
+  [1m[35m (2.0ms)[0m  DROP TABLE "aclinics"
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160311025303"]]
+  [1m[35m (113.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-03-10 20:55:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 480ms (Views: 455.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:56:01 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 177ms (Views: 172.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clinics/2" for ::1 at 2016-03-10 20:56:05 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered clinics/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 182ms (Views: 157.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:56:09 -0600
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.0ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 170ms (Views: 169.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics/new" for ::1 at 2016-03-10 20:56:13 -0600
+Processing by ClinicsController#new as HTML
+  Rendered clinics/_form.html.erb (22.4ms)
+  Rendered clinics/new.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 208ms (Views: 206.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:56:16 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 141ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics/2" for ::1 at 2016-03-10 20:56:18 -0600
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClinic Load (0.0ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered clinics/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 143ms (Views: 137.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for ::1 at 2016-03-10 20:56:22 -0600
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.0ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 143ms (Views: 142.3ms | ActiveRecord: 0.0ms)
