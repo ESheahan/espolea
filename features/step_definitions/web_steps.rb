@@ -35,10 +35,9 @@ Given(/^the following clinics exist:$/) do |clinics_table|
   clinics_table.hashes.each do |clinic|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    #puts "Creating movie #{movie[:title]}, #{movie[:rating]}, #{movie[:director]}, #{movie[:release_date]}"
-    puts "Clinic Name: #{clinic[:name]}"
+    #puts "Clinic Name: #{clinic[:name]}"
     new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email])
-    puts "After creating, clinic name: #{new_clinic.name}"
+    #puts "After creating, clinic name: #{new_clinic.name}"
     #new_movie.save!
   end
   true
@@ -46,10 +45,19 @@ end
 
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
-    puts user
+    #puts user
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
     User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password])
+  end
+  true
+end
+
+Given(/^the following reviews exist:$/) do |reviews_table|
+  reviews_table.hashes.each do |review|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+    Review.create!(title: review[:title], rating: review[:rating], body: review[:text])
   end
   true
 end

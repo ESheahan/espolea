@@ -22,6 +22,16 @@ module NavigationHelpers
     when /^the clinics listing page$/
         clinics_path
 
+    when /^the users listing page$/
+        users_path
+
+    when /^the reviews listing page$/
+        reviews_path
+
+    when /^the review listing page for "(.*)"$/
+        review_id = Review.find_by(title: $1).id
+        "/reviews/#{review_id}"
+
     when /^the Create Profile page$/
         register_path
 
