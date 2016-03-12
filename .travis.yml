@@ -13,7 +13,8 @@ services:
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
-- bundle exec rspec spec/ # IMPORTANT! This runs all of the tests.
+- bundle exec cucumber features/
+#- bundle exec rspec spec/ # IMPORTANT! This runs all of the tests.
 #addons:
   #code_climate: # Pulls Code Coverage metrics from Code Climate
     #repo_token: [REDACTED]
