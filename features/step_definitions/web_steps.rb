@@ -62,6 +62,16 @@ Given(/^the following reviews exist:$/) do |reviews_table|
   true
 end
 
+Given(/^the following schedules exist:$/) do |schedules_table|
+  schedules_table.hashes.each do |schedule|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+    Review.create!(title: review[:title], rating: review[:rating], body: review[:text])
+  end
+  true
+end
+
+
 Given(/^that I am an administrator$/) do
     admin_email = "admin@gmail.com"
     admin_pass = "password"

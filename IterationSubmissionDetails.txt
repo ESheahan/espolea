@@ -1,0 +1,28 @@
+Submission URL details for Google Form
+
+Section Number / GSI Name: Section 101, Liang Gong 
+Group Number: 30
+Links to your Tracker, Github repo, CodeClimate metrics, and Heroku deployment.
+
+Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1545907
+Github: https://github.com/ESheahan/espolea
+CodeClimate Metrics: https://codeclimate.com/repos/56e31e7271bcfb0068003536/code
+Heroku Deployment: https://rocky-dusk-91042.herokuapp.com/
+
+
+User stories you are implementing this iteration in the Connextra format. We will evaluate the quality of user stories.
+
+View list of all clinics
+Non-admin users not able to add/edit/delete clinics
+Create a clinic
+View a particular clinic
+Edit a clinic
+Create a profile
+Edit a profile
+Log In
+Create a review
+Edit a review
+
+If you have changed any of your stories from previous iterations, please write a short description of the changes made and the reason behind the changes.
+
+Added user stories for the reviews feature to create better code coverage. Also changed some step definitions slightly to better follow convernion over configuration

@@ -1,5 +1,9 @@
-Feature: Non-admin users not able to add/edit/delete clinics
-	Background:
+Feature:
+	Given that I am a non-admin user
+	So that I can't mess with other users
+	I shouldn't be able to alter or delete clinics
+
+Background:
 	Given the following clinics exist:
 	| name       | phone          | email             |
 	| Clinic 1   | (123) 456-7890 | clinic1@gmail.com |
