@@ -17,3 +17,14 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300,700);
+
+html,body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:hover {
+  text-decoration: none; 
+  color: #000;
+  background-color: transparent;
+}
