@@ -5865,3 +5865,505 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 136.152.142.116 at 2016-03-29 23:18:47 +0000
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:31:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 720ms (Views: 700.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 136.152.142.116 at 2016-03-29 23:31:40 +0000
+Processing by UsersController#login as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  Rendered users/login.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 213ms (Views: 181.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/register" for 136.152.142.116 at 2016-03-29 23:31:46 +0000
+Processing by UsersController#register as HTML
+  Rendered users/_form.html.erb (39.3ms)
+  Rendered users/register.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 160ms (Views: 152.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews" for 136.152.142.116 at 2016-03-29 23:32:45 +0000
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 250ms (Views: 245.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:39:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 691ms (Views: 670.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:47:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 757ms (Views: 739.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/application.self-34004b9031935a065bf67ff8ae720ea24b933eea4682a5d7ffbb1dee0fa33d00.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/scaffolds.self-85b5430dbaa38028667844599a443662aeb5f95db2ce8b94874de5af4acb379e.css?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:38 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 136.152.142.116 at 2016-03-29 23:47:39 +0000
+
+
+Started GET "/clinics" for 136.152.142.116 at 2016-03-29 23:47:47 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.6ms)[0m  SELECT "clinics".* FROM "clinics"
+  Rendered clinics/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 118ms (Views: 113.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 136.152.142.116 at 2016-03-29 23:48:31 +0000
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered users/login.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 148ms (Views: 126.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:49:32 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/application.self-34004b9031935a065bf67ff8ae720ea24b933eea4682a5d7ffbb1dee0fa33d00.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/scaffolds.self-85b5430dbaa38028667844599a443662aeb5f95db2ce8b94874de5af4acb379e.css?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:33 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 136.152.142.116 at 2016-03-29 23:49:34 +0000
+
+
+Started GET "/login" for 136.152.142.116 at 2016-03-29 23:49:46 +0000
+Processing by UsersController#login as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 99ms (Views: 97.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:51:57 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/ubuntu/workspace/espolea/app/views"
+):
+    13: <body>
+    14: 
+    15: <%= yield %>
+    16: <%= render 'layouts/application' %>
+    17: 
+    18: </body>
+    19: </html>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3286628493735651648_70034710794600'
+  app/controllers/pages_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.7ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:52:55 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/ubuntu/workspace/espolea/app/views"
+):
+     9:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:   <%= csrf_meta_tags %>
+    12:   <%= render 'layouts/application' %>
+    13: </head>
+    14: <body>
+    15: 
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3286628493735651648_70034812836220'
+  app/controllers/pages_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (32.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.6ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:57:10 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/ubuntu/workspace/espolea/app/views"
+):
+     9:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:   <%= csrf_meta_tags %>
+    12:   <%= render 'layouts/application' %>
+    13: </head>
+    14: <body>
+    15: 
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3286628493735651648_70034811470660'
+  app/controllers/pages_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (107.2ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:57:55 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/ubuntu/workspace/espolea/app/views"
+):
+     9:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:   <%= csrf_meta_tags %>
+    12:   <%= render 'layouts/application' %>
+    13: </head>
+    14: <body>
+    15: 
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3286628493735651648_70034811470660'
+  app/controllers/pages_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.0ms)
+
+
+Started GET "/" for 136.152.142.116 at 2016-03-29 23:58:43 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.31.105.184 at 2016-03-30 00:10:44 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 192.31.105.184 at 2016-03-30 00:10:52 +0000
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  Rendered users/login.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 137ms (Views: 134.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.31.105.184 at 2016-03-30 00:11:04 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 115ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.31.105.184 at 2016-03-30 00:11:15 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 139ms (Views: 138.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 192.31.105.184 at 2016-03-30 00:11:57 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 208ms (Views: 203.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.31.105.184 at 2016-03-31 19:38:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 821ms (Views: 788.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/application.self-34004b9031935a065bf67ff8ae720ea24b933eea4682a5d7ffbb1dee0fa33d00.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/scaffolds.self-85b5430dbaa38028667844599a443662aeb5f95db2ce8b94874de5af4acb379e.css?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/clinics.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:51 +0000
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:52 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:52 +0000
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:52 +0000
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 192.31.105.184 at 2016-03-31 19:38:52 +0000
+
+
+Started GET "/reviews" for 192.31.105.184 at 2016-03-31 19:38:54 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 203ms (Views: 197.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clinics" for 192.31.105.184 at 2016-03-31 19:38:57 +0000
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 227ms (Views: 216.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews" for 192.31.105.184 at 2016-03-31 19:40:40 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 314ms (Views: 312.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clinics" for 192.31.105.184 at 2016-03-31 19:40:42 +0000
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics"[0m
+  Rendered clinics/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 187ms (Views: 185.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 192.31.105.184 at 2016-03-31 19:40:44 +0000
+Processing by UsersController#login as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  Rendered users/login.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 162ms (Views: 136.7ms | ActiveRecord: 0.6ms)
