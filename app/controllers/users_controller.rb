@@ -177,6 +177,38 @@ class UsersController < ApplicationController
             @prev_user = User.find_by_id(id)
         end
 
+        error_list = create_error_list
+        error_message = create_error_message(error_list)
+        return error_message
+    end
+    
+    def create_error_message(error_list)
+        if error_list.sum == 0
+            error_message = "None"
+        else
+            error_message = "Error: "
+
+            if error_list.include? 1
+                error_message += "First name field required; "
+            end
+
+            if error_list.include? 2
+                error_message += "Last name field required; "
+            end
+
+            if error_list.include? 3
+                error_message += "Email field required; "
+            end
+            
+            if error_list.include? 4
+                error_message += "Password field required; " 
+            end
+        end
+        
+        return error_message
+    end
+    
+    def create_error_list
         error_list = [0]
         if params[:user][:first_name] == ""
             if @prev_user
@@ -205,31 +237,9 @@ class UsersController < ApplicationController
             end
             error_list.push(4)
         end
-
-        if error_list.sum == 0
-            error_message = "None"
-        else
-            error_message = "Error: "
-
-            if error_list.include? 1
-                error_message += "First name field required; "
-            end
-
-            if error_list.include? 2
-                error_message += "Last name field required; "
-            end
-
-            if error_list.include? 3
-                error_message += "Email field required; "
-            end
-
-            if error_list.include? 4
-                error_message += "Password field required; " 
-            end
-        end
-
-        return error_message
+        return error_list
     end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
