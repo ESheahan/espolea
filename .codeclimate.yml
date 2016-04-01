@@ -44,5 +44,4 @@ exclude_paths:
 - features/
 - test/
 - vendor/
-exclude_paths:
-- "coverage/assets/0.10.0/application.js"
+- coverage/assets/0.10.0/application.js
