@@ -10473,3 +10473,25 @@ Processing by UsersController#register as HTML
   Rendered users/_form.html.erb (43.3ms)
   Rendered users/register.html.erb within layouts/application (55.3ms)
 Completed 200 OK in 151ms (Views: 142.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 136.152.142.119 at 2016-04-01 18:17:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 11004ms (Views: 10985.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 136.152.142.119 at 2016-04-01 18:17:23 +0000
+Processing by UsersController#login as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  Rendered users/login.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 184ms (Views: 161.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/register" for 136.152.142.119 at 2016-04-01 18:17:25 +0000
+Processing by UsersController#register as HTML
+  Rendered users/_form.html.erb (64.6ms)
+  Rendered users/register.html.erb within layouts/application (77.1ms)
+Completed 200 OK in 315ms (Views: 301.3ms | ActiveRecord: 0.4ms)

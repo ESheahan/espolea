@@ -1,0 +1,30 @@
+1-1 Features
+Feature: User Registration
+	As a first-time clinic patient
+	So that I can have a user profile on Espolea
+	I want to create a profile
+
+Feature: Log In
+	As a returning clinic patient
+	So that the site can track my registration and reviews
+	I want to log in
+
+Feature: Display the profile after 
+	As a returning clinic patient
+	So that I can see a history of past visits and reviews
+	I want to display my profile after my login
+
+Feature: Create a Clinic
+	As an administrator
+	So that users can review and register for a clinic
+	I want to create a clinic
+
+Feature: View list of all Clinics
+	As any user
+	So that I know what clinics I can visit
+	I want to see a list of all the clinics
+
+Feature: View a Particular Clinic
+	As any user
+	So that I can submit reviews and register for a clinic
+	I want to view the details of a particular clinic
