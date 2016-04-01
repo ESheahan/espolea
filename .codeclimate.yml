@@ -1,0 +1,2 @@
+exclude_paths:
+- "coverage/assets/0.10.0/application.js"
