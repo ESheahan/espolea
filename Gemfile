@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.2.2'
+gem 'tzinfo-data'
+gem 'smarter_csv'
 gem 'rails', '4.2.1'
 gem 'jquery-rails'
 gem 'rails-helper'
@@ -39,6 +41,8 @@ gem 'uglifier', '>= 2.7.1'
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'autoprefixer-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
