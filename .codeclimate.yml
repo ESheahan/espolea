@@ -45,4 +45,4 @@ exclude_paths:
 - test/
 - vendor/
 - coverage/assets/0.10.0/application.js
-- "Gemfile.lock"
+- Gemfile.lock
