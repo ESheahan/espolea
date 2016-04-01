@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.2.2'
+gem 'tzinfo-data'
+gem 'smarter_csv'
 gem 'rails', '4.2.1'
 gem 'jquery-rails'
 gem 'rails-helper'
