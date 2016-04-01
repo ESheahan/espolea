@@ -46,3 +46,4 @@ exclude_paths:
 - vendor/
 - coverage/assets/0.10.0/application.js
 - Gemfile.lock
+- coverage/assets/0.10.0/application.css
