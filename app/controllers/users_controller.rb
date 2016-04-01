@@ -187,57 +187,39 @@ class UsersController < ApplicationController
             error_message = "None"
         else
             error_message = "Error: "
-
-            if error_list.include? 1
-                error_message += "First name field required; "
-            end
-
-            if error_list.include? 2
-                error_message += "Last name field required; "
-            end
-
-            if error_list.include? 3
-                error_message += "Email field required; "
-            end
-            
-            if error_list.include? 4
-                error_message += "Password field required; " 
+            archive_error = ["First name field required; ", "Last name field required; ", 
+                "Email field required; ", "Password field required; "]
+            counter = 1
+            error_list.each do |error| 
+                error_message += archive_error[(error-1)]
             end
         end
-        
         return error_message
     end
     
     def create_error_list
         error_list = [0]
-        if params[:user][:first_name] == ""
-            if @prev_user
-                params[:user][:first_name] = @prev_user.first_name
+        param_list = ["first_name", "last_name", "email", "password"]
+        
+        counter = 1
+        param_list.each do |field| 
+            error_val = field_check(field, counter)
+            if error_val != -1
+                error_list.push(error_val)
             end
-            error_list.push(1)
-        end
-
-        if params[:user][:last_name] == ""
-            if @prev_user
-                params[:user][:last_name] = @prev_user.last_name
-            end
-            error_list.push(2)
-        end
-
-        if params[:user][:email] == ""
-            if @prev_user
-                params[:user][:email] = @prev_user.email
-            end
-            error_list.push(3)
-        end
-
-        if params[:user][:password] == ""
-            if @prev_user
-                params[:user][:password] = @prev_user.password
-            end
-            error_list.push(4)
+            counter += 1
         end
         return error_list
+    end
+    
+    def field_check(field, error_no)
+        if params[:user][field] == ""
+            if @prev_user
+                params[:user][field] = @prev_user[field]
+            end
+            return error_no
+        end
+        return -1
     end
     
 
