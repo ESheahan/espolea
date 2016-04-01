@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/show'
 
   get '/login', to: 'users#login', as: 'login'
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :clinics
-  resources :users
   root "pages#show", page: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

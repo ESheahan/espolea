@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'rails-helper'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -34,7 +35,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 
-  #gem 'therubyracer', '~> 0.12.0'
+#gem 'therubyracer', '~> 0.12.0'
 gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 2.7.1'
