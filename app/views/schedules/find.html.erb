@@ -1,0 +1,15 @@
+<h4>Appointments Matching Your Search</h4>
+
+<% if @appointments.length == 0 %>
+    <p>Sorry, no appointments currently exist to fill your needs</p>
+<% else %>
+    <% @appointments.each do |appointment| %>
+        <tr>
+            <td><%= appointment.start_time %></td>
+            <td><%= appointment.end_time %></td>
+            <td><%= Clinic.find_by(id: appointment.the_clinic).municipality %></td>
+            <td><%= Clinic.find_by(id: appointment.the_clinic).state %></td>
+            <td><%= appointment.treatment_options %></td>
+        </tr>
+    <% end %>
+<% end %>

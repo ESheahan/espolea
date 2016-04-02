@@ -48,7 +48,8 @@ Given(/^the following users exist:$/) do |users_table|
     #puts user
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password])
+    user = User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
+    puts user.email
   end
   true
 end
@@ -66,11 +67,26 @@ Given(/^the following schedules exist:$/) do |schedules_table|
   schedules_table.hashes.each do |schedule|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    Review.create!(title: review[:title], rating: review[:rating], body: review[:text])
+      clinic = Clinic.find_by(name: schedule[:clinic])
+      the_id = nil
+      if clinic
+         the_id = clinic.id 
+      end
+
+      s = Schedule.create!(start_time: schedule[:start], end_time: schedule[:end], treatment_options: schedule[:treatments], the_clinic: the_id)
   end
+  puts Schedule.all.length
   true
 end
 
+Given(/^"(.*)" manages "(.*)"/) do |email, clinic_name|
+    puts "Adding a clinic to a user"
+    user = User.find_by(email: email)
+    clinic = Clinic.find_by(name: clinic_name)
+    puts user.email
+    puts clinic.name
+    user.clinics_id = clinic.id
+end
 
 Given(/^that I am an administrator$/) do
     admin_email = "admin@gmail.com"
@@ -90,10 +106,11 @@ Then(/^I should see the error message "([^"]*)"$/) do |message|
 end
 
 Given(/^I login as "(.*)" with "(.*)"$/) do |email, password|
-    visit("/login")
+    visit("/users/sign_in")
+    puts User.all.length
     fill_in("Email", :with => email)
     fill_in("Password", :with => password)
-    click_button("Submit")
+    click_button("Log In")
 end
 
 # Single-line step scoper

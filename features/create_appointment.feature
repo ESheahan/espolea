@@ -16,16 +16,15 @@ Background:
     
     #TODO: Create this step definition
     Given the following schedules exist:
-    | date     |time       | clinic      | treatment__options       |
+    | start    | end       | clinic      | treatments               |
     | 2016-4-1 |11:00 a.m. | Test Clinic | clean_needles; methadone |
     
     Given I login as "dahrens@berkeley.edu" with "password"
     #TODO: Where should this link be?
     And I follow "Schedule Appointment"
     Then I should be on the appointment scheduling page
-    When I fill in "Date" with "2016-4-1"
-    And I fill in "Time" with "11:00 a.m."
-    And I fill in "Location" with "Mexico City"
+    When I fill in "Date" with "2016-4-1 11:00"
+    And I fill in "City" with "Mexico City"
     And I fill in "Municipality" with "Something"
     And I fill in "State" with "Uh"
     
@@ -33,8 +32,7 @@ Scenario: Logged in and creating a valid appointment
     And I fill in "Reason" with "methadone"
     And I press "Find Appointment"
     Then I should be on the appointments listing page
-    And I should see "Test Clinic"
-    And I should see "11:00 a.m."
+    And I should see "methadone"
     
 Scenario: Trying to schedule an appointment where no resources exist
     When I fill in "Reason" with "alcoholism"
@@ -44,8 +42,7 @@ Scenario: Trying to schedule an appointment where no resources exist
     And I should not see "Test Clinic"
     
 Scenario: Trying to schedule an appointment without logging in (should redirect)
-    When I follow "Profile"
-    And I follow "Log Out"
+    When I follow "Welcome, dahrens@berkeley.edu"
+    And I press "Log Out"
     And I follow "Schedule Appointment"
     Then I should be on the Login page
-    And I should see "Please log in to schedule an appointment"

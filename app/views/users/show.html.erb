@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>Welcome, <%= @user.email %><p>
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
+
+<%= link_to 'Edit', edit_user_registration_path %> |
+<%= link_to 'Back', '/profiles/all' %> |
+
+<%= form_tag destroy_user_session_path, method: 'delete' do %>
+    <%= submit_tag("Delete Profile", class: "styled-submit") %>
+<% end %>
+
+<%= form_tag destroy_user_session_path, method: 'delete' do %>
+    <%= submit_tag("Log Out", class: "styled-submit") %>
+<% end %>
+
+<% if @clinic and @clinic != "" %>
+    <%= link_to "Manage #{@clinic.name}", clinic_path(@clinic) %>
+<% end %>
+

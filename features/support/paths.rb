@@ -17,13 +17,13 @@ module NavigationHelpers
         '/'
 
     when /^the Login page$/
-        '/login'
+        new_user_session_path
 
     when /^the clinics listing page$/
         clinics_path
 
     when /^the users listing page$/
-        users_path
+        '/profile/all'
 
     when /^the reviews listing page$/
         reviews_path
@@ -33,7 +33,7 @@ module NavigationHelpers
         "/reviews/#{review_id}"
 
     when /^the Create Profile page$/
-        register_path
+        new_user_registration_path
 
     when /^profile page ([\d])$/
         "/users/#{$1}"
@@ -49,15 +49,25 @@ module NavigationHelpers
         clinic_id = Clinic.find_by(name: $1).id
         "/clinics/#{clinic_id}/edit"
 
-    when /^the edit profile page for "(.*)"$/
-        user_id = User.find_by(email: $1).id
-        "/users/#{user_id}/edit"
+    when /^the edit profile page$/
+        "/users/edit"
+
+    when /^the appointment scheduling page$/
+        find_path
+
+    when /^the appointments listing page$/
+        "/search_appointments"
 
     when /^the profile page for "(.*)"$/
         #byebug
         puts "Email: #{$1}"
+        users = User.all
+        puts users.length
+        users.each do |the_user|
+            puts the_user.email
+        end
         user_id = User.find_by(email: $1).id
-        "/users/#{user_id}"
+        "/profile/#{user_id}"
 
     when /^the confirm deletion page for "(.*)"$/
         clinic_id = Clinic.find_by(name: $1).id
