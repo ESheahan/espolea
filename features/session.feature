@@ -4,27 +4,25 @@ Feature:
 	A session should be created when I log in
 
 Background:
-	Give the following users exist:
+	Given the following users exist:
 	| first_name | last_name | email                | password |
 	| Daniel     | Ahrens    | dahrens@berkeley.edu | password |
 	Given I login as "dahrens@berkeley.edu" with "password"
-	Then I should be on the profile page for "dahres@berkeley.edu"
-	And I should see "Welcome, Daniel"
+	And I should see "Welcome, dahrens@berkeley.edu"
 
 Scenario: Follow another page link, should still see profile information
 	When I follow "Clinics"
 	Then I should be on the clinics listing page
-	And I should see "Welcome, Daniel"
-	And I should see "Profile"
+	And I should see "Welcome, dahrens@berkeley.edu"
 	
 Scenario: Can still go back to your profile page
 	When I follow "Clinics"
-	And I follow "Profile"
+	And I follow "Welcome, dahrens@berkeley.edu"
 	Then I should be on the profile page for "dahrens@berkeley.edu"
-	And I should see "Daniel Ahrens"
+	And I should see "dahrens@berkeley.edu"
 	
 Scenario: When I log out, I should no longer see my username
-  	When I follow "Profile"
-  	And I follow "Log Out"
-  	Then I should be on the login page
-  	And I should not see "Daniel Ahrens"
+  	When I follow "Welcome, dahrens@berkeley.edu"
+  	And I press "Log Out"
+  	Then I should be on the home page
+  	And I should not see "Welcome, dahrens@berkeley.edu"

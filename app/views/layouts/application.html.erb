@@ -27,12 +27,18 @@
         <ul class="nav navbar-nav">
         
             <li> <%= link_to "Clinics", clinics_path %></li>
-            <li> <%= link_to "Users", users_path %></li>
             <li> <%= link_to "Reviews", reviews_path %></li>
-            
-            <!--<button type="button" class="btn btn-default navbar-btn">-->
-                <%= link_to "Log in", login_path, :class => "btn btn-default navbar-btn" %>
-            <!--</button>-->
+            <li> <%= link_to "Schedule Appointment", find_path %></li>
+        </ul> 
+
+        <ul class="nav navbar-nav navbar-right">
+            <% if current_user == nil %>
+                <button type="button" class="btn btn-default navbar-btn">
+                    <%= link_to "Log in", new_user_session_path %>
+                </button>
+            <% else %>
+                <li> <%= link_to("Welcome, #{current_user.email}", "/profile/#{current_user.id}", class: "styled-submit") %></li>
+            <% end %>
         </ul>
     </div>
     </div>

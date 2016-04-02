@@ -14,17 +14,19 @@ Background:
 Scenario: Log-in (normal)
 	When I fill in "Email" with "dahrens@berkeley.edu"
 	And I fill in "Password" with "password"
-	And I press "Submit"
+	And I press "Log In"
 	Then I should see "dahrens@berkeley.edu"
 
 Scenario: Log-in (Bad username)
 	When I fill in "Email" with "notdaniel@berkeley.edu"
 	And I fill in "Password" with "password"
-	And I press "Submit"
-	Then I should see the error message "No user found with that email"		
+	And I press "Log In"
+    Then I should be on the Login page 
+	And I should not see "notdaniel@berkeley.edu"
 
 Scenario: Log-in (Bad password)
 	When I fill in "Email" with "dahrens@berkeley.edu"
 	And I fill in "Password" with "incorrect"
-	And I press "Submit"
-	Then I should see the error message "Incorrect Password"	
+	And I press "Log In"
+    Then I should be on the Login page
+    And I should not see "dahrens@berkeley.edu"

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Schedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Treatment options</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.start_time %></td>
+        <td><%= schedule.end_time %></td>
+        <td><%= schedule.treatment_options %></td>
+        <td><%= link_to 'Show', schedule %></td>
+        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
+        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_tag search_appointments_path, method: 'post' do %>
+
+    <%= label_tag :date %> 
+    <%= datetime_field :search, :date, id: "date" %>
+
+    <%= label_tag :city %>
+    <%= text_field_tag :city %>
+
+    <%= label_tag :municipality %>
+    <%= text_field_tag :municipality %>
+
+    <%= label_tag :state %>
+    <%= text_field_tag :state %>
+
+    <%= label_tag :reason %>
+    <%= text_field_tag :reason %>
+
+    <%= submit_tag "Find Appointment" %>
+
+<% end %>
+
+<%= link_to 'New Schedule', new_schedule_path %>

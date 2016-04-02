@@ -60,3 +60,14 @@ a:hover {
     font-size: 32px;
   }
   
+button a:hover {
+    text-decoration: none;
+    color: none;
+    background-color: none !important;
+}
+
+.styled-submit {
+    background: none;
+    border: none;
+    color: #23527C;
+}

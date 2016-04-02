@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
+  resources :schedules
+  devise_for :users
   get 'pages/show'
 
-  get '/login', to: 'users#login', as: 'login'
-  post '/signin', to: 'users#signin', as: 'signin'
-  get '/register', to: 'users#register', as: 'register'
+  get '/schedule/new/:clinic_id', to: "schedules#new"
+  get '/login', to: 'users#sign_in', as: 'login'
+  post '/signin', to: 'users#sign_in', as: 'signin'
+  get '/register', to: 'users#sign_up', as: 'register'
   post '/register', to: 'users#confirm_registration', as: 'confirm_registration'
   
   get '/clinics/confirm/:id', to: 'clinics#confirm'
 
+  get '/profile/:id', to: 'users#show', as: 'profile'
+  get '/profile', to: 'users#index', as: 'profiles'
+
+  get '/find', to: 'schedules#index', as: 'find'
+  post '/search_appointments', to: 'schedules#find', as: 'search_appointments'
+
   resources :reviews
   resources :clinics
-  resources :users
   root "pages#show", page: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
