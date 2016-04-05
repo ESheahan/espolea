@@ -27,7 +27,24 @@
   <strong>Municipality:</strong>
   <%= @clinic.municipality %>
 </p>
+<br>
+<div id="map" style="height:300px;"></div>
+<script>
+ $("#map").geolocateMap({
+      markers: 
+        [ 
+          {"lat":"<%= @clinic.latitude  %> ", "lng":"<%= @clinic.longitude  %>" }
+      ],
+      google_maps: {
+        zoom: 20
+      },
+      markers_settings: {
+        draggable: false,
+        animation: google.maps.Animation.DROP
+      }
+    })
 
+</script>
 <%= link_to 'Edit', edit_clinic_path(@clinic) %> |
 <%= link_to 'Back', clinics_path %>
 
