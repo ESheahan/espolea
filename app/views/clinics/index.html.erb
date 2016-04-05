@@ -3,30 +3,33 @@
 <h1>Listing Clinics</h1>
 <%= form_for_filterrific @filterrific do |f| %>
   <div class="jumbotron row">
-  <div >
+  <div class="form-group">
     Search
     <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
     <%= f.text_field(
       :search_query,
-      class: 'filterrific-periodically-observed'
+      class: 'filterrific-periodically-observed',
+      class: "form-control col-lg-8",
     ) %>
   </div>
-  <div >
+  <div class="form-group">
     State
     <%= f.select(
       :by_state,
       @filterrific.select_options[:by_state],
       { include_blank: '- Any -' },
-      class: 'filterrific-periodically-observed'
+      class: 'filterrific-periodically-observed',
+      class: "form-control"
     ) %>
   </div>
-  <div >
+  <div class="form-group">
     Municipality
     <%= f.select(
       :by_municipality,
       @filterrific.select_options[:by_municipality],
       { include_blank: '- Any -' },
-      class: 'filterrific-periodically-observed'
+      class: 'filterrific-periodically-observed',
+      class: "form-control"
     ) %>
   </div>
   <div >
