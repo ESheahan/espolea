@@ -1,33 +1,65 @@
 <div id="filterrific_results">
 
-  <div>
+  <h1>
     <%=  page_entries_info @clinics %>
-  </div>
+  </h1>
 
-  <table class="table-striped table-hover col-lg-12">
-    <tr>
-      <th>Name</th>
-      <th>Phone number</th>
-      <th>Email</th>
-      <th>Website</th>
-      <th>State</th>
-      <th>Municipality</th>
-      <th colspan="3"></th>
-    </tr>
-
+  <div class="row">
+    <% count = 1 %>
     <% @clinics.each do |clinic| %>
-      <tr>
-        <td><%= link_to(clinic.name, clinic_path(clinic)) %></td>
-        <td><%= clinic.phone_number %></td>
-        <td><%= clinic.email %></td>
-        <td><%= clinic.website %></td>
-        <td><%= clinic.state %></td>
-        <td><%= clinic.municipality %></td>
-        <td><%= link_to 'Show', clinic %></td>
-        <td><%= link_to 'Edit', edit_clinic_path(clinic) %></td>
-        <td><%= link_to 'Destroy', clinic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h2 class="panel-title"><%= link_to(clinic.name, clinic_path(clinic), { :class=>"" }) %></h2>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li>
+                <span class="card-info-description">Phone number</span>
+                <span class="card-info-value"><%= clinic.phone_number %></span>
+              </li>
+              <li>
+                <span class="card-info-description">Email</span>
+                <span class="card-info-value"><%= clinic.email %></span>
+              </li>
+              <li>
+                <span class="card-info-description">Website</span>
+                <span class="card-info-value"><%= clinic.website %></span>
+              </li>
+              <li>
+                <span class="card-info-description">State</span>
+                <span class="card-info-value"><%= clinic.state %></span>
+              </li>
+              <li>
+                <span class="card-info-description">Municipality</span>
+                <span class="card-info-value"><%= clinic.municipality %></span>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="col-sm-4">
+                <%= link_to clinic, { :class=>"btn btn-raised btn-success" } do %>
+                  Show <div class="ripple-container"></div>
+                <% end %>
+              </div>
+              <div class="col-sm-4">
+                <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
+                  Edit <div class="ripple-container"></div>
+                <% end %>
+              </div>
+              <div class="col-sm-4">
+                <%= link_to clinic, { :class=>"btn btn-raised btn-danger" }, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                  Destroy <div class="ripple-container"></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if count % 2 == 0 %>
+        <div class="clearfix hidden-xs"></div>
+      <% end %>
+      <% count = count + 1 %>
     <% end %>
-</table>
+  </div>
 </div>
 <%=  will_paginate @clinics %>
