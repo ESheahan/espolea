@@ -18014,3 +18014,520 @@ Processing by ClinicsController#index as JS
   Rendered clinics/_list.html.erb (39.0ms)
   Rendered clinics/index.js.erb (72.2ms)
 Completed 200 OK in 395ms (Views: 325.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 05:18:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 13662ms (Views: 13643.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/find" for 108.205.49.243 at 2016-04-07 05:19:20 +0000
+Processing by SchedulesController#index as HTML
+Redirected to https://test-rachelelle.c9users.io/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.205.49.243 at 2016-04-07 05:19:21 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (151.3ms)
+Completed 200 OK in 468ms (Views: 429.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 05:19:23 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (1.2ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (32.1ms)
+  Rendered clinics/index.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 239ms (Views: 212.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/clinics/1" for 108.205.49.243 at 2016-04-07 05:19:30 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clinics/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 183ms (Views: 141.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 05:24:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 910ms (Views: 892.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 05:24:42 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.3ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (32.6ms)
+  Rendered clinics/index.html.erb within layouts/application (169.2ms)
+Completed 200 OK in 306ms (Views: 271.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/clinics/1" for 108.205.49.243 at 2016-04-07 05:24:46 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clinics/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 255ms (Views: 230.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews" for 108.205.49.243 at 2016-04-07 05:24:52 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 146ms (Views: 141.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/find" for 108.205.49.243 at 2016-04-07 05:24:53 +0000
+Processing by SchedulesController#index as HTML
+Redirected to https://test-rachelelle.c9users.io/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.205.49.243 at 2016-04-07 05:24:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 247ms (Views: 219.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 05:24:55 +0000
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.3ms)[0m  SELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0[0m
+  Rendered clinics/_list.html.erb (133.1ms)
+  Rendered clinics/index.html.erb within layouts/application (143.0ms)
+Completed 200 OK in 291ms (Views: 285.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/clinics/2" for 108.205.49.243 at 2016-04-07 05:25:07 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClinic Load (0.2ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered clinics/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 184ms (Views: 182.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 05:34:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 610ms (Views: 589.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 05:35:04 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.5ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (42.4ms)
+  Rendered clinics/index.html.erb within layouts/application (85.1ms)
+Completed 200 OK in 389ms (Views: 229.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/clinics/1" for 108.205.49.243 at 2016-04-07 05:35:08 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clinics/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 176ms (Views: 144.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 06:51:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 652ms (Views: 633.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:51:31 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.5ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.2ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.4ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (22.8ms)
+  Rendered clinics/index.html.erb within layouts/application (80.8ms)
+Completed 200 OK in 240ms (Views: 192.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/clinics/1" for 108.205.49.243 at 2016-04-07 06:51:34 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clinics/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 153ms (Views: 131.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:51:36 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.6ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (64.7ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (83.9ms)
+  Rendered clinics/index.html.erb within layouts/application (91.8ms)
+Completed 200 OK in 247ms (Views: 177.4ms | ActiveRecord: 66.3ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 06:52:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 9293ms (Views: 9272.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-a5f94412f2df5399448b8d99d90b1f60ef15aadd954462167350155cd5c70a05.css?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/ripples.self-d036987b711522667c20c1380b8e4b3bd387c5db802d3cae16dcd2c02b321aca.css?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/application.self-b6a2ec072a21607821f359b1c66260b1a6b0e8fc75bc266ef1bb14e46a62e05d.css?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/material.self-706cdf8744f36551eb282aa412cb8eb4c885a0a2ec87a73065dc56a1dda1f775.js?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/ripples.self-694723e2b2814bfbba56d969ededb398f4b91d08ea541e685cf9bb744f935802.js?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/bootstrap-material-design.self-db6a3fb35de74e5a2ecf613ef255977f806038843346e9c14ca98d693e36803c.css?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/layout.self-4eb310f4803a620c2cb09778a1890c71a125f7e0e73aaa916c2cfe41352976f7.css?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 108.205.49.243 at 2016-04-07 06:52:41 +0000
+
+
+Started GET "/find" for 108.205.49.243 at 2016-04-07 06:52:54 +0000
+Processing by SchedulesController#index as HTML
+Redirected to https://test-rachelelle.c9users.io/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:52:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 246ms (Views: 227.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:52:57 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.2ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.2ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (24.8ms)
+  Rendered clinics/index.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 291ms (Views: 257.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/clinics?filterrific%5Breset_filterrific%5D=true" for 108.205.49.243 at 2016-04-07 06:53:15 +0000
+Processing by ClinicsController#index as HTML
+  Parameters: {"filterrific"=>{"reset_filterrific"=>"true"}}
+  [1m[36mClinic Load (0.9ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.3ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+Redirected to https://test-rachelelle.c9users.io/clinics
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:53:15 +0000
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.3ms)[0m  SELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0[0m
+  Rendered clinics/_list.html.erb (37.0ms)
+  Rendered clinics/index.html.erb within layouts/application (56.7ms)
+Completed 200 OK in 231ms (Views: 222.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/find" for 108.205.49.243 at 2016-04-07 06:53:34 +0000
+Processing by SchedulesController#index as HTML
+Redirected to https://test-rachelelle.c9users.io/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:53:34 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 130ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:53:54 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nln0Q84JM7ZIRRICLgKUdANywRer1dk7PXy3Wjk3lHkIUmbk+guj6fS99eO9OMy3ttN6mMRhtwE521odcoW49A==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "dahrens@berkeley.edu"]]
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nln0Q84JM7ZIRRICLgKUdANywRer1dk7PXy3Wjk3lHkIUmbk+guj6fS99eO9OMy3ttN6mMRhtwE521odcoW49A==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 415ms (Views: 129.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:54:57 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Ay/RpVM1C3oI/yDqXVUtvEjPBq1TSsYdPajGFD6wJfaBy3hoU5EclTbG2I6Twx1RIKHldr5RSJwUU5fG0jsGg==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "dahrens@berkeley.edu"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Ay/RpVM1C3oI/yDqXVUtvEjPBq1TSsYdPajGFD6wJfaBy3hoU5EclTbG2I6Twx1RIKHldr5RSJwUU5fG0jsGg==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 224ms (Views: 142.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 108.205.49.243 at 2016-04-07 06:55:03 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 210ms (Views: 207.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 108.205.49.243 at 2016-04-07 06:55:11 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 211ms (Views: 207.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews/new" for 108.205.49.243 at 2016-04-07 06:55:16 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (9.8ms)
+  Rendered reviews/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 178ms (Views: 171.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:55:18 +0000
+Processing by ClinicsController#index as HTML
+  [1m[36mClinic Load (0.6ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (3.3ms)[0m  SELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0[0m
+  Rendered clinics/_list.html.erb (21.8ms)
+  Rendered clinics/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 174ms (Views: 165.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/reviews" for 108.205.49.243 at 2016-04-07 06:55:20 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 249ms (Views: 247.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/new" for 108.205.49.243 at 2016-04-07 06:55:59 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (2.2ms)
+  Rendered reviews/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 109ms (Views: 108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 108.205.49.243 at 2016-04-07 06:56:23 +0000
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 114ms (Views: 112.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 06:56:26 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.3ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.2ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.2ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (17.5ms)
+  Rendered clinics/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 189ms (Views: 184.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/clinics/1" for 108.205.49.243 at 2016-04-07 06:56:50 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered clinics/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 118ms (Views: 112.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schedule/new/1" for 108.205.49.243 at 2016-04-07 06:57:04 +0000
+Processing by SchedulesController#new as HTML
+  Parameters: {"clinic_id"=>"1"}
+  Rendered schedules/_form.html.erb (11.9ms)
+  Rendered schedules/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 171ms (Views: 149.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/find" for 108.205.49.243 at 2016-04-07 06:57:13 +0000
+Processing by SchedulesController#index as HTML
+Redirected to https://test-rachelelle.c9users.io/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:57:13 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 150ms (Views: 147.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 108.205.49.243 at 2016-04-07 06:57:37 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hsE3wPwOx8FALcNZDjf2zdjYA3mx8o35wszqpg0OOPQEJZ4N/KrQLn4UOz3AocYgsLbgolzpA3jrN7t04YUbg==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "dahrens@berkeley.edu"]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7hsE3wPwOx8FALcNZDjf2zdjYA3mx8o35wszqpg0OOPQEJZ4N/KrQLn4UOz3AocYgsLbgolzpA3jrN7t04YUbg==", "user"=>{"email"=>"dahrens@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log In"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 289ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 07:49:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 771ms (Views: 750.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b6a2ec072a21607821f359b1c66260b1a6b0e8fc75bc266ef1bb14e46a62e05d.css?body=1" for 108.205.49.243 at 2016-04-07 07:49:25 +0000
+
+
+Started GET "/assets/bootstrap-material-design.self-db6a3fb35de74e5a2ecf613ef255977f806038843346e9c14ca98d693e36803c.css?body=1" for 108.205.49.243 at 2016-04-07 07:49:25 +0000
+
+
+Started GET "/assets/application.self-10ad0916cf31256fe71785e8dc9cc297a96b1cdf7b74aeb61711199b9a3d003f.js?body=1" for 108.205.49.243 at 2016-04-07 07:49:25 +0000
+
+
+Started GET "/clinics" for 108.205.49.243 at 2016-04-07 07:49:42 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.9ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.4ms)[0m  SELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (34.2ms)
+  Rendered clinics/index.html.erb within layouts/application (70.7ms)
+Completed 200 OK in 383ms (Views: 220.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/clinics?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=&filterrific%5Bby_state%5D=&filterrific%5Bby_municipality%5D=MEXICALI&_=1460015365391" for 108.205.49.243 at 2016-04-07 07:50:20 +0000
+Processing by ClinicsController#index as JS
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"", "by_state"=>"", "by_municipality"=>"MEXICALI"}, "_"=>"1460015365391"}
+  [1m[36mClinic Load (0.6ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%') LIMIT 30 OFFSET 0[0m
+  Rendered clinics/_list.html.erb (18.6ms)
+  Rendered clinics/index.js.erb (24.9ms)
+Completed 200 OK in 155ms (Views: 48.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reviews" for 108.205.49.243 at 2016-04-07 07:51:19 +0000
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 171ms (Views: 166.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews/new" for 108.205.49.243 at 2016-04-07 07:51:22 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (21.1ms)
+  Rendered reviews/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 158ms (Views: 153.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 07:54:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 648ms (Views: 628.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/clinics.self-a5f94412f2df5399448b8d99d90b1f60ef15aadd954462167350155cd5c70a05.css?body=1" for 108.205.49.243 at 2016-04-07 07:54:49 +0000
+
+
+Started GET "/assets/layout.self-4eb310f4803a620c2cb09778a1890c71a125f7e0e73aaa916c2cfe41352976f7.css?body=1" for 108.205.49.243 at 2016-04-07 07:54:50 +0000
+
+
+Started GET "/assets/ripples.self-d036987b711522667c20c1380b8e4b3bd387c5db802d3cae16dcd2c02b321aca.css?body=1" for 108.205.49.243 at 2016-04-07 07:54:50 +0000
+
+
+Started GET "/reviews/new" for 108.205.49.243 at 2016-04-07 07:55:34 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (40.5ms)
+  Rendered reviews/new.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 247ms (Views: 236.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 108.205.49.243 at 2016-04-07 07:55:58 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 239ms (Views: 238.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/new" for 108.205.49.243 at 2016-04-07 07:56:03 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (2.5ms)
+  Rendered reviews/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 130ms (Views: 128.6ms | ActiveRecord: 0.0ms)
