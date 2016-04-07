@@ -22,7 +22,4 @@
 	<%= form_tag("/clinics/confirm/#{@clinic.id}", method: "get") do %>
 	    <%= submit_tag "Delete Clinic", class: "btn btn-danger" %>
 	<% end %>
-
-	<%= link_to 'Show', @clinic %> |
-	<%= link_to 'Back', clinics_path %>
 </div>
