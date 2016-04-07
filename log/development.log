@@ -18678,3 +18678,95 @@ Processing by PagesController#show as HTML
   Parameters: {"page"=>"home"}
   Rendered pages/home.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 90ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 136.152.142.117 at 2016-04-07 17:13:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 5947ms (Views: 5930.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-575178f899f5dfac595817526ee0e532543fac7775c4b41f566a54cbd1c552c2.css?body=1" for 136.152.142.117 at 2016-04-07 17:13:07 +0000
+
+
+Started GET "/clinics" for 136.152.142.117 at 2016-04-07 17:13:18 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.6ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')
+  [1m[36mClinic Load (0.3ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%') LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (33.0ms)
+  Rendered clinics/index.html.erb within layouts/application (145.5ms)
+Completed 200 OK in 307ms (Views: 279.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/clinics/6/edit" for 136.152.142.117 at 2016-04-07 17:13:21 +0000
+Processing by ClinicsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered clinics/_form.html.erb (34.0ms)
+  Rendered clinics/edit.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 199ms (Views: 169.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clinics" for 136.152.142.117 at 2016-04-07 17:13:40 +0000
+Processing by ClinicsController#index as HTML
+  [1m[35mClinic Load (0.4ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics" WHERE (municipality LIKE '%MEXICALI%')[0m
+  [1m[35mClinic Load (0.5ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE (municipality LIKE '%MEXICALI%') LIMIT 30 OFFSET 0
+  Rendered clinics/_list.html.erb (145.4ms)
+  Rendered clinics/index.html.erb within layouts/application (154.5ms)
+Completed 200 OK in 298ms (Views: 292.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clinics?utf8=%E2%9C%93&filterrific%5Bsearch_query%5D=&filterrific%5Bby_state%5D=&filterrific%5Bby_municipality%5D=&_=1460049188478" for 136.152.142.117 at 2016-04-07 17:13:46 +0000
+Processing by ClinicsController#index as JS
+  Parameters: {"utf8"=>"✓", "filterrific"=>{"search_query"=>"", "by_state"=>"", "by_municipality"=>""}, "_"=>"1460049188478"}
+  [1m[36mClinic Load (0.4ms)[0m  [1mSELECT "clinics".* FROM "clinics" GROUP BY "clinics"."state"  ORDER BY LOWER(state)[0m
+  [1m[35mClinic Load (0.8ms)[0m  SELECT "clinics".* FROM "clinics" GROUP BY "clinics"."municipality"  ORDER BY LOWER(municipality)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mClinic Load (0.3ms)[0m  SELECT  "clinics".* FROM "clinics"  ORDER BY "clinics"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "clinics"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clinics"
+  [1m[36mClinic Load (0.5ms)[0m  [1mSELECT  "clinics".* FROM "clinics" LIMIT 30 OFFSET 0[0m
+  Rendered clinics/_list.html.erb (150.0ms)
+  Rendered clinics/index.js.erb (155.5ms)
+Completed 200 OK in 170ms (Views: 164.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/clinics/17" for 136.152.142.117 at 2016-04-07 17:13:51 +0000
+Processing by ClinicsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mClinic Load (0.2ms)[0m  SELECT  "clinics".* FROM "clinics" WHERE "clinics"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered clinics/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 125ms (Views: 123.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 136.152.142.117 at 2016-04-07 17:14:03 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 170ms (Views: 169.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/new" for 136.152.142.117 at 2016-04-07 17:14:06 +0000
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (11.2ms)
+  Rendered reviews/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 234ms (Views: 223.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 136.152.142.117 at 2016-04-07 17:14:08 +0000
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 206ms (Views: 205.2ms | ActiveRecord: 0.0ms)
