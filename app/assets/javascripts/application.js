@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require filterrific/filterrific-jquery
+//= require material
+//= require ripples
 //= require_tree .

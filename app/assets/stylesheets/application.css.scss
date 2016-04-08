@@ -12,12 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-material-design
+ *= require ripples
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 body {
   font-family: 'Open Sans', sans-serif;
