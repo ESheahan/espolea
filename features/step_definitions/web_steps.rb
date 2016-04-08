@@ -36,7 +36,7 @@ Given(/^the following clinics exist:$/) do |clinics_table|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
     #puts "Clinic Name: #{clinic[:name]}"
-    new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email])
+    new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email], municipality: clinic[:municipality], state: clinic[:state])
     #puts "After creating, clinic name: #{new_clinic.name}"
     #new_movie.save!
   end

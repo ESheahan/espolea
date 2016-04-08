@@ -6,8 +6,8 @@ Feature:
 Background:
   
     Given the following clinics exist:
-    | name        | location    |
-    | Test Clinic | Mexico City |
+    | name        | phone_number   | email             | municipality | state      |
+    | Test Clinic | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
       
     Given the following users exist:
     | first_name | last_name | email                | password |

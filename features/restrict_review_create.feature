@@ -1,15 +1,17 @@
-As a clinic
-So I can follow up with poor reviews
-I want reviews to be tied to users
+Feature:
+  As a clinic
+  So I can follow up with poor reviews
+  I want reviews to be tied to users
 
-Given the following users exist:
-| first_name | last_name | email                | password | UID
-| Daniel     | Ahrens    | dahrens@berkeley.edu | password | 5
-| Daniel     | Ahrens    | notdahrens@berkeley.edu | notpassword | 6
+Background:
+  Given the following users exist:
+  | first_name | last_name | email                | password | UID
+  | Daniel     | Ahrens    | dahrens@berkeley.edu | password | 5
+  | Daniel     | Ahrens    | notdahrens@berkeley.edu | notpassword | 6
 
- Given the following reviews exist:
-| title       | rating      | text         | Email
-| Test Review | 5           | Nothing Here | dahrens@berkeley.edu
+  Given the following reviews exist:
+  | title       | rating      | text         | Email
+  | Test Review | 5           | Nothing Here | dahrens@berkeley.edu
 
 
 Scenario: User is not logged in

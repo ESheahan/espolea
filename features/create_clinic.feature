@@ -4,10 +4,10 @@ Feature: Create a Clinic
 	I want to be able to create, edit and delete clinics
 
 Background:
-	Given the following clinics exist:
-	| name       | phone_number   | email             |
-	| Clinic 1   | (123) 456-7890 | clinic1@gmail.com |
-	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
+    Given the following clinics exist:
+	| name       | phone_number   | email             | municipality | state      |
+    | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
+    | Clinic 2   | (123) 456-7891 | clinic2@gmail.com | Monterrey    | Nuevo Leon |
 
     Given the following users exist:
     | first name | last name | email                | password | admin |
