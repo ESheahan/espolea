@@ -2,10 +2,32 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
 
   <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name%>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:gender, "Female") %>
+    <%= label_tag(:gender_female, "Female") %>
+    <%= radio_button_tag(:gender, "Male") %>
+    <%= label_tag(:gender_male, "Male") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :birthdate%><br />
+    <%= datetime_field(:user, :birthdate) %>
+  </div>
+  
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email%>
   </div>
 
   <div class="field">
