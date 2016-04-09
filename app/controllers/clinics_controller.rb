@@ -19,7 +19,6 @@ class ClinicsController < ApplicationController
       format.html
       format.js
     end
-    redirect_to(reset_filterrific_url(format: :html)) and return
     
   end
   
