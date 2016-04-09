@@ -43,26 +43,36 @@ Given(/^the following clinics exist:$/) do |clinics_table|
   true
 end
 
+Given(/^that "([^"]*)" is associated with "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
     #puts user
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    user = User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
+    user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
     puts user.email
   end
   true
 end
 
-Given(/^the following reviews exist:$/) do |reviews_table|
+Given(/^the following reviews where created by users:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    Review.create!(title: review[:title], rating: review[:rating], body: review[:text])
+    puts User.find_by(email: review[:email]).id
+    puts User.find_by(email: review[:email]).reviews.any?
+    User.find_by(email: review[:email]).reviews.create!(title: review[:title], rating: review[:rating], body: review[:text])
   end
   true
 end
+Given(/^I am not logged in$/) do
 
+end
+Given(/^I am logged in with email "([^"]*)"$/) do |email, password|
+    visit("/users/sign_in")
+    fill_in("Email", :with => email)
+    fill_in("Password", :with => password)
+    click_button("Log In")
+end
 Given(/^the following schedules exist:$/) do |schedules_table|
   schedules_table.hashes.each do |schedule|
     # each returned element will be a hash whose key is the table header.

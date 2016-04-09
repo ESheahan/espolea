@@ -12,9 +12,9 @@ Background:
   | title       | rating  | text         |
   | Test Review | 5       | Nothing Here |
 
-  Given that “Test Review” is associated with “Clinic 1”
+  Given that "Test Review" is associated with "Clinic 1"
 
 Scenario: View a Clinic and see its reviews
 	Given I am on the Clinics Listing page
-	And I follow “Clinic 1”
-	Then I should see “Test Review”
+	And I follow "Clinic 1"
+	Then I should see "Test Review"
