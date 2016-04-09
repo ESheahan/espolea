@@ -1,0 +1,101 @@
+2016-04-09T03:41:35.452944+00:00 heroku[web.1]: State changed from up to starting
+2016-04-09T03:41:39.206898+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-04-09T03:41:39.849020+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 58181 -e production`
+2016-04-09T03:41:40.454260+00:00 app[web.1]: [2016-04-09 03:41:40] FATAL SignalException: SIGTERM
+2016-04-09T03:41:40.454278+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+2016-04-09T03:41:40.454280+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+2016-04-09T03:41:40.454280+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+2016-04-09T03:41:40.454281+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+2016-04-09T03:41:40.454282+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-04-09T03:41:40.454283+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2016-04-09T03:41:40.454284+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-04-09T03:41:40.454283+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-04-09T03:41:40.454285+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-04-09T03:41:40.454286+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-04-09T03:41:40.454286+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-04-09T03:41:40.454287+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2016-04-09T03:41:40.454288+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-04-09T03:41:40.454289+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-04-09T03:41:40.454434+00:00 app[web.1]: [2016-04-09 03:41:40] INFO  going to shutdown ...
+2016-04-09T03:41:40.501109+00:00 app[web.1]: => Booting WEBrick
+2016-04-09T03:41:40.501118+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:16532
+2016-04-09T03:41:40.501119+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-04-09T03:41:40.501120+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-04-09T03:41:40.454542+00:00 app[web.1]: [2016-04-09 03:41:40] INFO  WEBrick::HTTPServer#start done.
+2016-04-09T03:41:40.501121+00:00 app[web.1]: Exiting
+2016-04-09T03:41:41.348983+00:00 heroku[web.1]: Process exited with status 143
+2016-04-09T03:41:57.663140+00:00 app[web.1]: [2016-04-09 03:41:57] INFO  WEBrick 1.3.1
+2016-04-09T03:41:57.663418+00:00 app[web.1]: [2016-04-09 03:41:57] INFO  ruby 2.2.2 (2015-04-13) [x86_64-linux]
+2016-04-09T03:41:57.663795+00:00 app[web.1]: [2016-04-09 03:41:57] INFO  WEBrick::HTTPServer#start: pid=3 port=58181
+2016-04-09T03:41:57.922845+00:00 heroku[web.1]: State changed from starting to up
+2016-04-09T03:41:59.821967+00:00 heroku[router]: at=info method=GET path="/" host=rocky-dusk-91042.herokuapp.com request_id=82624ed0-b4c3-4759-8f1b-42a61853477d fwd="71.202.181.1" dyno=web.1 connect=1ms service=423ms status=200 bytes=3421
+2016-04-09T03:41:59.908601+00:00 heroku[router]: at=info method=GET path="/" host=rocky-dusk-91042.herokuapp.com request_id=e26debbd-e17c-4098-af5a-9d849686d931 fwd="71.202.181.1" dyno=web.1 connect=1ms service=244ms status=200 bytes=3421
+2016-04-09T03:42:00.491451+00:00 heroku[router]: at=info method=GET path="/clinics/7" host=rocky-dusk-91042.herokuapp.com request_id=7cff7c36-c950-49d9-b783-db84f971b610 fwd="71.202.181.1" dyno=web.1 connect=1ms service=169ms status=200 bytes=3754
+2016-04-09T03:42:01.661245+00:00 heroku[router]: at=info method=GET path="/clinics" host=rocky-dusk-91042.herokuapp.com request_id=e717e442-3faf-4885-b507-87036d66747c fwd="71.202.181.1" dyno=web.1 connect=1ms service=19ms status=200 bytes=3149
+2016-04-09T03:42:08.849343+00:00 heroku[router]: at=info method=GET path="/clinics/7" host=rocky-dusk-91042.herokuapp.com request_id=4fa82ae4-2467-45ce-a31e-d198c2e60ee0 fwd="71.202.181.1" dyno=web.1 connect=1ms service=18ms status=200 bytes=3754
+2016-04-09T03:45:42.156348+00:00 heroku[api]: Starting process with command `rails c` by evan.sheahan@gmail.com
+2016-04-09T03:45:45.092902+00:00 heroku[run.4472]: Awaiting client
+2016-04-09T03:45:45.112032+00:00 heroku[run.4472]: Starting process with command `rails c`
+2016-04-09T03:45:45.466875+00:00 heroku[run.4472]: State changed from starting to up
+2016-04-09T03:46:37.719010+00:00 heroku[run.4472]: State changed from up to complete
+2016-04-09T03:46:37.700751+00:00 heroku[run.4472]: Process exited with status 0
+2016-04-09T03:47:56.038401+00:00 heroku[api]: Starting process with command `bundle install` by evan.sheahan@gmail.com
+2016-04-09T03:47:59.454700+00:00 heroku[run.8118]: Awaiting client
+2016-04-09T03:47:59.496549+00:00 heroku[run.8118]: Starting process with command `bundle install`
+2016-04-09T03:47:59.822765+00:00 heroku[run.8118]: State changed from starting to up
+2016-04-09T03:48:02.609071+00:00 heroku[run.8118]: State changed from up to complete
+2016-04-09T03:48:02.573678+00:00 heroku[run.8118]: Process exited with status 0
+2016-04-09T03:48:16.253871+00:00 heroku[api]: Starting process with command `bundle install` by evan.sheahan@gmail.com
+2016-04-09T03:48:19.662254+00:00 heroku[run.1391]: Awaiting client
+2016-04-09T03:48:19.690424+00:00 heroku[run.1391]: Starting process with command `bundle install`
+2016-04-09T03:48:19.932026+00:00 heroku[run.1391]: State changed from starting to up
+2016-04-09T03:48:21.987407+00:00 heroku[run.1391]: State changed from up to complete
+2016-04-09T03:48:21.977702+00:00 heroku[run.1391]: Process exited with status 0
+2016-04-09T03:54:51.260337+00:00 heroku[slug-compiler]: Slug compilation started
+2016-04-09T03:54:51.260343+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-04-09T03:54:51.113640+00:00 heroku[api]: Deploy 2cb15dd by evan.sheahan@gmail.com
+2016-04-09T03:54:51.113666+00:00 heroku[api]: Release v18 created by evan.sheahan@gmail.com
+2016-04-09T03:54:51.311278+00:00 heroku[web.1]: State changed from up to starting
+2016-04-09T03:54:51.303531+00:00 heroku[web.1]: Restarting
+2016-04-09T03:54:51.565373+00:00 heroku[router]: at=info method=GET path="/" host=rocky-dusk-91042.herokuapp.com request_id=e0dc603a-6a7d-40f6-b657-2313603a754c fwd="71.202.181.1" dyno=web.1 connect=0ms service=15ms status=200 bytes=3421
+2016-04-09T03:54:54.320071+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 36733 -e production`
+2016-04-09T03:54:54.924088+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-04-09T03:54:56.006378+00:00 app[web.1]: [2016-04-09 03:54:56] FATAL SignalException: SIGTERM
+2016-04-09T03:54:56.006392+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+2016-04-09T03:54:56.006414+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+2016-04-09T03:54:56.006415+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+2016-04-09T03:54:56.006416+00:00 app[web.1]: 	/app/vendor/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+2016-04-09T03:54:56.006416+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+2016-04-09T03:54:56.006417+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+2016-04-09T03:54:56.006418+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2016-04-09T03:54:56.006419+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2016-04-09T03:54:56.006419+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2016-04-09T03:54:56.006420+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2016-04-09T03:54:56.006421+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2016-04-09T03:54:56.006421+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.2.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2016-04-09T03:54:56.006422+00:00 app[web.1]: 	bin/rails:9:in `require'
+2016-04-09T03:54:56.006423+00:00 app[web.1]: 	bin/rails:9:in `<main>'
+2016-04-09T03:54:56.006476+00:00 app[web.1]: [2016-04-09 03:54:56] INFO  going to shutdown ...
+2016-04-09T03:54:56.006525+00:00 app[web.1]: [2016-04-09 03:54:56] INFO  WEBrick::HTTPServer#start done.
+2016-04-09T03:54:56.034869+00:00 app[web.1]: => Booting WEBrick
+2016-04-09T03:54:56.034904+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:58181
+2016-04-09T03:54:56.034906+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-04-09T03:54:56.034907+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-04-09T03:54:56.034908+00:00 app[web.1]: Exiting
+2016-04-09T03:54:56.656094+00:00 heroku[web.1]: Process exited with status 143
+2016-04-09T03:54:59.006326+00:00 app[web.1]: [2016-04-09 03:54:59] INFO  WEBrick 1.3.1
+2016-04-09T03:54:59.006345+00:00 app[web.1]: [2016-04-09 03:54:59] INFO  ruby 2.2.2 (2015-04-13) [x86_64-linux]
+2016-04-09T03:54:59.006717+00:00 app[web.1]: [2016-04-09 03:54:59] INFO  WEBrick::HTTPServer#start: pid=3 port=36733
+2016-04-09T03:54:59.156301+00:00 heroku[web.1]: State changed from starting to up
+2016-04-09T03:54:59.865502+00:00 heroku[router]: at=info method=GET path="/" host=rocky-dusk-91042.herokuapp.com request_id=2d294463-4b3c-43f5-9a5e-7222bb0f04ee fwd="71.202.181.1" dyno=web.1 connect=0ms service=138ms status=200 bytes=3421
+2016-04-09T03:54:59.977388+00:00 heroku[router]: at=info method=GET path="/assets/application-88495f1a8a13ac79719a36bd271e98ed1e4868a821bd58be78d96daf9c8ed0ce.css" host=rocky-dusk-91042.herokuapp.com request_id=cc2b5441-f5fe-4f90-9f2e-4d158cf069d3 fwd="71.202.181.1" dyno=web.1 connect=0ms service=8ms status=304 bytes=204
+2016-04-09T03:55:00.073763+00:00 heroku[router]: at=info method=GET path="/assets/application-95d7ea83e14c046f97ee1ef7a380b0597e659eef154859c4aad0b4634773b149.js" host=rocky-dusk-91042.herokuapp.com request_id=f350165d-ccb0-4370-8c28-0b0ace8e6d0e fwd="71.202.181.1" dyno=web.1 connect=0ms service=4ms status=304 bytes=218
+2016-04-09T03:55:00.340820+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=rocky-dusk-91042.herokuapp.com request_id=b3ae4305-a127-478d-aab2-5a2b14149909 fwd="71.202.181.1" dyno=web.1 connect=0ms service=4ms status=200 bytes=228
+2016-04-09T03:55:01.346498+00:00 heroku[router]: at=info method=GET path="/clinics" host=rocky-dusk-91042.herokuapp.com request_id=677ff109-b7a4-4d8c-910f-ed17f1a8ca03 fwd="71.202.181.1" dyno=web.1 connect=0ms service=17ms status=500 bytes=1754
+2016-04-09T03:55:01.345038+00:00 app[web.1]: => Booting WEBrick
+2016-04-09T03:55:01.345070+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:36733
+2016-04-09T03:55:01.345071+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2016-04-09T03:55:01.345072+00:00 app[web.1]: => Ctrl-C to shutdown server
+2016-04-09T03:55:01.345073+00:00 app[web.1]: Inside index controller method
+2016-04-09T03:55:01.464946+00:00 app[web.1]: Inside index controller method
+2016-04-09T03:55:01.476784+00:00 heroku[router]: at=info method=GET path="/clinics" host=rocky-dusk-91042.herokuapp.com request_id=39f72614-1b8e-4438-915d-41095ceea162 fwd="71.202.181.1" dyno=web.1 connect=3ms service=29ms status=500 bytes=1754
