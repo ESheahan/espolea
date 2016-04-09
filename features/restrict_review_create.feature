@@ -29,11 +29,11 @@ Scenario: User has same reviews after logging out
 	Then I should be on the profile page for "dahrens@berkeley.edu"
 	And I should see "Welcome, Daniel"
 	Given I follow “Reviews”
-	I should see “Test Review”
+	Then I should see “Test Review”
 
 Scenario: Other user’s reviews are not listed as my reviews
 	Given I login as "notdahrens@berkeley.edu" with "notpassword"
 	Then I should be on the profile page for "notdahrens@berkeley.edu"
 	And I should see "Welcome, Daniel"
 	Given I follow “Reviews”
-	I should not see “Test Review”
+	Then I should not see “Test Review”
