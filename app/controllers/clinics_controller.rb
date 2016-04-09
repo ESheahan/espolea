@@ -3,28 +3,32 @@ class ClinicsController < ApplicationController
 
   # GET /clinics
   # GET /clinics.json
-  def index
-    #@clinics = Clinic.all
-    @filterrific = initialize_filterrific(
-    Clinic,
-    params[:filterrific],
-    select_options: {
-        by_state: Clinic.options_for_select_state,
-        by_municipality: Clinic.options_for_select_municipality
-      },
-      default_filter_params: {},
-    ) or return
-    @clinics = @filterrific.find.page(params[:page])
+  #def index
+    ##@clinics = Clinic.all
+    #@filterrific = initialize_filterrific(
+    #Clinic,
+    #params[:filterrific],
+    #select_options: {
+        #by_state: Clinic.options_for_select_state,
+        #by_municipality: Clinic.options_for_select_municipality
+      #},
+      #default_filter_params: {},
+    #) or return
+    #@clinics = @filterrific.find.page(params[:page])
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
-    rescue ActiveRecord::RecordNotFound => e
-    # There is an issue with the persisted param_set. Reset it.
-    puts "Had to reset filterrific params: #{ e.message }"
-    redirect_to(reset_filterrific_url(format: :html)) and return
+    #respond_to do |format|
+      #format.html
+      #format.js
+    #end
+    #rescue ActiveRecord::RecordNotFound => e
+    ## There is an issue with the persisted param_set. Reset it.
+    #puts "Had to reset filterrific params: #{ e.message }"
+    #redirect_to(reset_filterrific_url(format: :html)) and return
     
+  #end
+
+  def index
+      @clinics = Clinic.all
   end
   
   # GET /clinics/1
