@@ -65,13 +65,10 @@ Given(/^the following reviews where created by users:$/) do |reviews_table|
   true
 end
 Given(/^I am not logged in$/) do
-
+  pending
 end
 Given(/^I am logged in with email "([^"]*)"$/) do |email, password|
-    visit("/users/sign_in")
-    fill_in("Email", :with => email)
-    fill_in("Password", :with => password)
-    click_button("Log In")
+   pending
 end
 Given(/^the following schedules exist:$/) do |schedules_table|
   schedules_table.hashes.each do |schedule|
