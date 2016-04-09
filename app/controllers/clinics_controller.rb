@@ -6,6 +6,7 @@ class ClinicsController < ApplicationController
   def index
     #@clinics = Clinic.all
     puts "Inside index controller method"
+    puts "About to create filterrific controller"
     @filterrific = initialize_filterrific(
     Clinic,
     params[:filterrific],
