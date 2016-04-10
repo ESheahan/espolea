@@ -36,33 +36,38 @@ Given(/^the following clinics exist:$/) do |clinics_table|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
     #puts "Clinic Name: #{clinic[:name]}"
-    new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email])
+    new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email], municipality: clinic[:municipality], state: clinic[:state])
     #puts "After creating, clinic name: #{new_clinic.name}"
     #new_movie.save!
   end
   true
 end
 
+Given(/^that "([^"]*)" is associated with "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
     #puts user
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    user = User.create!(first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
-    puts user.email
+    user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
   end
   true
 end
 
-Given(/^the following reviews exist:$/) do |reviews_table|
+Given(/^the following reviews where created by users:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    Review.create!(title: review[:title], rating: review[:rating], body: review[:text])
+    user_id= User.find_by(email: review[:email]).id
+    review = Review.create!(title: review[:title], rating: review[:rating], body: review[:text],user_id: user_id)
   end
   true
 end
-
+Given(/^I am not logged in$/) do
+  pending
+end
+Given(/^I am logged in$/) do
+   pending
+end
 Given(/^the following schedules exist:$/) do |schedules_table|
   schedules_table.hashes.each do |schedule|
     # each returned element will be a hash whose key is the table header.
@@ -107,7 +112,6 @@ end
 
 Given(/^I login as "(.*)" with "(.*)"$/) do |email, password|
     visit("/users/sign_in")
-    puts User.all.length
     fill_in("Email", :with => email)
     fill_in("Password", :with => password)
     click_button("Log In")
@@ -324,7 +328,13 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     end
   end
 end
- 
+
+Then (/^it should create clinic with values "([^"]*)" , "([^"]*)" , "([^"]*)"$/) do |name,state,municipality|
+     
+  Clinic.create!(name: name,state: state,municipality: municipality) 
+  
+end
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should

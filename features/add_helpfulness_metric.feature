@@ -1,11 +1,12 @@
-As a user
-So I can find high quality helpful reviews
-I want to see more helpful reviews first
-
- Given the following reviews exist:
-| title         | rating | text   | Email                 | Helpfulness | Clinic  |
-| Test Review   | 5      | great! | dahrens@berkeley.edu  | 4           | Clinic1 |
-| Test Review 2 | 5      | lame   | dahrens2@berkeley.edu | 1           | Clinic1 |
+Feature:
+  As a user
+  So I can find high quality helpful reviews
+  I want to see more helpful reviews first
+Background:
+  Given the following reviews exist:
+  | title         | rating | text   | Email                 | Helpfulness | Clinic  |
+  | Test Review   | 5      | great! | dahrens@berkeley.edu  | 4           | Clinic1 |
+  | Test Review 2 | 5      | lame   | dahrens2@berkeley.edu | 1           | Clinic1 |
 
 Scenario: Reviews should reflect helpfulness
 	When I follow Clinics
