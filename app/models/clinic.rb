@@ -57,6 +57,6 @@ class Clinic < ActiveRecord::Base
   order('LOWER(state)').group('clinics.id', 'state').map { |e| [e.state, e.state] }
  end
  def self.options_for_select_municipality
-  order('LOWER(municipality)').group('municipality').map { |e| [e.municipality, e.municipality] }
+  order('LOWER(municipality)').group('clinics.id', 'municipality').map { |e| [e.municipality, e.municipality] }
  end
 end
