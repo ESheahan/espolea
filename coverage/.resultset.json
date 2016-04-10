@@ -17,6 +17,10 @@
       "C:/Users/ana/Documents/Escuela/Proyecto UCB-TEC/espolea/app/models/review.rb": [
         1,
         1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "C:/Users/ana/Documents/Escuela/Proyecto UCB-TEC/espolea/app/controllers/application_controller.rb": [
@@ -219,6 +223,7 @@
         null,
         null,
         1,
+        2,
         2,
         null,
         null,
@@ -625,6 +630,6 @@
         0
       ]
     },
-    "timestamp": 1460240538
+    "timestamp": 1460261461
   }
 }

@@ -51,23 +51,21 @@ Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
     #puts user
     user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
-    puts user.email
   end
   true
 end
 
 Given(/^the following reviews where created by users:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    puts User.find_by(email: review[:email]).id
-    puts User.find_by(email: review[:email]).reviews.any?
-    User.find_by(email: review[:email]).reviews.create!(title: review[:title], rating: review[:rating], body: review[:text])
+    user_id= User.find_by(email: review[:email]).id
+    review = Review.create!(title: review[:title], rating: review[:rating], body: review[:text],user_id: user_id)
   end
   true
 end
 Given(/^I am not logged in$/) do
   pending
 end
-Given(/^I am logged in with email "([^"]*)"$/) do |email, password|
+Given(/^I am logged in$/) do
    pending
 end
 Given(/^the following schedules exist:$/) do |schedules_table|
@@ -114,7 +112,6 @@ end
 
 Given(/^I login as "(.*)" with "(.*)"$/) do |email, password|
     visit("/users/sign_in")
-    puts User.all.length
     fill_in("Email", :with => email)
     fill_in("Password", :with => password)
     click_button("Log In")
