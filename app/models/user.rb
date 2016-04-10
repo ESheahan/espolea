@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :clinics
+  has_many :reviews
   has_one :info
 
   # Include default devise modules. Others available are:

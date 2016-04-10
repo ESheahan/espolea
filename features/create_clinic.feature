@@ -4,10 +4,10 @@ Feature: Create a Clinic
 	I want to be able to create, edit and delete clinics
 
 Background:
-	Given the following clinics exist:
-	| name       | phone_number   | email             |
-	| Clinic 1   | (123) 456-7890 | clinic1@gmail.com |
-	| Clinic 2   | (234) 567-8901 | clinic2@gmail.com |
+    Given the following clinics exist:
+	| name       | phone_number   | email             | municipality | state      |
+    | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
+    | Clinic 2   | (123) 456-7891 | clinic2@gmail.com | Monterrey    | Nuevo Leon |
 
     Given the following users exist:
     | first name | last name | email                | password | admin |
@@ -19,12 +19,13 @@ Background:
 Scenario: adding clinic to the list
 	When I follow "New Clinic"
 	Then I should be on the "Add Clinic" Page
-	When I fill in "Name" with "New Clinic"
-	And I fill in "Phone" with "(345) 678-9012"
-	And I fill in "Email" with "newclinic@gmail.com"
+	When I fill in "Name" with "My New Clinic"
+        And I fill in "State" with "some state"
+        And I fill in "Municipality" with "any municipality"
 	And I press "Create Clinic"
-	Then I should be on the clinics listing page for "New Clinic"
-	And I should see "New Clinic"
+        Then it should create clinic with values "My New Clinic" , "some state" , "any municipality"
+	And I should be on the "Add Clinic" Page
+
 
 Scenario: editing an existing clinic
 	When I follow "Clinic 1"
