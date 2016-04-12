@@ -4,6 +4,7 @@ class Clinic < ActiveRecord::Base
   has_many :schedules
   has_many :reviews
   filterrific(
+  default_filter_params: {},
   available_filters: [
     :search_query,
     :by_state,
