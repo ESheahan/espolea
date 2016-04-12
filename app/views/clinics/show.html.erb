@@ -47,5 +47,5 @@
 </script>
 <%= link_to 'Edit', edit_clinic_path(@clinic) %> |
 <%= link_to 'Back', clinics_path %>
-
+<%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
 <%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
