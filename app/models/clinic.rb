@@ -3,6 +3,7 @@ class Clinic < ActiveRecord::Base
   belongs_to :user
   has_many :schedules
   filterrific(
+  default_filter_params: {},
   available_filters: [
     :search_query,
     :by_state,
