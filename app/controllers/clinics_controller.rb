@@ -36,6 +36,7 @@ class ClinicsController < ApplicationController
 
   # GET /clinics/1/edit
   def edit
+    @clinic = Clinic.find(params[:id])
   end
 
   # POST /clinics
@@ -52,29 +53,13 @@ class ClinicsController < ApplicationController
   # PATCH/PUT /clinics/1
   # PATCH/PUT /clinics/1.json
   def update
-    is_valid = check_params(@clinic.id)
+
     update =  @clinic.update(clinic_params)
-
-    #byebug
-    if (is_valid == "None") and update
-        flash[:notice] = "Clinic was sucessfully updated"
+    
+    if update 
+      redirect_to @clinic
     else
-        #Sets the flash[:warning] value to the rendered error message
-        flash[:warning] = is_valid
-        redirect_to edit_clinic_path(@clinic) and return
-    end
-
-    respond_to do |format|
-      is_valid = check_params(@clinic.id)
-      update =  @clinic.update(clinic_params)
-      if (is_valid == "None") and update 
-        format.html { redirect_to @clinic, notice: 'Clinic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @clinic }
-      else
-        flash[:warning] = is_valid
-        format.html { render :edit, notice: is_valid }
-        format.json { render json: @clinic.errors, status: :unprocessable_entity }
-      end
+      render :edit
     end
   end
 
@@ -98,64 +83,7 @@ class ClinicsController < ApplicationController
       @clinic = Clinic.find(params[:id])
     end
 
-    def check_params(id)
-        #byebug
-        error_list = [0]
-        if id == -1
-            @prev_clinic = nil
-        else
-            @prev_clinic = Clinic.find_by_id(id)
-        end
-
-        if params[:clinic][:name] == ""
-            if @prev_clinic
-                params[:clinic][:name] = @prev_clinic.name
-            end
-            error_list.push(1)
-        end
-
-        if params[:clinic][:phone_number] == ""
-            if @prev_clinic
-                params[:clinic][:phone_number] = @prev_clinic.phone_number
-            end
-            error_list.push(2)
-        end 
-
-        if params[:clinic][:email] == ""
-            if @prev_clinic
-                params[:clinic][:email] = @prev_clinic.email
-            end
-            error_list.push(3)
-        end
-
-        #if params[:clinic][:website] = ""
-            #if @prev_clinic
-                #params[:clinic][:website] = @prev_clinic.password
-            #else
-                #return false
-            #end
-        #end
-
-        if error_list.sum == 0
-            error_message = "None"
-        else
-            error_message = "Error: "
-            if error_list.include? 1
-                error_message += "Name field required for clinic; "
-            end
-
-            if error_list.include? 2
-                error_message += "Phone Number field required for clinic; "
-            end
-
-            if error_list.include? 3
-                error_message += "Email field required for clinic; "
-            end
-        end
-
-        return error_message
-    end
-
+ 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clinic_params

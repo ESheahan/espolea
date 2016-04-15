@@ -12,9 +12,9 @@ class Clinic < ActiveRecord::Base
   ]
   )
   #Required fields for possible filters
-  validates :name, presence: true
-  validates :state, presence: true
-  validates :municipality, presence: true
+  validates :name, presence: { message: 'Name field required for clinic'}
+  validates :state, presence: { message: 'State field required for clinic'}
+  validates :municipality, presence: { message: 'Municipality field required for clinic'}
   scope :search_query, lambda { |query|
     return nil  if query.blank?
     # condition query, parse into individual keywords
