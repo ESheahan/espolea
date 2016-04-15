@@ -75,3 +75,30 @@ button a:hover {
     border: none;
     color: #23527C;
 }
+
+// Needs a parent element with position absolute
+.vertical-center { 
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Card containers
+.container-actions {
+  position: relative; 
+  height: 56px;
+  .left-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    &.back-button {
+      @extend .vertical-center;
+    }
+  }
+  .right-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

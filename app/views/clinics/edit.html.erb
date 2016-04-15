@@ -1,17 +1,13 @@
 <p><%= flash[:warning] %>
 
 <div class="container-actions">
-	<div class="row">
-		<div class="col-xs-6 col-sm-1">
-			<div class="btn-group-sm">
-				<%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
-	              <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
-	            <% end %>
-			</div>
-		</div>
-		<div class="col-xs-6 col-sm-2 col-sm-offset-9">
-			<%= link_to 'Show', @clinic, { :class=>"btn btn-warning" } %>
-		</div>
+	<div class="btn-group-sm left-button back-button">
+		<%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
+          <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
+        <% end %>
+	</div>
+	<div class="right-button">
+		<%= link_to 'View', @clinic, { :class=>"btn btn-success" } %>
 	</div>
 </div>
 

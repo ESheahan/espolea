@@ -1,34 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @clinic.name %>
-</p>
+<div class="container-actions">
+  <div class="btn-group-sm left-button back-button">
+    <%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
+          <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
+        <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @clinic.phone_number %>
-</p>
+<div class="well">
+  <div class="panel-body" style="width: 50%; float: left; position: relative;">
+    <h1 style="margin-right: 40px"><%= @clinic.name %></h1>
+    <ul>
+      <li>
+        <span class="card-info-description">Phone number</span>
+        <span class="card-info-value"><%= @clinic.phone_number %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Email</span>
+        <span class="card-info-value"><%= @clinic.email %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Website</span>
+        <span class="card-info-value"><%= @clinic.website %></span>
+      </li>
+      <li>
+        <span class="card-info-description">State</span>
+        <span class="card-info-value"><%= @clinic.state %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Municipality</span>
+        <span class="card-info-value"><%= @clinic.municipality %></span>
+      </li>
+    </ul>
+    <div class="btn-group-sm" style="position: absolute; right: 10px; top: 35px;">
+      <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
+        <i class="material-icons">edit</i><div class="ripple-container"></div>
+      <% end %>
+    </div>
+  </div>
+  <div id="map" style="height: 450px; width: 50%"></div>
+  <%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
+  <%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @clinic.email %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @clinic.website %>
-</p>
-<p>
-  <strong>State:</strong>
-  <%= @clinic.state %>
-</p>
-<p>
-  <strong>Municipality:</strong>
-  <%= @clinic.municipality %>
-</p>
-<br>
-<div id="map" style="height:300px;"></div>
 <script>
  $("#map").geolocateMap({
       markers: 
@@ -45,7 +60,3 @@
     })
 
 </script>
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
-<%= link_to 'Back', clinics_path %>
-<%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
-<%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
