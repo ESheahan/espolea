@@ -48,8 +48,10 @@
 <div class="jumbotron row">
     <div class="text-center">
         <h3>Reviews for this clinic</h3>
-        <% @clinic.reviews.each do | review | %>
-        <p><%= review.title %> </p>
+        <% @clinic.reviews.order("helpfulness DESC").each do | review | %>
+        <p><%= review.title %> </p><br>
+        <p><%= review.body %> </p>
+        <p>Helpfulness: <%= review.helpfulness %> </p>
  <% end %>
     </div>
 </div>
