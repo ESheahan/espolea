@@ -8,9 +8,9 @@
   </div>
 </div>
 
-<div class="well">
-  <div class="panel-body" style="width: 50%; float: left; position: relative;">
-    <h1 style="margin-right: 40px"><%= @clinic.name %></h1>
+<div class="well clinic-card">
+  <div class="panel-body left-info-container">
+    <h1><%= @clinic.name %></h1>
     <ul>
       <li>
         <span class="card-info-description">Phone number</span>
@@ -33,13 +33,13 @@
         <span class="card-info-value"><%= @clinic.municipality %></span>
       </li>
     </ul>
-    <div class="btn-group-sm" style="position: absolute; right: 10px; top: 35px;">
+    <div class="btn-group-sm edit-button">
       <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
         <i class="material-icons">edit</i><div class="ripple-container"></div>
       <% end %>
     </div>
   </div>
-  <div id="map" style="height: 450px; width: 50%"></div>
+  <div id="map" class="right-info-container map-container"></div>
   <%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
   <%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
 </div>

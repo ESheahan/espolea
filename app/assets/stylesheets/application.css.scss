@@ -102,3 +102,29 @@ button a:hover {
     bottom: 0;
   }
 }
+
+// Needs a parent element with position: relative and margin-right: 40px;s
+.edit-button {
+  position: absolute; 
+  right: 10px; 
+  top: 35px;
+}
+
+.map-container {
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .left-info-container {
+    width: 50%; 
+    float: left; 
+  }
+
+  .right-info-container {
+    width: 50%;
+  }
+
+  .map-container {
+    height: 100%;
+  }
+}

@@ -45,3 +45,18 @@
 		line-height: 1em;
 	}
 }
+
+.clinic-card {
+	.left-info-container {
+		position: relative;
+		h1 {
+			margin-right: 40px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.clinic-card {
+		height: 450px;
+	}
+}
