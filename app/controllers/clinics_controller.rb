@@ -28,6 +28,7 @@ class ClinicsController < ApplicationController
   # GET /clinics/1
   # GET /clinics/1.json
   def show
+    #TODO Get filtered reviews for this clinic
   end
 
   # GET /clinics/new

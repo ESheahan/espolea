@@ -2,6 +2,7 @@ class Clinic < ActiveRecord::Base
 
   belongs_to :user
   has_many :schedules
+  has_many :reviews
   filterrific(
   default_filter_params: {},
   available_filters: [
