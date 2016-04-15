@@ -32,28 +32,9 @@ class SchedulesController < ApplicationController
 
     @appointments = []
     interim_appointments.each do |appointment|
-        add_appt = true
         clinic = Clinic.find_by(id: appointment.the_clinic)
 
         if clinic != nil
-            #the_city = params[:city]
-            #if the_city != nil and the_city.strip != ""
-                #if clinic.city
-            #end
-
-            the_muni = params[:municipality]
-            if the_muni != nil and the_muni.strip != ""
-                if clinic.municipality != the_muni.strip
-                    add_appt = false
-                end
-            end
-
-            the_state = params[:state]
-            if the_state != nil and the_state.strip != ""
-                if clinic.state != the_state.strip
-                    add_appt = false
-                end
-            end
             @appointments.push(appointment)
         end
     end 
