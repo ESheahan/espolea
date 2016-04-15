@@ -24,7 +24,7 @@ Scenario: adding clinic to the list
         And I fill in "Municipality" with "any municipality"
 	And I press "Create Clinic"
         Then it should create clinic with values "My New Clinic" , "some state" , "any municipality"
-	And I should be on the "Add Clinic" Page
+	And I should be on the clinics listing page
 
 
 Scenario: editing an existing clinic

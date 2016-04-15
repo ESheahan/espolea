@@ -2,7 +2,7 @@ class Clinic < ActiveRecord::Base
 
   belongs_to :user
   has_many :schedules
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   filterrific(
   default_filter_params: {},
   available_filters: [

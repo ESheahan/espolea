@@ -12,10 +12,8 @@ class ClinicsController < ApplicationController
         by_municipality: Clinic.options_for_select_municipality
       },
     ) or return
-    puts "Initialized filterrific properly"
+
     @clinics = @filterrific.find.page(params[:page])
-    puts "Found all of the clinics"
-    puts "Clinics length: #{@clinics.length}"
 
     respond_to do |format|
       format.html
@@ -28,7 +26,7 @@ class ClinicsController < ApplicationController
   # GET /clinics/1
   # GET /clinics/1.json
   def show
-    #TODO Get filtered reviews for this clinic
+    
   end
 
   # GET /clinics/new
@@ -43,25 +41,11 @@ class ClinicsController < ApplicationController
   # POST /clinics
   # POST /clinics.json
   def create
-    #byebug
-    is_valid = check_params(-1)
-
-    if is_valid == "None"
-        @clinic = Clinic.new(clinic_params)
+    @clinic = Clinic.new(clinic_params)
+    if @clinic.save
+      redirect_to clinics_path
     else
-        #Sets the flash[:warning] value to the rendered error message
-        flash[:warning] = is_valid
-        redirect_to new_clinic_path and return
-    end
-
-    respond_to do |format|
-      if @clinic.save
-        format.html { redirect_to @clinic, notice: 'Clinic was successfully created.' }
-        format.json { render :show, status: :created, location: @clinic }
-      else
-        format.html { render :new }
-        format.json { render json: @clinic.errors, status: :unprocessable_entity }
-      end
+      render :new
     end
   end
 
