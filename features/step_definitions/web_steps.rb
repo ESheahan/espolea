@@ -33,12 +33,8 @@ World(WithinHelpers)
 
 Given(/^the following clinics exist:$/) do |clinics_table|
   clinics_table.hashes.each do |clinic|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-    #puts "Clinic Name: #{clinic[:name]}"
-    new_clinic = Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email], municipality: clinic[:municipality], state: clinic[:state])
-    #puts "After creating, clinic name: #{new_clinic.name}"
-    #new_movie.save!
+    Clinic.create!(name: clinic[:name], phone_number: clinic[:phone_number], email: clinic[:email], municipality: clinic[:municipality], state: clinic[:state])
+
   end
   true
 end
@@ -51,7 +47,7 @@ Given(/^the following users exist:$/) do |users_table|
 end
 Given(/^the following reviews exist:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id])
+    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id],helpfulness: review[:helpfulness])
   end
   true
 end
