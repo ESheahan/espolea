@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = current_user.reviews.new(review_params)
-   if @review.save and associated_review.save
+   if @review.save
         redirect_to reviews_path
       else
          render :new 
