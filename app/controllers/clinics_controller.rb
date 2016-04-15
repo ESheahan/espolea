@@ -4,7 +4,6 @@ class ClinicsController < ApplicationController
   # GET /clinics
   # GET /clinics.json
   def index
-    
     @filterrific = initialize_filterrific(
     Clinic,
     params[:filterrific],
@@ -13,7 +12,10 @@ class ClinicsController < ApplicationController
         by_municipality: Clinic.options_for_select_municipality
       },
     ) or return
+    puts "Initialized filterrific properly"
     @clinics = @filterrific.find.page(params[:page])
+    puts "Found all of the clinics"
+    puts "Clinics length: #{@clinics.length}"
 
     respond_to do |format|
       format.html
@@ -21,6 +23,7 @@ class ClinicsController < ApplicationController
     end
     
   end
+
   
   # GET /clinics/1
   # GET /clinics/1.json

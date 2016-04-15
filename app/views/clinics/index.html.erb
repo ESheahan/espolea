@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Clinics</h1>
-<%= form_for_filterrific @filterrific do |f| %>
+ <%= form_for_filterrific @filterrific do |f| %>
   <div class="jumbotron row clinics-search">
     <div class="form-group">
       Search
-      <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+      [> give the search field the 'filterrific-periodically-observed' class for live updates <]
       <%= f.text_field(
         :search_query,
         class: 'filterrific-periodically-observed',
@@ -46,7 +46,7 @@
   partial: 'clinics/list',
   locals: { clinics: @clinics }
 ) %>
-
+<div>Testing clinics functionality. Clinics length: <%= @clinics.length %></div>
 
 <br>
 
