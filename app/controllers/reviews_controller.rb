@@ -27,9 +27,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = current_user.reviews.new(review_params)
-    @review.clinic_id = params[:clinic_id]
-    associated_review = Clinic.find(params[:clinic_id]).reviews.new(review_params)
-      if @review.save and associated_review.save
+   if @review.save and associated_review.save
         redirect_to reviews_path
       else
          render :new 
@@ -66,6 +64,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :rating, :body, :clinic_id)
+      params.require(:review).permit(:title, :rating, :body)
     end
 end
