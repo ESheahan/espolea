@@ -7,7 +7,7 @@ Background:
   | title         | rating | text   | Email                 | Helpfulness | Clinic  |
   | Test Review   | 5      | great! | dahrens@berkeley.edu  | 4           | Clinic1 |
   | Test Review 2 | 5      | lame   | dahrens2@berkeley.edu | 1           | Clinic1 |
-
+    And I am on the home page
 Scenario: Reviews should reflect helpfulness
 	When I follow "Clinics"
 	And I search "Clinic 1"
@@ -28,7 +28,7 @@ Scenario: Reviews should be voted on
 	Then I should see "5"
 
 Scenario: Reviews should be sorted
-	When I follow "Clinics"
+	When I follow "Clinics" 
 	And I search "Clinic 1"
 	Then I should see "Helpfulness"
 	And I should see "Test Review" before "Test Review 2"
