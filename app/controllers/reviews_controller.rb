@@ -15,21 +15,21 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = current_user.reviews.new
   end
 
   # GET /reviews/1/edit
   def edit
-    @review = Review.find(params[:id])
+    @review = current_user.reviews.find(params[:id])
   end
 
   # POST /reviews
   # POST /reviews.json
   def create
     @review = current_user.reviews.new(review_params)
- 
-    
-      if @review.save
+    @review.clinic_id = params[:clinic_id]
+    associated_review = Clinic.find(params[:clinic_id]).reviews.new(review_params)
+      if @review.save and associated_review.save
         redirect_to reviews_path
       else
          render :new 
@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    @review = Review.find(params[:id])
+    @review = current_user.reviews.find(params[:id])
     if @review.update(review_params)
         redirect_to @review, notice: 'Review was successfully updated.' 
         
@@ -66,6 +66,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :rating, :body)
+      params.require(:review).permit(:title, :rating, :body, :clinic_id)
     end
 end

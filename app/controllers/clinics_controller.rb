@@ -54,9 +54,8 @@ class ClinicsController < ApplicationController
   # PATCH/PUT /clinics/1.json
   def update
 
-    update =  @clinic.update(clinic_params)
     
-    if update 
+    if @clinic.update(clinic_params)
       redirect_to @clinic
     else
       render :edit
