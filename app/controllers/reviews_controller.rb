@@ -4,63 +4,56 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-      @reviews = Review.all
-      @reviews = @reviews.for_user(current_user)
+      @reviews = current_user.reviews
   end
 
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-     @review = Review.find(params[:id])
+     @review = current_user.reviews.find(params[:id])
   end
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = current_user.reviews.new
   end
 
   # GET /reviews/1/edit
   def edit
+    @review = current_user.reviews.find(params[:id])
   end
 
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
+    @review = current_user.reviews.new(review_params)
+   if @review.save
+        redirect_to reviews_path
       else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+         render :new 
       end
-    end
+    
   end
 
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
-      else
-        format.html { render :edit }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
+    @review = current_user.reviews.find(params[:id])
+    if @review.update(review_params)
+        redirect_to @review, notice: 'Review was successfully updated.' 
+        
+    else
+      render :edit 
     end
+  
   end
 
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
-    respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to reviews_path
   end
 
   private

@@ -43,14 +43,15 @@ Given(/^the following clinics exist:$/) do |clinics_table|
   true
 end
 
-Given(/^that "([^"]*)" is associated with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
-    #puts user
     user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
+  end
+  true
+end
+Given(/^the following reviews exist:$/) do |reviews_table|
+  reviews_table.hashes.each do |review|
+    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id])
   end
   true
 end
@@ -63,11 +64,9 @@ Given(/^the following reviews where created by users:$/) do |reviews_table|
   true
 end
 Given(/^I am not logged in$/) do
-  pending
+  true
 end
-Given(/^I am logged in$/) do
-   pending
-end
+
 Given(/^the following schedules exist:$/) do |schedules_table|
   schedules_table.hashes.each do |schedule|
     # each returned element will be a hash whose key is the table header.
@@ -80,7 +79,7 @@ Given(/^the following schedules exist:$/) do |schedules_table|
 
       s = Schedule.create!(start_time: schedule[:start], end_time: schedule[:end], treatment_options: schedule[:treatments], the_clinic: the_id)
   end
-  puts Schedule.all.length
+  
   true
 end
 

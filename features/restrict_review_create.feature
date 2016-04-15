@@ -9,18 +9,24 @@ Background:
   | Daniel     | Ahrens    | dahrens@berkeley.edu | password | 
   | Daniel     | Ahrens    | notdahrens@berkeley.edu | notpassword |
 
-  Given the following reviews where created by users:
-  | title       | rating      | text         | email |
-  | Test Review | 5           | Nothing Here | dahrens@berkeley.edu |
+  Given the following clinics exist:
+  | name       | phone_number   | email             | municipality | state      |
+  | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
+
+  Given the following reviews exist:
+  | title       | rating      | text         | user_id |clinic_id   |
+  | Test Review | 5           | Nothing Here | 1       |1           |
 
 
 Scenario: User is not logged in
 	Given I am not logged in
+        And I am on the home page
 	And I follow "Reviews"
 	Then I should not see "New Review"
 
 Scenario: User is logged in
-	Given I am logged in
+	Given I login as "dahrens@berkeley.edu" with "password"
+        And I am on the home page
 	And I follow "Reviews"
 	Then I should see "New Review"
 
