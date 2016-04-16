@@ -92,49 +92,29 @@ $level: 1;
 
   /* Inputs */
   .form-group {
+    margin: 0 60px 50px;
+    input {
+      font-size: $big-size;
+      height: 60px;
+    }
+
     &.label-floating {
       position: relative;
-      margin: 0 60px 50px;
-
-      input {
-        font-size: $big-size;
-      }
 
       label {
         font-size: $big-size;
       }
-
-      .form-control {
-        height: 60px;
-      }
     }
 
-    &.checkbox-container, &.radio-container {
-      margin: 0 60px 50px;
+    &.checkbox-container {
       margin-bottom: 28px;
     }
 
     &.radio-container {
+      margin: -20px 60px 15px 60px;
+
       .radio {
         display: inline-block;
-
-        label {
-          color: $white;
-          &:hover {
-            color: rgba(255, 255, 255, 0.8);
-          }
-        }
-        .circle {
-          border-color: $white;
-        }
-        .check {
-          background-color: $white;
-        }
-      }
-      &.is-focused {
-        label {
-          color: rgba(255, 255, 255, 0.3);
-        }
       }
     }
   }
@@ -217,27 +197,100 @@ $level: 1;
     }
 
     .form-group {
+      input, label {
+        color: white;
+      }
+
+      .form-control {
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFfFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+        background-image: -webkit-linear-gradient(#FFFfFF, #FFFfFF), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+        background-image: -o-linear-gradient(#FFFFFF, #FFFFFF), -o-linear-gradient(#D2D2D2, #D2D2D2);
+        background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#D2D2D2, #D2D2D2);
+      }
+
       &.label-floating {
-        input, label {
-          color: white;
-        }
-
-        .form-control {
-          background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFfFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
-          background-image: -webkit-linear-gradient(#FFFfFF, #FFFfFF), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
-          background-image: -o-linear-gradient(#FFFFFF, #FFFFFF), -o-linear-gradient(#D2D2D2, #D2D2D2);
-          background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#D2D2D2, #D2D2D2);
-        }
-
         .help-block {
           color: $white;
         }
       }
+
+      &.radio-container {
+        .radio {
+          label {
+            color: $white;
+            &:hover {
+              color: rgba(255, 255, 255, 0.8);
+            }
+          }
+          .circle {
+            border-color: $white;
+          }
+          .check {
+            background-color: $white;
+          }
+        }
+        &.is-focused {
+          label {
+            color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+
+      &.datetimepicker-container {
+        .glyphicon-calendar {
+          color: $white;
+          font-size: 28px;
+        }
+      }
+
+      .button-container {
+        button, input, a {
+          border-color: transparent;
+          color: $white;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $white;
+            color: $accent;
+          }
+        }
+      }
+
+      .button-filled {
+        button, input {
+          background-color: $white;
+          color: $accent;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: $accent;
+          }
+        }
+      }
     }
 
+    /* Button */
     .button-container {
+
       button, input, a {
-        border-color: transparent;
+        border-color: $white;
+        color: $white;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: transparent;
+          color: $accent;
+          background-color: $white;
+        }
+      }
+    }
+
+    .button-filled {
+      button, input {
         color: $white;
 
         &:hover,
@@ -248,147 +301,43 @@ $level: 1;
         }
       }
     }
+  }
 
-    .button-filled {
-      button, input {
-        background-color: $white;
-        color: $accent;
-
-        &:hover,
-        &:active,
-        &:focus {
-          background-color: rgba(255, 255, 255, 0.7);
-          color: $accent;
-        }
+  .form-group {
+    .field_with_errors {
+      input, label {
+        color: #A40000;
+      }
+      .form-control {
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#A40000), to(#A40000)), -webkit-gradient(linear, left top, left bottom, from(#981313), to(#981313));
+        background-image: -webkit-linear-gradient(#A40000, #A40000), -webkit-linear-gradient(#981313, #981313);
+        background-image: -o-linear-gradient(#A40000, #A40000), -o-linear-gradient(#981313, #981313);
+        background-image: linear-gradient(#A40000, #A40000), linear-gradient(#981313, #981313);
       }
     }
   }
 
-  /* Alt Card */
-  &.alt {
-    position: absolute;
-    top: 40px;
-    right: -70px;
-    z-index: 10;
-    width: 140px;
-    height: 140px;
-    background: none;
-    border-radius: 100%;
-    box-shadow: none;
-    padding: 0;
-    transition: .3s ease;
+  // Error message
+  #error_explanation {
+    margin: 0 60px 50px;
+    background-color: #f44336;
+    padding: 15px;
+    color: rgba(255,255,255, 0.84);
 
-    /* Toggle */
-    .toggle {
-      position: relative;
-      background: $accent;
-      width: 140px;
-      height: 140px;
-      border-radius: 100%;
-      @include materialShadow(1);
-      color: $white;
-      font-size: 58px;
-      line-height: 140px;
-      text-align: center;
-      cursor: pointer;
-
-      &:before {
-        content: '\f040';
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transform: translate(0, 0);
-      }
+    h2 {
+      text-align: left;
+      font-weight: bold;
+      margin-top: 0;
+      font-size: 14px;
     }
 
-    .title,
-    .input-container,
-    .button-container {
-      left: 100px;
-      opacity: 0;
-      visibility: hidden;
-    }
+    ul {
+      margin-bottom: 0;
+      padding-left: 20px;
 
-    /* Title */
-    .title {
-      position: relative;
-      border-color: $white;
-      color: $white;
-
-      .close {
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        right: 60px;
-        display: inline;
-        color: $white;
-        font-size: 58px;
-        font-weight: 400;
-
-        &:before {
-          content: '\00d7';
-        }
-      }
-    }
-
-    /* Input */
-    .input-container {
-      input {
-        color: $white;
-
-        &:focus {
-          ~ label {
-            color: $white;
-          }
-
-          ~ .bar {
-            &:before,
-            &:after {
-              background: $white;
-            }
-          }
-        }
-
-        &:valid {
-          ~ label {
-            color: $white;
-          }
-        }
-      }
-
-      label {
-        color: rgba($white, 0.8);
-      }
-
-      .bar {
-        background: rgba($white, 0.8);
-      }
-    }
-
-    /* Button */
-    .button-container {
-      button {
-        width: 100%;
-        background: $white;
-        border-color: $white;
-
-        span {
-          color: $accent;
-        }
-
-        &:hover {
-          background: rgba($white, 0.9);
-        }
-
-        &:active,
-        &:focus {
-          &:before {
-            display: none;
-          }
-        }
+      li {
+        font-size: 12px;
+        list-style: square;
       }
     }
   }
@@ -397,7 +346,7 @@ $level: 1;
 // Responsive
 @media (max-width: 767px) {
   .card {
-    .form-group.label-floating {
+    .form-group.label-floating, .form-group.datetimepicker-container {
       input, label {
         font-size: $small-size;
       }
