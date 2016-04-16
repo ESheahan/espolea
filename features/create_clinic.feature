@@ -24,12 +24,12 @@ Scenario: adding clinic to the list
         And I fill in "Municipality" with "any municipality"
 	And I press "Create Clinic"
         Then it should create clinic with values "My New Clinic" , "some state" , "any municipality"
-	And I should be on the "Add Clinic" Page
+	And I should be on the clinics listing page
 
 
 Scenario: editing an existing clinic
 	When I follow "Clinic 1"
-	And I follow "Edit"
+	And I follow "edit"
 	Then I should be on the edit clinics page for "Clinic 1"
 	When I fill in "Name" with "Edited Clinic"
 	And I press "Update Clinic"
@@ -38,18 +38,18 @@ Scenario: editing an existing clinic
 
 Scenario: editing an existing clinic with bad information (sad path)
 	When I follow "Clinic 1"
-	And I follow "Edit"
+	And I follow "edit"
 	When I fill in "Name" with ""
-    And I fill in "Phone number" with ""
-    And I fill in "Email" with ""
-    And I fill in "Website" with ""
+    And I fill in "Municipality" with ""
+    And I fill in "State" with ""
 	And I press "Update Clinic"
-	Then I should be on the edit clinics page for "Clinic 1"
+	Then I should be on the re edit clinics page for "Clinic 1"
 	And I should see the error message "Name field required for clinic"
-	
+	And I should see the error message "State field required for clinic"
+        And I should see the error message "Municipality field required for clinic"
 Scenario: deleting an existing clinic
 	When I follow "Clinic 1"
-    And I follow "Edit"
+    And I follow "edit"
 	And I press "Delete Clinic"
 	Then I should be on the confirm deletion page for "Clinic 1"
 	And I should see "Are you sure you want to delete Clinic 1"
@@ -59,7 +59,7 @@ Scenario: deleting an existing clinic
 
 Scenario: canceling a clinic deletion
 	When I follow "Clinic 1"
-    And I follow "Edit"
+    And I follow "edit"
 	And I press "Delete Clinic"
 	Then I should be on the confirm deletion page for "Clinic 1"
 	And I should see "Are you sure you want to delete Clinic 1"

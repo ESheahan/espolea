@@ -4,6 +4,7 @@ class Clinic < ActiveRecord::Base
 
   belongs_to :user
   has_many :schedules
+  has_many :reviews, dependent: :destroy
   filterrific(
   default_filter_params: {},
   available_filters: [
@@ -13,9 +14,9 @@ class Clinic < ActiveRecord::Base
   ]
   )
   #Required fields for possible filters
-  validates :name, presence: true
-  validates :state, presence: true
-  validates :municipality, presence: true
+  validates :name, presence: { message: 'Name field required for clinic'}
+  validates :state, presence: { message: 'State field required for clinic'}
+  validates :municipality, presence: { message: 'Municipality field required for clinic'}
   scope :search_query, lambda { |query|
     return nil  if query.blank?
     # condition query, parse into individual keywords
@@ -57,10 +58,10 @@ class Clinic < ActiveRecord::Base
     order(:name => :desc)
   }
  def self.options_for_select_state
-  order('LOWER(state)').group('state').map { |e| [e.state, e.state] }
+  order('LOWER(state)').group('clinics.id', 'state').map { |e| [e.state, e.state] }
  end
  def self.options_for_select_municipality
-  order('LOWER(municipality)').group('municipality').map { |e| [e.municipality, e.municipality] }
+  order('LOWER(municipality)').group('clinics.id', 'municipality').map { |e| [e.municipality, e.municipality] }
  end
  
  extend Searchable(:state)

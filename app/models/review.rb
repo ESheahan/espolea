@@ -1,7 +1,8 @@
 class Review < ActiveRecord::Base
   belongs_to  :user
-  #To get reviews associated with this user
-  scope :for_user, lambda { |user|
-    where("user_id = ?", user.id)
+  belongs_to  :clinic
+  #To get reviews associated with the clinic
+  scope :for_clinic, lambda{ |clinic|
+    where("clinic_id = ?", user.id)
   }
 end
