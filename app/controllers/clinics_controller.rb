@@ -102,7 +102,6 @@ class ClinicsController < ApplicationController
       end
     end
 
-
     def require_logged_admin
       unless is_logged_in?
         flash[:error] = "You must be logged in to access this section"
