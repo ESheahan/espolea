@@ -18,11 +18,11 @@
       </li>
       <li>
         <span class="card-info-description">Email</span>
-        <span class="card-info-value"><%= @clinic.email %></span>
+        <span class="card-info-value"><%= link_to_unless(@clinic.email.nil?, @clinic.email, "http://#{@clinic.email}", target: "_blank") %></span>
       </li>
       <li>
         <span class="card-info-description">Website</span>
-        <span class="card-info-value"><%= @clinic.website %></span>
+        <span class="card-info-value"><%= link_to_unless(@clinic.website.nil?, @clinic.website, "http://#{@clinic.website}", target: "_blank") %></span>
       </li>
       <li>
         <span class="card-info-description">State</span>
@@ -33,15 +33,23 @@
         <span class="card-info-value"><%= @clinic.municipality %></span>
       </li>
     </ul>
+    <div>
+      <%= link_to "/review/new/#{@clinic.id}", { :class=>"btn btn-info " } do %>
+        Add Review <div class="ripple-container"></div>
+      <% end %>
+      <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
+        Add Scheduling Block <div class="ripple-container"></div>
+      <% end %>
+    </div>
+    
+    <!-- positioned absolute -->
     <div class="btn-group-sm edit-button">
       <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
         <i class="material-icons">edit</i><div class="ripple-container"></div>
       <% end %>
     </div>
   </div>
-  <div id="map" class="right-info-container map-container"></div>
-  <%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
-  <%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
+  <figure id="map" class="right-info-container map-container"></figure>
 </div>
 
 <script>

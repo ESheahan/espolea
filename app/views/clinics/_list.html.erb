@@ -20,11 +20,11 @@
               </li>
               <li>
                 <span class="card-info-description">Email</span>
-                <span class="card-info-value"><%= clinic.email %></span>
+                <span class="card-info-value"><%= link_to_unless(clinic.email.nil?, clinic.email, "mailto:#{clinic.email}", target: "_blank") %></span>
               </li>
               <li>
                 <span class="card-info-description">Website</span>
-                <span class="card-info-value"><%= clinic.website %></span>
+                <span class="card-info-value"><%= link_to_unless(clinic.website.nil?, clinic.website, "http://#{clinic.website}", target: "_blank") %></span>
               </li>
               <li>
                 <span class="card-info-description">State</span>
