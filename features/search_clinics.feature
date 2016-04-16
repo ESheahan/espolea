@@ -21,4 +21,3 @@ Scenario: searching for a clinic
 	When I fill in "filterrific[search_query]" with "Clinic1"
     And I select "Saltillo" from "filterrific[by_municipality]"
     And I select "Coahuila" from "filterrific[by_state]"
-    And I press "#search_button"
