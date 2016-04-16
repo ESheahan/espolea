@@ -37,7 +37,7 @@
           Reset filters <div class="ripple-container"></div>
         <% end -%>
 
-        <!-- this button is just to improve the UX, simulates the search -->
+        <!-- this button is just to improve the UX, simulates the search that is made with ajax-->
         <div class="btn btn-success">Search<div class="ripple-container"></div></div>
       </div>
     </div>
@@ -49,8 +49,5 @@
   partial: 'clinics/list',
   locals: { clinics: @clinics }
 ) %>
-<div>Testing clinics functionality. Clinics length: <%= @clinics.length %></div>
-
-<br>
 
 <%= link_to 'New Clinic', new_clinic_path %>

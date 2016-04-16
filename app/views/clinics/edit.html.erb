@@ -1,5 +1,3 @@
-<p><%= flash[:warning] %>
-
 <div class="container-actions">
 	<div class="btn-group-sm left-button back-button">
 		<%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
@@ -11,11 +9,32 @@
 	</div>
 </div>
 
-<div class="well">
-	<legend>Editing Clinic: <%= @clinic.name %></legend>
-	<%= render 'form' %>
+<div class="well clinic-card edit-mode">
+  <div class="panel-body left-info-container">
+    <h1>Editing: <%= @clinic.name %></h1>
+    <p class="error-message"><%= flash[:warning] %></p> <!-- For showing errors -->
+    <%= render 'form' %>
 
-	<%= form_tag("/clinics/confirm/#{@clinic.id}", method: "get") do %>
+    <%= form_tag("/clinics/confirm/#{@clinic.id}", method: "get") do %>
 	    <%= submit_tag "Delete Clinic", class: "btn btn-danger" %>
 	<% end %>
+  </div>
+  <figure id="map" class="right-info-container map-container"></figure>
 </div>
+
+<script>
+ $("#map").geolocateMap({
+      markers: 
+        [ 
+          {"lat":"<%= @clinic.latitude  %> ", "lng":"<%= @clinic.longitude  %>" }
+      ],
+      google_maps: {
+        zoom: 20
+      },
+      markers_settings: {
+        draggable: false,
+        animation: google.maps.Animation.DROP
+      }
+    })
+
+</script>

@@ -55,8 +55,29 @@
 	}
 }
 
+// This is for edit view
+.edit-mode {
+	&.clinic-card {
+		height: auto;
+		overflow: hidden;
+		h1 {
+			margin-right: 0;
+		}
+
+		.error-message {
+			color: red;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.clinic-card {
 		height: 600px;
+	}
+
+	.edit-mode {
+		#map {
+			height: 450px;
+		}
 	}
 }

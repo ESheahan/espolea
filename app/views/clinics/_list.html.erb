@@ -36,17 +36,17 @@
               </li>
             </ul>
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-sm-6 col-md-4">
                 <%= link_to clinic, { :class=>"btn btn-raised btn-success" } do %>
                   View <div class="ripple-container"></div>
                 <% end %>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-6 col-md-4">
                 <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
                   Edit <div class="ripple-container"></div>
                 <% end %>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-6 col-md-4">
                 <%= link_to clinic, { :class=>"btn btn-raised btn-danger" }, method: :delete, data: { confirm: 'Are you sure?' }  do %>
                   Destroy <div class="ripple-container"></div>
                 <% end %>
