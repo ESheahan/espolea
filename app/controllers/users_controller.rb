@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :require_admin
     #GET index
     def index
         @users = User.all
@@ -76,5 +77,9 @@ class UsersController < ApplicationController
             clinic_id = @user.clinics_id
             @clinic = Clinic.find_by(clinic_id)
         end
+    end
+    
+    def current_user
+        @current_user ||= User.find_by(id: session[:id])
     end
 end

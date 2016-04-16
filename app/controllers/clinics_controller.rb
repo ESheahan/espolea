@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:edit, :destroy]
 
   # GET /clinics
   # GET /clinics.json
@@ -80,6 +81,18 @@ class ClinicsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_clinic
       @clinic = Clinic.find(params[:id])
+    end
+    
+    def is_logged_in?
+        @user = User.find(params[:id])
+        !session[@user.id].nil?
+    end
+    
+    def require_admin
+        unless is_logged_in?
+            flash[:error] = "You must be logged in to access this section"
+            redirect_to new_user_session_path
+        end
     end
 
  
