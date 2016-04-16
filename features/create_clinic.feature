@@ -29,7 +29,7 @@ Scenario: adding clinic to the list
 
 Scenario: editing an existing clinic
 	When I follow "Clinic 1"
-	And I follow "Edit"
+	And I follow "edit"
 	Then I should be on the edit clinics page for "Clinic 1"
 	When I fill in "Name" with "Edited Clinic"
 	And I press "Update Clinic"
@@ -38,7 +38,7 @@ Scenario: editing an existing clinic
 
 Scenario: editing an existing clinic with bad information (sad path)
 	When I follow "Clinic 1"
-	And I follow "Edit"
+	And I follow "edit"
 	When I fill in "Name" with ""
     And I fill in "Municipality" with ""
     And I fill in "State" with ""
@@ -49,7 +49,7 @@ Scenario: editing an existing clinic with bad information (sad path)
         And I should see the error message "Municipality field required for clinic"
 Scenario: deleting an existing clinic
 	When I follow "Clinic 1"
-    And I follow "Edit"
+    And I follow "edit"
 	And I press "Delete Clinic"
 	Then I should be on the confirm deletion page for "Clinic 1"
 	And I should see "Are you sure you want to delete Clinic 1"
@@ -59,7 +59,7 @@ Scenario: deleting an existing clinic
 
 Scenario: canceling a clinic deletion
 	When I follow "Clinic 1"
-    And I follow "Edit"
+    And I follow "edit"
 	And I press "Delete Clinic"
 	Then I should be on the confirm deletion page for "Clinic 1"
 	And I should see "Are you sure you want to delete Clinic 1"
