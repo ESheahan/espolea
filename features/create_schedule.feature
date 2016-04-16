@@ -27,12 +27,19 @@ Background:
     And I select "April" from "schedule_start_time_2i"
     And I select "1" from "schedule_start_time_3i"
 
-Scenario: Logging in and adding schedule
+Scenario: Logging in and adding schedule, then editing
     And I select "2016" from "schedule_end_time_1i"
     And I select "April" from "schedule_end_time_2i"
     And I select "1" from "schedule_end_time_3i"
     And I press "Create Schedule"
     Then I should see "2016-04-01"
+    When I follow "Edit"
+    And I select "2" from "schedule_end_time_3i"
+    And I press "Update Schedule"
+    Then I should see "2016-04-02"
+    When I press "Delete"
+    Then I should see "Listing Schedules"
+
     
 Scenario: Adding an invalid start time
     And I select "2015" from "schedule_end_time_1i"
@@ -47,3 +54,5 @@ Scenario: Trying to edit as an incorrect users
     And I login as "notdaniel@gmail.com" with "password"
     Then I should be on the profile page for "notdaniel@gmail.com"
     And I should not see "Manage Clinic"
+
+

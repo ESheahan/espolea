@@ -23,19 +23,18 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @is_edit = true
     @review = current_user.reviews.find(params[:id])
   end
 
   # POST /reviews
   # POST /reviews.json
   def create
-      byebug
+
     @review = current_user.reviews.new(review_params)
     @review[:clinic_id] = params[:review][:clinic_id]
     if @review.save
       redirect_to reviews_path
-    else
-      render :new 
     end
     
   end
@@ -43,13 +42,10 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-      byebug
     @review = current_user.reviews.find(params[:id])
     @review[:clinic_id] = params[:review][:clinic_id]
     if @review.update(review_params)
         redirect_to @review, notice: 'Review was successfully updated.' 
-    else
-      render :edit 
     end
   
   end

@@ -19,7 +19,7 @@ Scenario: Reviews should reflect helpfulness
 	When I follow "Clinics"
 	Given I fill in "filterrific_search_query" with "Clinic 1"
         Then I should see "Clinic 1"
-        When I follow "Show"
+        When I follow "View"
 	Then I should see "Helpfulness"
 	And I should see "Test Review"
 	And I should see "Test Review 2"
@@ -28,19 +28,16 @@ Scenario: Reviews should reflect helpfulness
 	And I should see "4"
 
 Scenario: Reviews should be voted on
-	When I follow "Clinics"
-	And I search "Clinic 1"
+    When I login as "dahrens@berkeley.edu" with "password"
+	And I follow "Reviews"
 	Then I should see "Helpfulness"
-	And I should see "Test Review"
-	And I should see "Helpful?"
-	When I press "Yes"
-	Then I should see "5"
+	And I should see "4"
 
 Scenario: Reviews should be sorted
 	When I follow "Clinics" 
 	Given I fill in "filterrific_search_query" with "Clinic 1"
         Then I should see "Clinic 1"
-        When I follow "Show"
+        When I follow "View"
 	Then I should see "Helpfulness"
 	And I should see "Test Review" before "Test Review 2"
 	And I should see "5"

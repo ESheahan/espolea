@@ -34,7 +34,14 @@
     <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Create Review", :class => "btn btn-raised btn-success" %>
-  </div>
+  <% if @is_edit %>
+      <div class="actions">
+        <%= f.submit "Update Review", :class => "btn btn-raised btn-success" %>
+      </div>
+  <% else %>
+      <div class="actions">
+        <%= f.submit "Create Review", :class => "btn btn-raised btn-success" %>
+      </div>
+  <% end %>
+
 <% end %>

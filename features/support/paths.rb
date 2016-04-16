@@ -23,7 +23,8 @@ module NavigationHelpers
         clinics_path
 
     when /^the users listing page$/
-        '/profile/all'
+        '/profile'
+
 
     when /^the reviews listing page$/
         reviews_path
@@ -35,8 +36,8 @@ module NavigationHelpers
     when /^the Create Profile page$/
         new_user_registration_path
 
-    when /^profile page ([\d])$/
-        "/users/#{$1}"
+    when /^profile page "([\d])"$/
+        "/profile/#{$1}"
 
     when /^the clinics listing page for "(.*)"$/
         clinic_id = Clinic.find_by(name: $1).id
