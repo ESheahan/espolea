@@ -9,12 +9,10 @@ Background:
   | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
 
   Given the following reviews exist:
-  | title       | rating  | text         |
-  | Test Review | 5       | Nothing Here |
-
-  Given that "Test Review" is associated with "Clinic 1"
+  | title       | rating  | body         | clinic_id|
+  | Test Review | 5       | Nothing Here | 1        |
 
 Scenario: View a Clinic and see its reviews
-	Given I am on the Clinics Listing page
+	Given I am on the clinics listing page
 	And I follow "Clinic 1"
 	Then I should see "Test Review"
