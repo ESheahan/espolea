@@ -1,7 +1,8 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, only: [:edit, :destroy]
-
+  before_action :require_logged_admin, only: [:edit, :destroy]
+  before_action :require_admin_user, only: [:edit, :destroy]
+  
   # GET /clinics
   # GET /clinics.json
   def index
@@ -84,19 +85,31 @@ class ClinicsController < ApplicationController
     end
     
     def is_logged_in?
-        @user = User.find(params[:id])
-        !session[@user.id].nil?
+      @user = User.find(params[:id])
+      !session[@user.id].nil?
     end
     
-    def require_admin
-        unless is_logged_in?
-            flash[:error] = "You must be logged in to access this section"
-            redirect_to new_user_session_path
-        end
+    def admin_for_clinic?
+      @clinic = Clinic.find(params[:id])
+      @user = User.find(params[:id])
+      @clinic.id.equals?(@user.clinics_id)
+    end
+    
+    def require_admin_user
+      unless admin_for_clinic?
+        flash[:error] = "You are not an admin for this clinic"
+        redirect_to clinics_path
+      end
     end
 
- 
 
+    def require_logged_admin
+      unless is_logged_in?
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to new_user_session_path
+      end
+    end
+  
     # Never trust parameters from the scary internet, only allow the white list through.
     def clinic_params
       params.require(:clinic).permit(:name, :phone_number, :email, :website, :state, :municipality)
