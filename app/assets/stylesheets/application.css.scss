@@ -75,3 +75,56 @@ button a:hover {
     border: none;
     color: #23527C;
 }
+
+// Needs a parent element with position absolute
+.vertical-center { 
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Card containers
+.container-actions {
+  position: relative; 
+  height: 56px;
+  .left-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    &.back-button {
+      @extend .vertical-center;
+    }
+  }
+  .right-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// Needs a parent element with position: relative and margin-right: 40px;s
+.edit-button {
+  position: absolute; 
+  right: 10px; 
+  top: 35px;
+}
+
+.map-container {
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .left-info-container {
+    width: 50%; 
+    float: left; 
+  }
+
+  .right-info-container {
+    width: 50%;
+  }
+
+  .map-container {
+    height: 100%;
+  }
+}

@@ -1,34 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @clinic.name %>
-</p>
+<div class="container-actions">
+  <div class="btn-group-sm left-button back-button">
+    <%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
+      <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @clinic.phone_number %>
-</p>
+<div class="well clinic-card">
+  <div class="panel-body left-info-container">
+    <h1><%= @clinic.name %></h1>
+    <ul>
+      <li>
+        <span class="card-info-description">Phone number</span>
+        <span class="card-info-value"><%= @clinic.phone_number %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Email</span>
+        <span class="card-info-value"><%= link_to_unless(@clinic.email.nil?, @clinic.email, "http://#{@clinic.email}", target: "_blank") %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Website</span>
+        <span class="card-info-value"><%= link_to_unless(@clinic.website.nil?, @clinic.website, "http://#{@clinic.website}", target: "_blank") %></span>
+      </li>
+      <li>
+        <span class="card-info-description">State</span>
+        <span class="card-info-value"><%= @clinic.state %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Municipality</span>
+        <span class="card-info-value"><%= @clinic.municipality %></span>
+      </li>
+    </ul>
+    <div>
+      <%= link_to "/review/new/#{@clinic.id}", { :class=>"btn btn-info " } do %>
+        Add Review <div class="ripple-container"></div>
+      <% end %>
+      <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
+        Add Scheduling Block <div class="ripple-container"></div>
+      <% end %>
+    </div>
+    
+    <!-- positioned absolute -->
+    <div class="btn-group-sm edit-button">
+      <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
+        <i class="material-icons">edit</i><div class="ripple-container"></div>
+      <% end %>
+    </div>
+  </div>
+  <figure id="map" class="right-info-container map-container"></figure>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @clinic.email %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @clinic.website %>
-</p>
-<p>
-  <strong>State:</strong>
-  <%= @clinic.state %>
-</p>
-<p>
-  <strong>Municipality:</strong>
-  <%= @clinic.municipality %>
-</p>
-<br>
-<div id="map" style="height:300px;"></div>
 <script>
  $("#map").geolocateMap({
       markers: 
@@ -45,7 +68,3 @@
     })
 
 </script>
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
-<%= link_to 'Back', clinics_path %>
-<%= link_to "Add Review", "/review/new/#{@clinic.id}" %>
-<%= link_to "Add Scheduling Block", "/schedule/new/#{@clinic.id}" %>
