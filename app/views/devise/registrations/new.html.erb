@@ -50,36 +50,57 @@
 
 <%= render "devise/shared/links" %>
 
-<h1 class="login-title">Espolea</h1>
+
+<h1 class="login-title">Register to become a member of Espolea today!</h1>
 <div class="container-devise">
   <div class="card"></div>
-  <!-- <div class="card">
-    <h1 class="title">Login</h1>
+  <div class="card alternative">
+    <h1 class="title">Register</h1>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group label-floating">
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        <%= f.label :first_name, class: "control-label" %>
+      </div>
+      <div class="form-group label-floating">
+        <%= f.text_field :last_name, class: "form-control" %>
+        <%= f.label :last_name, class: "control-label" %>
+      </div>
+      <div class="form-group radio-container">
+        <div class="radio radio-primary">
+          <label>
+            <%= radio_button_tag(:gender, "Female") %>
+            Female
+          </label>
+        </div>
+        <div class="radio radio-primary">
+          <label>
+            <%= radio_button_tag(:gender, "Male") %>
+            Male
+          </label>
+        </div>
+      </div>
+      <div class="form-group label-floating">
+        <%= f.email_field :email, class: "form-control" %>
         <%= f.label :email, class: "control-label" %>
       </div>
       <div class="form-group label-floating">
         <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
         <%= f.label :password, class: "control-label" %>
+        <% if @minimum_password_length %>
+          <p class="help-block"><%= @minimum_password_length %> characters minimum</p>
+        <% end %>
       </div>
-      <% if devise_mapping.rememberable? -%>
-        <div class="form-group checkbox-container">
-          <div class="checkbox">
-            <label>
-              <%= f.check_box :remember_me %> Remember Me
-            </label>
-          </div>
-        </div>
-      <% end -%>
+      <div class="form-group label-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
+        <%= f.label :password_confirmation, class: "control-label" %>
+      </div>
       <div class="button-container button-filled">
-        <%= f.submit "Log In" %>
+        <%= f.submit "Sign up" %>
       </div>
       <br>
       <div class="button-container">
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Sign up", new_registration_path(resource_name) %>
+        <%- if controller_name != 'sessions' %>
+          <%= link_to "Log in", new_session_path(resource_name) %>
         <% end -%>
       </div>
       <div class="footer">
@@ -88,8 +109,8 @@
         <% end -%>
       </div>
     <% end %>
-  </div> -->
-  <div class="card alt">
+  </div>
+  <!-- <div class="card alt">
     <div class="toggle"></div>
     <h1 class="title">Register
       <div class="close"></div>
@@ -114,5 +135,5 @@
         <button><span>Next</span></button>
       </div>
     </form>
-  </div> 
+  </div> -->
 </div>
