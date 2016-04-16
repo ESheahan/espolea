@@ -1,6 +1,11 @@
 es:
   hello: "Hola Mundo"
-  home_page_search: "Spanish"
+  home:
+    search: "Estoy buscando una clínica en"
+    write: "Escribe una reseña"
+    question: "Tiene visitaron una clínica recientemente?"
+    zip: "Introducir código postal o ciudad"
+    recent: "Comentarios recientes"
   will_paginate:
     page_entries_info:
       single_page:
@@ -11,6 +16,18 @@ es:
         zero:  "No %{model} found"
         one:   "Displaying <b>1</b> %{model}"
         other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-
       multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+  errors:
+    messages:
+      not_saved: "Record not saved"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blankPassword: "Email can't be blank"
+              blank: "Email can't be blank"
+            password:
+              blank: "Password can't be blank"

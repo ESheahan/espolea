@@ -1,14 +1,14 @@
 <div class="jumbotron row">
     <div class="text-center form-group">
-        <h1><%=t :home_page_search %></h1>
-        <input type="location" class="form-control" id="location" placeholder="Enter zip code or city">
+        <h1><%=I18n.t '.home.search' %></h1>
+        <input type="location" class="form-control" id="location" placeholder= "Enter zip code or city"}>
     </div>
 </div>
 <div class="jumbotron row">
     <div class="text-center">
-       <h1>Have you visited a clinic recently?</h1>
-        <%= link_to 'Write a Review', new_review_path, :class => 'btn btn-raised btn-success' %>
+       <h1><%=I18n.t '.home.question' %></h1>
+        <%= link_to I18n.t('.home.write'), new_review_path, :class => 'btn btn-raised btn-success' %>
     </div>
 </div>
 
-<h1>Recent Reviews</h1>
+<h1><%=I18n.t '.home.recent' %></h1>

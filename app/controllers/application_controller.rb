@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def set_locale
-    I18n.locale = session[:locale] || 'es'
+    I18n.locale = session[:locale] || 'en'
   end
   
   def after_sign_in_path_for(resource)
@@ -26,9 +26,9 @@ class ApplicationController < ActionController::Base
     redirect_to request.referer
   end 
   
-  def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
-  end
+  # def default_url_options(options = {})
+  #   { locale: I18n.locale }.merge options
+  # end
   
   def configure_permitted_parameters
    devise_parameter_sanitizer.for(:sign_up) do |u|
