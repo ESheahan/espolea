@@ -38,19 +38,28 @@
             <div class="row">
               <div class="col-sm-4">
                 <%= link_to clinic, { :class=>"btn btn-raised btn-success" } do %>
-                  Show <div class="ripple-container"></div>
+                  View <div class="ripple-container"></div>
                 <% end %>
               </div>
-              <div class="col-sm-4">
-                <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
-                  Edit <div class="ripple-container"></div>
+              <% if current_user %>
+                <%= link_to new_clinic_review_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
+                  Write Review <div class="ripple-container"></div>
                 <% end %>
-              </div>
-              <div class="col-sm-4">
-                <%= link_to clinic, { :class=>"btn btn-raised btn-danger" }, method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                  Destroy <div class="ripple-container"></div>
-                <% end %>
-              </div>
+            <% end %>
+
+              <% if current_user.clinics_id and current_user.clinics_id == clinic.id %>
+                  <div class="col-sm-4">
+                    <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
+                      Edit <div class="ripple-container"></div>
+                    <% end %>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <%= link_to clinic, { :class=>"btn btn-raised btn-danger" }, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                      Destroy <div class="ripple-container"></div>
+                    <% end %>
+                  </div>
+              <% end %>
             </div>
           </div>
         </div>

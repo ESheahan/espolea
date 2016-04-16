@@ -45,8 +45,8 @@
   partial: 'clinics/list',
   locals: { clinics: @clinics }
 ) %>
-<div>Testing clinics functionality. Clinics length: <%= @clinics.length %></div>
-
 <br>
 
-<%= link_to 'New Clinic', new_clinic_path %>
+<%= link_to new_clinic_path, { :class=>"btn btn-raised btn-success" } do %>  
+    New Clinic <div class="ripple-container"></div>
+<% end %>

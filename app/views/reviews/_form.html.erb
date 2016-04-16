@@ -24,7 +24,17 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
+
+  <div class="field">
+    <%= f.label :clinic %><br>
+    <% if @selected_clinic %>
+        <%= f.select :clinic_id, options_from_collection_for_select(Clinic.all, :id, :name, @selected_clinic.id) %>
+    <% else %>
+        <%= f.select :clinic_id, options_from_collection_for_select(Clinic.all, :id, :name) %>
+    <% end %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Review", :class => "btn btn-raised btn-success" %>
   </div>
 <% end %>
