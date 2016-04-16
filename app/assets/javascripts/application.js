@@ -17,4 +17,6 @@
 //= require filterrific/filterrific-jquery
 //= require material
 //= require ripples
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
