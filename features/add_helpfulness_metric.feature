@@ -12,8 +12,8 @@ Background:
 
   Given the following reviews exist:
   | title         | rating | body   | helpfulness | clinic_id | user_id |
-  | Test Review   | 5      | great! | 4           | 1         | 1       |
-  | Test Review 2 | 5      | lame   | 1           | 1         | 1       |
+  | Test Review   | 5      | great! | 0           | 1         | 1       |
+  | Test Review 2 | 5      | lame   | 0           | 1         | 1       |
     And I am on the home page
 Scenario: Reviews should reflect helpfulness
 	When I follow "Clinics"
