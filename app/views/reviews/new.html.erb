@@ -1,5 +1,16 @@
-<h1>New Review</h1>
+<div class="container-actions">
+	<div class="btn-group-sm left-button back-button">
+		<%= link_to reviews_path, { :class=>"btn btn-primary btn-fab" } do %>
+          <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
+        <% end %>
+	</div>
+</div>
 
-<%= render 'form' %>
+<div class="well">
+	<div class="panel-body">
+		<h1>New Review</h1>
 
-<%= link_to 'Back', reviews_path %>
+		<%= render 'form' %>
+	</div>
+</div>
+

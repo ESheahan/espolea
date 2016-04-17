@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<h1 class="login-title">Forgot your password?</h1>
+<div class="container-devise">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Reset Password</h1>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  		<%= devise_error_messages! %>
+     	<div class="form-group label-floating">
+	        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+	        <%= f.label :email, class: "control-label" %>
+	    </div>
+	    <p class="text-primary">You will receive email instructions to reset password</p>
+		<div class="button-container button-filled">
+			<%= f.submit "Reset password" %>
+		</div>
+		<div class="button-container">
+			<%- if controller_name != 'sessions' %>
+			  <%= link_to "Log in", new_session_path(resource_name) %><br />
+			<% end -%>
+		</div>
+		<div class="button-container">
+			<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+			  <%= link_to "Sign up", new_registration_path(resource_name) %>
+			<% end -%>
+		</div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

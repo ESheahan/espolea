@@ -10,15 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require bootstrap-material-design
  *= require ripples
+ *= require_tree .
  */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datetimepicker";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
@@ -103,16 +104,65 @@ button a:hover {
   }
 }
 
-// Needs a parent element with position: relative and margin-right: 40px;s
+// These three go together to create an edit link
+.card-to-edit {
+  position: relative;
+}
+
+.title-w-edit {
+  margin-right: 40px;
+}
+
 .edit-button {
   position: absolute; 
   right: 10px; 
   top: 35px;
 }
+///////////////////////////////////////////////
 
 .map-container {
   height: 300px;
 }
+
+// ERRORS
+.form-group {
+  .field_with_errors {
+    input, label {
+      color: #A40000 !important;
+    }
+    .form-control {
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#A40000), to(#A40000)), -webkit-gradient(linear, left top, left bottom, from(#981313), to(#981313)) !important;
+      background-image: -webkit-linear-gradient(#A40000, #A40000), -webkit-linear-gradient(#981313, #981313) !important;
+      background-image: -o-linear-gradient(#A40000, #A40000), -o-linear-gradient(#981313, #981313) !important;
+      background-image: linear-gradient(#A40000, #A40000), linear-gradient(#981313, #981313) !important;
+    }
+  }
+}
+
+// Error message
+#error_explanation {
+  background-color: #f44336;
+  padding: 15px;
+  color: rgba(255,255,255, 0.84);
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+
+    li {
+      font-size: 12px;
+      list-style: square;
+    }
+  }
+}
+// 
 
 @media (min-width: 768px) {
   .left-info-container {

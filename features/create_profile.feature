@@ -20,5 +20,16 @@ Scenario: Create a profile (Happy path)
 	
 Scenario: Create a profile (Sad path)
 	When I press "Sign up"
+	When I fill in "Email" with ""
+	And I fill in "Password" with ""
+    And I fill in "Password confirmation" with ""
     Then I should see the error message "Email can't be blank"
     And I should see the error message "Password can't be blank"
+
+Scenario: Viewing all the users
+    Given I am on the users listing page
+    Then I should see "Listing Users"
+
+Scenario:
+    Given I am on profile page "1"
+    Then I should see "I'm looking for a clinic in"

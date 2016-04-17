@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/find', to: 'schedules#index', as: 'find'
   post '/search_appointments', to: 'schedules#find', as: 'search_appointments'
 
+  get '/reviews/new/:clinic_id', to: 'reviews#new', as: 'new_clinic_review'
   resources :reviews
   resources :clinics
   root "pages#show", page: "home"

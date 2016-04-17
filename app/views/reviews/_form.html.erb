@@ -11,20 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-      <%= f.label :title %></br>
-      <%= f.text_field :title %>
+  <div class="form-group label-floating">
+    <%= f.label :title, class: "control-label" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+  <div class="form-group label-floating">
+    <%= f.label :rating, class: "control-label" %>
+    <%= f.number_field :rating, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+
+  <div class="form-group label-floating">
+    <%= f.label :body, class: "control-label" %>
+    <%= f.text_area :body, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group label-floating">
+    <%= f.label :clinic, class: "control-label" %>
+    <% if @selected_clinic %>
+        <%= f.select :clinic_id, options_from_collection_for_select(Clinic.all, :id, :name, @selected_clinic.id), {}, {:class => 'fomr-control'} %>
+    <% else %>
+        <%= f.select :clinic_id, options_from_collection_for_select(Clinic.all, :id, :name), {}, { :class => 'form-control' } %>
+    <% end %>
   </div>
+
+  <% if @is_edit %>
+      <div class="actions">
+        <%= f.submit "Update Review", :class => "btn btn-primary" %>
+      </div>
+  <% else %>
+      <div class="actions">
+        <%= f.submit "Create Review", :class => "btn btn-success" %>
+      </div>
+  <% end %>
+
 <% end %>

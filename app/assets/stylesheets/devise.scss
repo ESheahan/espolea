@@ -1,0 +1,342 @@
+// @import "bourbon";
+
+// Main Colors
+$accent: null;
+$white: #ffffff;
+$black: #000000;
+$dark-gray: lighten($black, 20%);
+$gray: lighten($black, 40%);
+$light-gray: lighten($black, 60%);
+$lighter-gray: lighten($black, 80%);
+
+// Pen Settings
+$primary: #363636;
+$accent: #009688;
+$max-width: 460px;
+$hover: rgba(153, 153, 153, 0.2);
+$big-size: 24px;
+$small-size: 18px;
+
+// Mixins
+$level: 1;
+
+@mixin materialShadow($level) {
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.login-title {
+  text-align: center;
+}
+
+/* Container */
+.container-devise {
+  position: relative;
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto 100px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: $white;
+  border-radius: 5px;
+  padding: 60px 0 40px 0;
+  box-sizing: border-box;
+  @include materialShadow(1);
+  transition: .3s ease;
+
+  &:first-child {
+    background: darken($white, 2%);
+    height: 10px;
+    border-radius: 5px 5px 0 0;
+    margin: 0 10px;
+    padding: 0;
+    width: 95%;
+  }
+
+  &:nth-child(2) {
+    margin-top: -5px;
+  }
+
+  /* Title */
+  .title {
+    position: relative;
+    z-index: 1;
+    border-left: 5px solid $accent;
+    margin: 0 0 35px;
+    padding: 10px 0 10px 50px;
+    color: $accent;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 60px 50px;
+  }
+
+  /* Inputs */
+  .form-group {
+    margin: 0 60px 50px;
+    p {
+      margin: 0;
+    }
+    input {
+      font-size: $big-size;
+      height: 60px;
+    }
+
+    &.label-floating {
+      position: relative;
+
+      label {
+        font-size: $big-size;
+      }
+    }
+
+    &.checkbox-container {
+      margin-bottom: 28px;
+    }
+
+    &.radio-container {
+      margin: -20px 60px 15px 60px;
+
+      .radio {
+        display: inline-block;
+      }
+    }
+  }
+
+  /* Button */
+  .button-container {
+    margin: 0 60px;
+    text-align: center;
+
+    button, input, a {
+      outline: 0;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      background: 0;
+      width: 240px;
+      border: 2px solid #e3e3e3;
+      padding: 20px 0;
+      font-size: $big-size;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .3s ease;
+
+      color: #ddd;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: $accent;
+        color: $accent;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .button-filled {
+    @extend .button-container;
+
+    button, input {
+      border: none;
+      color: $accent;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $accent;
+        color: $white;
+      }
+    }
+  }
+
+  /* Footer */
+  .footer {
+    margin: 40px 0 0;
+    color: #d3d3d3;
+    font-size: $big-size;
+    font-weight: 300;
+    text-align: center;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: .3s ease;
+
+      &:hover {
+        color: darken(#d3d3d3, 10%);
+      }
+    }
+  }
+
+  // Register card
+  &.alternative {
+    background-color: $accent;
+
+    .title {
+      border-color: $white;
+      color: $white;
+    }
+
+    .form-group {
+      input, label {
+        color: white;
+      }
+
+      .form-control {
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFfFF), to(#FFFFFF)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+        background-image: -webkit-linear-gradient(#FFFfFF, #FFFfFF), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+        background-image: -o-linear-gradient(#FFFFFF, #FFFFFF), -o-linear-gradient(#D2D2D2, #D2D2D2);
+        background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#D2D2D2, #D2D2D2);
+      }
+
+      &.label-floating {
+        .help-block {
+          color: $white;
+        }
+      }
+
+      &.radio-container {
+        .radio {
+          label {
+            color: $white;
+            &:hover {
+              color: rgba(255, 255, 255, 0.8);
+            }
+          }
+          .circle {
+            border-color: $white;
+          }
+          .check {
+            background-color: $white;
+          }
+        }
+        &.is-focused {
+          label {
+            color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+
+      &.datetimepicker-container {
+        .glyphicon-calendar {
+          color: $white;
+          font-size: 28px;
+        }
+      }
+
+      .button-container {
+        button, input, a {
+          border-color: transparent;
+          color: $white;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $white;
+            color: $accent;
+          }
+        }
+      }
+
+      .button-filled {
+        button, input {
+          background-color: $white;
+          color: $accent;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: $accent;
+          }
+        }
+      }
+    }
+
+    /* Button */
+    .button-container {
+
+      button, input, a {
+        border-color: $white;
+        color: $white;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: transparent;
+          color: $accent;
+          background-color: $white;
+        }
+      }
+    }
+
+    .button-filled {
+      button, input {
+        color: $white;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $white;
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  // Error message
+  #error_explanation {
+    margin: 0 60px 50px;
+  }
+}
+
+// Responsive
+@media (max-width: 767px) {
+  .card {
+    .form-group.label-floating, .form-group.datetimepicker-container {
+      input, label {
+        font-size: $small-size;
+      }
+
+      .form-control {
+        height: 40px;
+      }
+    }
+
+    .button-container {
+      button, input, a {
+        font-size: $small-size;
+      }
+    }
+
+    .footer {
+      font-size: $small-size;
+    }
+  }
+}

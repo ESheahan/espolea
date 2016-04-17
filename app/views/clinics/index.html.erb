@@ -9,7 +9,7 @@
         <%= f.text_field(
           :search_query,
           class: 'filterrific-periodically-observed',
-          class: "form-control col-lg-8",
+          class: "form-control col-lg-8", id: "search_field"
         ) %>
       </div>
       <div class="form-group">
@@ -38,16 +38,18 @@
         <% end -%>
 
         <!-- this button is just to improve the UX, simulates the search that is made with ajax-->
-        <div class="btn btn-success">Search<div class="ripple-container"></div></div>
+        <button class="btn btn-success" id="search_button">Search<div class="ripple-container"></div></button>
       </div>
     </div>
   </div>
 <%= render_filterrific_spinner %>
 <% end %>
 
+<%= link_to new_clinic_path, { :class=>"btn btn-raised btn-success" } do %>  
+    New Clinic <div class="ripple-container"></div>
+<% end %>
+
 <%= render(
   partial: 'clinics/list',
   locals: { clinics: @clinics }
 ) %>
-
-<%= link_to 'New Clinic', new_clinic_path %>
