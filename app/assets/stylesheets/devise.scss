@@ -97,6 +97,9 @@ $level: 1;
   /* Inputs */
   .form-group {
     margin: 0 60px 50px;
+    p {
+      margin: 0;
+    }
     input {
       font-size: $big-size;
       height: 60px;

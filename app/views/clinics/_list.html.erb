@@ -43,23 +43,25 @@
               </div>
 
               <% if current_user %>
+                <div class="col-sm-6 col-md-4">
                 <%= link_to new_clinic_review_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
                   Write Review <div class="ripple-container"></div>
                 <% end %>
-            <% end %>
+                </div>
+              <% end %>
 
               <% if current_user and current_user.clinics_id and current_user.clinics_id == clinic.id %>
-                  <div class="col-sm-4">
-                    <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
-                      Edit <div class="ripple-container"></div>
-                    <% end %>
-                  </div>
+                <div class="col-sm-6 col-md-4">
+                  <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
+                    Edit <div class="ripple-container"></div>
+                  <% end %>
+                </div>
 
-                  <div class="col-sm-4">
-                    <%= link_to clinic, { :class=>"btn btn-raised btn-danger" }, method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                      Destroy <div class="ripple-container"></div>
-                    <% end %>
-                  </div>
+                <div class="col-sm-6 col-md-4">
+                  <%= link_to clinic, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                    Delete <div class="ripple-container"></div>
+                  <% end %>
+                </div>
               <% end %>
             </div>
           </div>
