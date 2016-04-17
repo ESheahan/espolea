@@ -13,7 +13,7 @@ Background:
   | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
 
      Given the following reviews exist:
-  | title       | rating      | text         | user_id |clinic_id   |
+  | title       | rating      | body         | user_id |clinic_id   |
   | Test Review | 5           | Nothing Here | 1       |1           |
     Given I login as "dahrens@berkeley.edu" with "password"
     Given I am on the reviews listing page
