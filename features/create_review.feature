@@ -10,7 +10,7 @@ Background:
   Then I should be on the profile page for "dahrens@berkeley.edu"
   And I should see "Welcome, Daniel"
   Given I follow "Reviews" 
-  And I follow "New Review"
+  And I follow "Write Review"
 
 Scenario: Create a new review
     When I fill in "Title" with "Test Review"

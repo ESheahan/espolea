@@ -28,7 +28,7 @@ Scenario: User is logged in
 	Given I login as "dahrens@berkeley.edu" with "password"
         And I am on the home page
 	And I follow "Reviews"
-	Then I should see "New Review"
+	Then I should see "Write Review"
 
 Scenario: User has same reviews after logging out
 	Given I login as "dahrens@berkeley.edu" with "password"
