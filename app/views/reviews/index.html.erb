@@ -9,48 +9,52 @@
 
 <div class="row">
 <% count = 1 %>
-  <% @reviews.each do |review|%>
-    <div class="col-sm-6 col-md-6">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <h2><%= review.title %></h2>
-          <ul>
-            <li>
-              <span class="card-info-description">Rating</span>
-              <span class="card-info-value"><%= review.rating %></span>
-            </li>
-            <li>
-              <span class="card-info-description">Comments</span>
-              <span class="card-info-value"><%= review.body %></span>
-            </li>
-            <li>
-              <span class="card-info-description">Helpfulness</span>
-              <span class="card-info-value">
-                <% if review.helpfulness %>
-                  <%= review.helpfulness %>
-                <% else %>
-                  0
-                <% end -%>
-              </span>
-            </li>
-          </ul>
-          <% if current_user.id == review.user_id %>
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <%= link_to edit_review_path(review), { :class=>"btn btn-raised btn-info" } do %>
-                  Edit <div class="ripple-container"></div>
-                <% end %>
-              </div>
-              <div class="col-sm-6 col-md-4">
-                <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                  Delete <div class="ripple-container"></div>
-                <% end %>
-              </div>
+<% @reviews.each do |review|%>
+  <div class="col-sm-6 col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body card-to-edit">
+        <h2 class="title-w-edit"><%= review.title %></h2>
+        <ul>
+          <li>
+            <span class="card-info-description">Rating</span>
+            <span class="card-info-value"><%= review.rating %></span>
+          </li>
+          <li>
+            <span class="card-info-description">Comments</span>
+            <span class="card-info-value"><%= review.body %></span>
+          </li>
+          <li>
+            <span class="card-info-description">Helpfulness</span>
+            <span class="card-info-value">
+              <% if review.helpfulness %>
+                <%= review.helpfulness %>
+              <% else %>
+                0
+              <% end -%>
+            </span>
+          </li>
+        </ul>
+        <% if current_user.id == review.user_id %>
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                Delete <div class="ripple-container"></div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
+          </div>
+          <div class="btn-group-sm edit-button">
+            <%= link_to edit_review_path(review), { :class=>"btn btn-info btn-fab" } do %>
+              <i class="material-icons">edit</i><div class="ripple-container"></div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
-  <% end -%>
+  </div>
+  <% if count % 2 == 0 %>
+    <div class="clearfix hidden-xs"></div>
+  <% end %>
+  <% count = count + 1 %>
+<% end -%>
 </div>
 

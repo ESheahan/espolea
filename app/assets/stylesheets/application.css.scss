@@ -104,12 +104,21 @@ button a:hover {
   }
 }
 
-// Needs a parent element with position: relative and margin-right: 40px;s
+// These three go together to create an edit link
+.card-to-edit {
+  position: relative;
+}
+
+.title-w-edit {
+  margin-right: 40px;
+}
+
 .edit-button {
   position: absolute; 
   right: 10px; 
   top: 35px;
 }
+///////////////////////////////////////////////
 
 .map-container {
   height: 300px;
