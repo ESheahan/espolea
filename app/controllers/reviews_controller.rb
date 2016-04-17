@@ -35,6 +35,8 @@ class ReviewsController < ApplicationController
     @review[:clinic_id] = params[:review][:clinic_id]
     if @review.save
       redirect_to reviews_path
+    else
+      render :new
     end
     
   end
@@ -46,6 +48,8 @@ class ReviewsController < ApplicationController
     @review[:clinic_id] = params[:review][:clinic_id]
     if @review.update(review_params)
         redirect_to reviews_path, notice: 'Review was successfully updated.' 
+    else
+      render :edit
     end
   
   end
