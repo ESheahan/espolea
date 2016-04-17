@@ -20,12 +20,12 @@ Background:
     Then I should see "Test Review"
  
 Scenario: Updating a review
-    When I follow "Edit"
+    When I follow "edit"
     And I fill in "Title" with "Best Review"
     And I press "Update Review"
     Then I should see "Best Review"
 
 Scenario: Deleting a review
-    When I follow "Destroy"
+    When I follow "Delete"
     Then I should be on the reviews listing page
     And I should not see "Test Review"

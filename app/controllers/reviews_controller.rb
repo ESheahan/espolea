@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.find(params[:id])
     @review[:clinic_id] = params[:review][:clinic_id]
     if @review.update(review_params)
-        redirect_to @review, notice: 'Review was successfully updated.' 
+        redirect_to reviews_path, notice: 'Review was successfully updated.' 
     end
   
   end
