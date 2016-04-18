@@ -3,14 +3,20 @@ Feature:
     So that I can provide information about clinics to other users 
     I want to be able to write a review
 Background:
+    Given the following clinics exist:
+    | name       | phone_number   | email             | municipality | state      |
+    | Clinic 1   | (123) 456-7890 | clinic1@gmail.com | Saltillo     | Coahuila   |
+    | Clinic 2   | (123) 456-7891 | clinic2@gmail.com | Monterrey    | Nuevo Leon |
+    
   Given the following users exist:
   | first_name | last_name | email                | password | 
   | Daniel     | Ahrens    | dahrens@berkeley.edu | password | 
   Given I login as "dahrens@berkeley.edu" with "password"
   Then I should be on the profile page for "dahrens@berkeley.edu"
   And I should see "Welcome, Daniel"
-  Given I follow "Reviews" 
-  And I follow "Write Review"
+  Given I follow "Clinics" 
+  And I follow "Clinic 1"
+  And I follow "Add Review"
 
 Scenario: Create a new review
     When I fill in "Title" with "Test Review"
