@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :schedules
   devise_for :users
   get 'pages/show'
-
+  get '/language/es', to: "application#set_english", as: 'set_english'
+  get '/language/en', to: "application#set_spanish", as: 'set_spanish'
   get '/schedule/new/:clinic_id', to: "schedules#new"
   get '/login', to: 'users#sign_in', as: 'login'
   post '/signin', to: 'users#sign_in', as: 'signin'

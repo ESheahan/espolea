@@ -35,6 +35,16 @@
         </ul> 
 
         <ul class="nav navbar-nav navbar-right">
+            <% if session[:locale] == 'en' || session[:locale] == nil%>
+              <button type="button" class="btn btn-raised btn-success">
+                <%= link_to "Español", set_spanish_path %>
+              </button>
+            <% else %>
+              <button type="button" class="btn btn-raised btn-success">
+                <%= link_to "English", set_english_path %>
+              </button>
+            <% end %>
+            
             <% if current_user == nil %>
                 <button type="button" class="btn btn-default navbar-btn">
                     <%= link_to "Log in", new_user_session_path %>

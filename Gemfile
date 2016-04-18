@@ -47,6 +47,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem 'textacular', '~> 3.0'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'

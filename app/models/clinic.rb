@@ -1,3 +1,5 @@
+require 'textacular/searchable'
+
 class Clinic < ActiveRecord::Base
 
   belongs_to :user
@@ -61,4 +63,6 @@ class Clinic < ActiveRecord::Base
  def self.options_for_select_municipality
   order('LOWER(municipality)').group('clinics.id', 'municipality').map { |e| [e.municipality, e.municipality] }
  end
+ 
+ extend Searchable(:state)
 end
