@@ -21,14 +21,18 @@ Background:
 Scenario: User is not logged in
 	Given I am not logged in
         And I am on the home page
-	And I follow "Reviews"
-	Then I should not see "New Review"
+	And I follow "Clinics"
+        And I follow "Clinic 1"
+        And I follow "Add Review"
+	Then I should be on the Login page
 
 Scenario: User is logged in
 	Given I login as "dahrens@berkeley.edu" with "password"
         And I am on the home page
-	And I follow "Reviews"
-	Then I should see "Write Review"
+	And I follow "Clinics"
+        And I follow "Clinic 1"
+        And I follow "Add Review"
+	Then I should see "Title"
 
 Scenario: User has same reviews after logging out
 	Given I login as "dahrens@berkeley.edu" with "password"

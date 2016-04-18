@@ -15,9 +15,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    if params[:clinic_id] != nil
-        @selected_clinic = Clinic.find_by(id: params[:clinic_id])
-    end
+
+    @selected_clinic = Clinic.find_by(id: params[:clinic_id])
+
     @review = current_user.reviews.new
   end
 
