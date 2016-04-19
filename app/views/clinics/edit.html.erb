@@ -1,12 +1,10 @@
 <div class="container-actions">
 	<div class="btn-group-sm left-button back-button">
-		<%= link_to clinics_path, { :class=>"btn btn-primary btn-fab" } do %>
+		<%= link_to clinic_path(@clinic.id), { :class=>"btn btn-primary btn-fab" } do %>
           <i class="material-icons">arrow_back</i><div class="ripple-container"></div>
         <% end %>
 	</div>
-	<div class="right-button">
-		<%= link_to 'View', @clinic, { :class=>"btn btn-success" } %>
-	</div>
+
 </div>
 
 <div class="well clinic-card edit-mode">
