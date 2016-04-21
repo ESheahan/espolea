@@ -41,13 +41,16 @@
         Add Scheduling Block <div class="ripple-container"></div>
       <% end %>
     </div>
-    
+    <% if current_user%>
+    <% if current_user.admin %>
     <!-- positioned absolute -->
     <div class="btn-group-sm edit-button">
       <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
         <i class="material-icons">edit</i><div class="ripple-container"></div>
       <% end %>
     </div>
+    <% end %>
+    <% end %>
   </div>
   <figure id="map" class="right-info-container map-container"></figure>
 </div>

@@ -12,3 +12,27 @@
 </div>
 
 <h1><%=I18n.t '.home.recent' %></h1>
+<div class="text-center">
+  <%  Review.order("created_at DESC").limit(4).each do | review | %>
+   <div class="col-sm-6 col-md-6">
+    <div class="panel panel-primary">
+      <%= link_to clinic_path(review.clinic_id), :class => 'btn btn-raised btn-success' do%>
+      <div class="panel-body card-to-edit">
+        <h3><%= Clinic.find(review.clinic_id).name %></h3>
+        <% end %>
+        <ul>
+          <li>
+            <span class="card-info-description">Rating</span>
+            <span class="card-info-value"><%= review.rating %></span>
+          </li>
+          <li>
+            <span class="card-info-description">Comments</span>
+            <span class="card-info-value"><%= review.body %></span>
+          </li>
+        </ul>
+      </div>
+        
+    </div>
+  </div>
+  <% end %>
+</div>
