@@ -21,7 +21,7 @@ Background:
 
 Scenario: Reviews should reflect helpfulness
 	When I follow "Clinics"
-	Given I fill in "filterrific_search_query" with "Clinic 1"
+	Given I fill in "filterrific[search_query]" with "Clinic 1"
     Then I should see "Clinic 1"
     When I follow "View"
 	Then I should see "Helpfulness"
@@ -39,7 +39,7 @@ Scenario: Reviews should be voted on
 
 Scenario: Reviews should be sorted
 	When I follow "Clinics" 
-	Given I fill in "filterrific_search_query" with "Clinic 1"
+	Given I fill in "filterrific[search_query]" with "Clinic 1"
     Then I should see "Clinic 1"
     When I follow "View"
 	Then I should see "Helpfulness"
