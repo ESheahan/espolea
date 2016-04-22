@@ -37,7 +37,7 @@
       <%= link_to "/review/new/#{@clinic.id}", { :class=>"btn btn-info " } do %>
         Add Review <div class="ripple-container"></div>
       <% end %>
-      <%= if current_user.clinics_id == @clinic.id %>
+      <% if current_user.clinics_id == @clinic.id %>
           <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
             Add Scheduling Block <div class="ripple-container"></div>
           <% end %>
