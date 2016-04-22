@@ -74,7 +74,7 @@ class UsersController < ApplicationController
 
         if @user
             clinic_id = @user.clinics_id
-            @clinic = Clinic.find_by(clinic_id)
+            @clinic = Clinic.find_by(id: clinic_id)
         end
     end
 end
