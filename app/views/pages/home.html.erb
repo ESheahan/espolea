@@ -12,14 +12,14 @@
 </div>
 
 <h1><%=I18n.t '.home.recent' %></h1>
-<div class="text-center">
-  <%  Review.recent().each do | review | %>
-   <div class="col-sm-6 col-md-6">
+
+<div class="row">
+<% count = 1 %>
+<%  Review.recent().each do | review | %>
+  <div class="col-sm-6 col-md-6">
     <div class="panel panel-primary">
-      <%= link_to clinic_path(review.clinic_id), :class => 'btn btn-raised btn-success' do%>
       <div class="panel-body card-to-edit">
-        <h3><%= Clinic.find(review.clinic_id).name %></h3>
-        <% end %>
+        <h2 class="title-w-edit"><%= Clinic.find(review.clinic_id).name %></h2>
         <ul>
           <li>
             <span class="card-info-description">Rating</span>
@@ -30,13 +30,47 @@
             <span class="card-info-value"><%= review.body %></span>
           </li>
           <li>
-            <span class="card-info-description">By:</span>
-            <span class="card-info-value"><%= User.find(review.user_id).first_name%></span>
+            <span class="card-info-description">Helpfulness</span>
+            <span class="card-info-value">
+              <% if review.helpfulness %>
+                <%= review.helpfulness %>
+              <% else %>
+                0
+              <% end -%>
+            </span>
+          </li>
+          <li>
+            <span class="card-info-description">Last update</span>
+            <span class="card-info-value"><%= review.updated_at.strftime("%m/%d/%Y") %></span>
           </li>
         </ul>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <%= link_to clinic_path(review.clinic_id), :class => 'btn btn-raised btn-success' do%>
+              Visit Clinic <div class="ripple-container"></div>
+            <% end -%>
+          </div>
+        </div>
+        <% if current_user.id == review.user_id %>
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                Delete <div class="ripple-container"></div>
+              <% end %>
+            </div>
+          </div>
+          <div class="btn-group-sm edit-button">
+            <%= link_to edit_review_path(review), { :class=>"btn btn-info btn-fab" } do %>
+              <i class="material-icons">edit</i><div class="ripple-container"></div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
-        
     </div>
   </div>
+  <% if count % 2 == 0 %>
+    <div class="clearfix hidden-xs"></div>
   <% end %>
+  <% count = count + 1 %>
+<% end -%>
 </div>
