@@ -58,10 +58,10 @@ class Clinic < ActiveRecord::Base
     order(:name => :desc)
   }
  def self.options_for_select_state
-  order('LOWER(state)').group('clinics.id', 'state').map { |e| [e.state, e.state] }
+  order('LOWER(state)').group('clinics.id', 'clinics.state').map { |e| [e.state, e.state] }
  end
  def self.options_for_select_municipality
-  order('LOWER(municipality)').group('clinics.id', 'municipality').map { |e| [e.municipality, e.municipality] }
+  order('LOWER(municipality)').group('clinics.id', 'clinics.municipality').map { |e| [e.municipality, e.municipality] }
  end
  
  extend Searchable(:state)
