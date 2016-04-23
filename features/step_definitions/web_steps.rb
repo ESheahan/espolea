@@ -41,13 +41,13 @@ end
 
 Given(/^the following users exist:$/) do |users_table|
   users_table.hashes.each do |user|
-    user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password])
+    user = User.create!(id: user[:id],first_name: user[:first_name], last_name: user[:last_name], email: user[:email], password: user[:password], password_confirmation: user[:password],admin: user[:admin])
   end
   true
 end
 Given(/^the following reviews exist:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id],helpfulness: review[:helpfulness])
+    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id],helpfulness: review[:helpfulness], created_at: review[:created_at])
   end
   true
 end
