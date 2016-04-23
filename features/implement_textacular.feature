@@ -11,16 +11,16 @@ Background:
   Given I am on the clinics listing page
 
 Scenario: Search that matches
-	And I fill in "filterrific_search_query" with "Clinic 1"
+	And I fill in "filterrific[search_query]" with "Clinic 1"
 	Then I should see "Clinic 1"
 	And I should see "clinic1@gmail.com"
 
 Scenario: Search with a partial match
-	And I fill in "filterrific_search_query" with "Clin" 
+	And I fill in "filterrific[search_query]" with "Clin" 
 	Then I should see "Clinic 1"
 	And I should see "clinic1@gmail.com"
 
 Scenario: Fuzzy match
-	And I fill in "filterrific_search_query" with "CLN 1"
+	And I fill in "filterrific[search_query]" with "CLN 1"
 	Then I should see "Clinic 1"
 	And I should see "clinic1@gmail.com"
