@@ -34,3 +34,4 @@ Scenario: On the individual clinics page, should see overview info
 	And I should see "Reviews"
 	And I should see "2"
 	And I should see "Check-Ins"
+	And I should see "0"

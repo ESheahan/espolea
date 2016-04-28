@@ -1,48 +1,89 @@
 <p id="notice"><%= notice %></p>
 
-<p>Welcome, <%= @user.first_name %><p>
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<div class="well clinic-card" style="height: <%= 400 + (((@reviews.length + 1) / 2).ceil * 440) %>px">
+  <div class="panel-body left-info-container card-to-edit" style="width: 100%;">
+    <h1 class="title">Welcome, <%= @user.full_name %></h1>
+    <ul>
+      <li>
+        <span class="card-info-description">Gender</span>
+        <span class="card-info-value"><%= @user.gender %></span>
+      </li>
+      <li>
+        <span class="card-info-description">Email</span>
+        <span class="card-info-value"><%= link_to_unless(@user.email.nil?, @user.email, "http://#{@user.email}", target: "_blank") %></span>
+      </li>
+    </ul>
+    <div>
+      <div style="display: inline-block">
+      <%= link_to edit_user_registration_path, { :class=>"btn btn-info " } do %>
+        Edit Profile <div class="ripple-container"></div>
+      <% end %>
+      </div>
+      <div style="display: inline-block">
+      <% if @clinic and @clinic != "" %>
+          <%= link_to clinic_path(@clinic), { :class=>"btn btn-success " } do %>
+            <%= "Manage #{@clinic.name} " %> <div class="ripple-container"></div>
+          <% end %>
+      <% end %>
+      </div>
+      <div style="display: inline-block">
+      <%= form_tag destroy_user_session_path, method: 'delete' do %>
+       <%= submit_tag("Log Out", class: "btn btn-warning") %>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_registration_path %> |
-<%= link_to 'Back', '/profiles/all' %> |
-
-<%= form_tag destroy_user_session_path, method: 'delete' do %>
-    <%= submit_tag("Delete Profile", class: "styled-submit") %>
-<% end %>
-
-<%= form_tag destroy_user_session_path, method: 'delete' do %>
-    <%= submit_tag("Log Out", class: "styled-submit") %>
-<% end %>
-
-<% if @clinic and @clinic != "" %>
-    <%= link_to "Manage #{@clinic.name}", clinic_path(@clinic) %>
-<% end %>
+  <h2 class="title">Your Reviews</h2>
+  <div class="row">
+    <% count = 1 %>
+    <% @reviews.each do |review|%>
+      <div class="col-sm-6 col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-body card-to-edit" style="width: 100%;">
+            <h2 class="title-w-edit"><%= review.title %></h2>
+            <ul>
+              <li>
+                <span class="card-info-description">Rating</span>
+                <span class="card-info-value"><%= review.rating %></span>
+              </li>
+              <li>
+                <span class="card-info-description">Comments</span>
+                <span class="card-info-value"><%= review.body %></span>
+              </li>
+              <li>
+                <span class="card-info-description">Helpfulness</span>
+                <span class="card-info-value">
+                  <% if review.helpfulness %>
+                    <%= review.helpfulness %>
+                  <% else %>
+                    0
+                  <% end -%>
+                </span>
+              </li>
+            </ul>
+            <% if current_user.id == review.user_id %>
+              <div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
+                    Delete <div class="ripple-container"></div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="btn-group-sm edit-button">
+                <%= link_to edit_review_path(review), { :class=>"btn btn-info btn-fab" } do %>
+                  <i class="material-icons">edit</i><div class="ripple-container"></div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% if count % 2 == 0 %>
+        <div class="clearfix hidden-xs"></div>
+      <% end %>
+      <% count = count + 1 %>
+    <% end -%>
+    </div>
+</div>
 

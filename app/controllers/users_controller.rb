@@ -76,5 +76,7 @@ class UsersController < ApplicationController
             clinic_id = @user.clinics_id
             @clinic = Clinic.find_by(id: clinic_id)
         end
+
+        @reviews = @user.reviews 
     end
 end
