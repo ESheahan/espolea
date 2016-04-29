@@ -7,10 +7,10 @@ Repo for the team working with Espolea as part of an Engineering Software as a S
 
 Users:
 
-**Admin (for Centro Nueva Vida Extra Forma)**
-*email:* admin@gmail.com
-*password:* password123
+**Admin (for Centro Nueva Vida Extra Forma)**  
+*email:* admin@gmail.com  
+*password:* password123  
 
-**Regular User**
-*email:* user@gmail.com
-*password:* password123
+**Regular User**  
+*email:* user@gmail.com  
+*password:* password123  

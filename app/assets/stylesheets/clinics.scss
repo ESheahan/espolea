@@ -19,6 +19,7 @@
 }
 
 .panel-body {
+
 	ul {
 		padding-left: 0;
 		li {
@@ -71,4 +72,57 @@
 			height: 450px;
 		}
 	}
+}
+
+
+
+/* Styling for the clinics rating and helpfulness radials */
+
+.background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+}
+
+.component {
+    fill: #e1e1e1;
+}
+
+.component .label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #878787;
+    font-size: 16px;
+}
+
+.arc {
+    stroke-weight:0.1;
+    fill: #4e8fff;
+}
+
+
+.arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+
+
+.label {
+    font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    color: grey !important;
+}
+
+.radial-svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.radial-container {
+	float: right;
+	height: 100px;
+	width: 100px;
+	margin-right: 80px;
+	margin-left: 25px;
+	margin-top: 10px;
+
 }

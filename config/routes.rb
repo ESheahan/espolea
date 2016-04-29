@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   get '/review/new/:clinic_id', to: 'reviews#new', as: 'new_clinic_review'
   resources :reviews
   resources :clinics
+
+  post '/helpful/add/:review_id/:user_id', to: 'reviews#add_helpful', as: 'add_helpful'
+  post '/helpful/remove/:review_id/:user_id', to: 'reviews#remove_helpful', as: 'remove_helpful'
+  post '/unhelpful/add/:review_id/:user_id', to: 'reviews#add_unhelpful', as: 'add_unhelpful'
+  post '/unhelpful/remove/:review_id/:user_id', to: 'reviews#remove_unhelpful', as: 'remove_unhelpful'
+
   root "pages#show", page: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

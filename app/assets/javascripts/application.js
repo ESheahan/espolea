@@ -18,5 +18,7 @@
 //= require material
 //= require ripples
 //= require moment
+//= require d3.min
+//= require radialProgress
 //= require bootstrap-datetimepicker
 //= require_tree .

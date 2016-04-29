@@ -53,3 +53,31 @@
   partial: 'clinics/list',
   locals: { clinics: @clinics }
 ) %>
+
+<%= javascript_tag do %>
+  window.clinics = <%=raw @clinics.to_json %>;
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    console.log(window.clinics);
+
+    for (i = 0; i < window.clinics.length; i += 1) {
+      clinic = window.clinics[i];
+      console.log(clinic)
+      divId = "radial" + clinic.id;
+      // console.log("Constructing Radial for " + divId);
+
+      percentage = 0
+      if (clinic.average_review != -1) {
+        percentage = (clinic.average_review / 5) * 100
+      }
+      
+      radialProgress(document.getElementById(divId))
+                .label("Average Review")
+                .diameter(150)
+                .value(percentage)
+                .render();
+    }
+  })
+</script>

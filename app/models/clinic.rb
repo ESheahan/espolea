@@ -5,6 +5,9 @@ class Clinic < ActiveRecord::Base
   belongs_to :user
   has_many :schedules
   has_many :reviews, dependent: :destroy
+  before_save :review_average
+
+
   filterrific(
   default_filter_params: {},
   available_filters: [
@@ -65,4 +68,23 @@ class Clinic < ActiveRecord::Base
  end
  
  extend Searchable(:state)
+
+ 
+ def review_average()
+
+    if self.reviews.length == 0
+        self.average_review = -1
+    else
+        total = 0
+        self.reviews.each do |review|
+            if review.rating
+                total += review.rating
+            end
+        end
+        self.average_review = total.to_f / self.reviews.length
+    end
+
+
+ end
+
 end

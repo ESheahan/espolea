@@ -34,24 +34,25 @@
       </li>
     </ul>
     <div>
-      <%= link_to "/review/new/#{@clinic.id}", { :class=>"btn btn-info " } do %>
-        Add Review <div class="ripple-container"></div>
+      <% if current_user and current_user.clinics_id != @clinic.id %>
+          <%= link_to "/review/new/#{@clinic.id}", { :class=>"btn btn-info " } do %>
+            Add Review <div class="ripple-container"></div>
+          <% end %>
       <% end %>
-      <% if current_user.clinics_id == @clinic.id %>
-      <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
-        Add Scheduling Block <div class="ripple-container"></div>
-      <% end %>
+
+      <% if current_user and current_user.clinics_id == @clinic.id %>
+          <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
+            Add Scheduling Block <div class="ripple-container"></div>
+          <% end %>
       <% end %>
     </div>
-    <% if current_user%>
-    <% if current_user.admin %>
+    <% if current_user and current_user.admin %>
     <!-- positioned absolute -->
     <div class="btn-group-sm edit-button">
       <%= link_to edit_clinic_path(@clinic), { :class=>"btn btn-info btn-fab" } do %>
         <i class="material-icons">edit</i><div class="ripple-container"></div>
       <% end %>
     </div>
-    <% end %>
     <% end %>
   </div>
   <figure id="map" class="right-info-container map-container"></figure>
@@ -77,7 +78,7 @@
 <h1>Reviews for this clinic</h1>
 <div class="row">
 <% count = 1 %>
-<% @clinic.reviews.order("helpfulness DESC").each do | review | %>
+<% @clinic.reviews.order("percent_helpful DESC").each do | review | %>
   <div class="col-sm-6 col-md-6">
     <div class="panel panel-primary">
       <div class="panel-body card-to-edit">
@@ -94,12 +95,44 @@
           <li>
             <span class="card-info-description">Helpfulness</span>
             <span class="card-info-value">
-              <% if review.helpfulness %>
-                <%= review.helpfulness %>
-              <% else %>
-                0
-              <% end -%>
+                <% if review.helpfulness and review.total_ratings > 0 %>
+                    <%= review.helpful %> of <% review.total_ratings %> users found this review helpful
+                <% else %>
+                    No Helpfulness Ratings to Display
+                <% end %>
             </span>
+            <% if current_user %>
+            <span class="card-info-value">
+                <i>Did this review help you?</i><br />
+                <% if review.user_voted(current_user.id) == 1 %>
+
+                    <%= form_tag "/helpful/remove/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "Yes", class: "btn btn-success" %>
+                    <% end %>
+                    <%= form_tag "/unhelpful/add/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "No", class: "btn btn-secondary" %>
+                    <% end %>
+
+                <% elsif review.user_voted(current_user.id) == -1 %>
+
+                    <%= form_tag "/helpful/add/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "Yes", class: "btn btn-secondary" %>
+                    <% end %>
+                    <%= form_tag "/unhelpful/remove/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "No", class: "btn btn-danger" %>
+                    <% end %>
+
+                <% else %>
+
+                    <%= form_tag "/helpful/add/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "Yes", class: "btn btn-secondary" %>
+                    <% end %>
+                    <%= form_tag "/unhelpful/add/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
+                        <% submit_tag "No", class: "btn btn-secondary" %>
+                    <% end %>
+                <% end %>
+            </span>
+            <% end %>
           </li>
         </ul>
       </div>

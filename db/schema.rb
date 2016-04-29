@@ -11,31 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415181810) do
+ActiveRecord::Schema.define(version: 20160428224417) do
 
   create_table "clinics", force: :cascade do |t|
     t.string   "name"
     t.string   "phone_number"
     t.string   "email"
     t.string   "website"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "state"
     t.string   "municipality"
     t.float    "latitude"
     t.float    "longitude"
+    t.float    "average_review"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "body"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "title"
     t.integer  "user_id"
     t.integer  "clinic_id"
     t.integer  "helpfulness"
+    t.integer  "helpful"
+    t.integer  "unhelpful"
+    t.float    "percent_helpful"
+    t.integer  "helpful_list_id"
+    t.integer  "unhelpful_list_id"
   end
+
+  add_index "reviews", ["helpful_list_id"], name: "index_reviews_on_helpful_list_id"
+  add_index "reviews", ["unhelpful_list_id"], name: "index_reviews_on_unhelpful_list_id"
 
   create_table "schedules", force: :cascade do |t|
     t.datetime "start_time"
