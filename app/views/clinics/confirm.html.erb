@@ -1,10 +1,10 @@
-<h1>Are you sure you want to delete <%= @clinic.name %>?</h1>
+<h1><%= I18n.t('.confirm.header')%><%= @clinic.name %>?</h1>
 
 <%= form_tag("/clinics/#{@clinic.id}", method: "delete") do%>
     
-    <%= submit_tag("Confirm Deletion") %>
+    <%= submit_tag(I18n.t('.confirm.tag')) %>
 
 <% end %>
 
-<!-- <%= button_to "Cancel", "/clinics/#{@clinic.id}", method: "get" %> -->
-<%= link_to "Cancel", "/clinics/#{@clinic.id}/edit" %>
+<!-- <%= button_to I18n.t('.confirm.cancel'), "/clinics/#{@clinic.id}", method: "get" %> -->
+<%= link_to I18n.t('.confirm.cancel'), "/clinics/#{@clinic.id}/edit" %>

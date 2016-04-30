@@ -24,7 +24,7 @@ Scenario: Adding helpful review
     When I login as "dahrens@berkeley.edu" with "password"
 	And I follow "Clinics"
     And I follow "Clinic 1"
-	Then I should see "Did this review help you?"
+	Then I should see "Did this Review help you?"
     When I press "Yes"
     Then I should be on the clinics listing page for "Clinic 1"
 
@@ -32,6 +32,6 @@ Scenario: Adding unhelpful review
     When I login as "dahrens@berkeley.edu" with "password"
 	And I follow "Clinics"
     And I follow "Clinic 1"
-	Then I should see "Did this review help you?"
+	Then I should see "Did this Review help you?"
     When I press "No"
     Then I should be on the clinics listing page for "Clinic 1"

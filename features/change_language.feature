@@ -6,6 +6,6 @@ Feature:
 Scenario:
    Given I am on the home page
    And I change the language to "Spanish"
-   Then I should see "Find My Clinic"
+   Then I should see "Toggle navigation"
    When I change the language to "English"
-   Then I should see "Find My Clinic"
+   Then I should see "Toggle navigation"

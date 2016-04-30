@@ -1,7 +1,7 @@
-<h1>New User</h1>
+<h1><%= I18n.t('user.new.new')%></h1>
 
 <%= flash[:warning] %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', users_path %>
+<%= link_to I18n.t('user.new.back'), users_path %>

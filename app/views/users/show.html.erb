@@ -2,27 +2,27 @@
 
 <div class="well clinic-card" style="height: <%= 400 + (((@reviews.length + 1) / 2).ceil * 440) %>px">
   <div class="panel-body left-info-container card-to-edit" style="width: 100%;">
-    <h1 class="title">Welcome, <%= @user.full_name %></h1>
+    <h1 class="title"><%= I18n.t('user.show.welcome')%> <%= @user.full_name %></h1>
     <ul>
       <li>
-        <span class="card-info-description">Gender</span>
+        <span class="card-info-description"><%= I18n.t('user.show.gender')%></span>
         <span class="card-info-value"><%= @user.gender %></span>
       </li>
       <li>
-        <span class="card-info-description">Email</span>
+        <span class="card-info-description"><%= I18n.t('user.show.email')%></span>
         <span class="card-info-value"><%= link_to_unless(@user.email.nil?, @user.email, "http://#{@user.email}", target: "_blank") %></span>
       </li>
     </ul>
     <div>
       <div style="display: inline-block">
       <%= link_to edit_user_registration_path, { :class=>"btn btn-info " } do %>
-        Edit Profile <div class="ripple-container"></div>
+        <%=I18n.t('user.show.editp')%> <div class="ripple-container"></div>
       <% end %>
       </div>
       <div style="display: inline-block">
       <% if @clinic and @clinic != "" %>
           <%= link_to clinic_path(@clinic), { :class=>"btn btn-success " } do %>
-            <%= "Manage #{@clinic.name} " %> <div class="ripple-container"></div>
+            <%=I18n.t('user.show.manage') + " #{@clinic.name} " %> <div class="ripple-container"></div>
           <% end %>
       <% end %>
       </div>
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <h2 class="title">Your Reviews</h2>
+  <h2 class="title"><%=I18n.t('user.show.yrev')%></h2>
   <div class="row">
     <% count = 1 %>
     <% @reviews.each do |review|%>
@@ -44,15 +44,15 @@
             <h2 class="title-w-edit"><%= review.title %></h2>
             <ul>
               <li>
-                <span class="card-info-description">Rating</span>
+                <span class="card-info-description"><%=I18n.t('user.show.rating')%></span>
                 <span class="card-info-value"><%= review.rating %></span>
               </li>
               <li>
-                <span class="card-info-description">Comments</span>
+                <span class="card-info-description"><%=I18n.t('user.show.comments')%></span>
                 <span class="card-info-value"><%= review.body %></span>
               </li>
               <li>
-                <span class="card-info-description">Helpfulness</span>
+                <span class="card-info-description"><%=I18n.t('user.show.helpfulness')%></span>
                 <span class="card-info-value">
                   <% if review.helpfulness %>
                     <%= review.helpfulness %>
@@ -65,8 +65,8 @@
             <% if current_user.id == review.user_id %>
               <div class="row">
                 <div class="col-sm-6 col-md-4">
-                  <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                    Delete <div class="ripple-container"></div>
+                  <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: I18n.t('user.show.confirm') }  do %>
+                    <%=I18n.t('user.show.delete')%> <div class="ripple-container"></div>
                   <% end %>
                 </div>
               </div>
