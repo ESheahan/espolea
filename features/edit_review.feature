@@ -29,3 +29,8 @@ Scenario: Deleting a review
     When I follow "Delete"
     Then I should be on the reviews listing page
     And I should not see "Test Review"
+
+Scenario: Viewing a review
+   Given I am on the review listing page for "Test Review"
+   Then I should see "5"
+   And I should see "Nothing Here"

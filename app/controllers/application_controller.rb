@@ -17,13 +17,15 @@ class ApplicationController < ActionController::Base
   def set_english
     session[:locale] = 'en'
     I18n.locale = 'en'
-    redirect_to request.referer
+    the_redirect = (request.referer or "/")
+    redirect_to the_redirect
   end  
   
   def set_spanish
     session[:locale] = 'es'
     I18n.locale = 'es'
-    redirect_to request.referer
+    the_redirect = (request.referer or "/")
+    redirect_to the_redirect
   end 
   
   # def default_url_options(options = {})

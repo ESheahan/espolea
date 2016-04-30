@@ -14,3 +14,8 @@ Users:
 **Regular User**  
 *email:* user@gmail.com  
 *password:* password123  
+
+
+**Super User**  
+*email:* super@gmail.com  
+*password:* password123  

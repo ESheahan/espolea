@@ -31,12 +31,6 @@ Scenario: Reviews should reflect helpfulness
 	And I should see "great!"
 	And I should see "4"
 
-Scenario: Reviews should be voted on
-    When I login as "dahrens@berkeley.edu" with "password"
-	And I follow "Reviews"
-	Then I should see "Helpfulness"
-	And I should see "4"
-
 Scenario: Reviews should be sorted
 	When I follow "Clinics" 
 	Given I fill in "filterrific[search_query]" with "Clinic 1"
@@ -47,3 +41,5 @@ Scenario: Reviews should be sorted
 	And I should see "5"
 	And I should see "great!"
 	And I should see "4"
+
+

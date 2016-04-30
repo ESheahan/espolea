@@ -1,5 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to  :user
+  has_many :users
   belongs_to  :clinic
   validates_presence_of :title, :body
   before_save :calc_helpfulness, :calc_amounts

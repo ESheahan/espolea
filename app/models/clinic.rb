@@ -20,6 +20,7 @@ class Clinic < ActiveRecord::Base
   validates :name, presence: { message: 'Name field required for clinic'}
   validates :state, presence: { message: 'State field required for clinic'}
   validates :municipality, presence: { message: 'Municipality field required for clinic'}
+  # :nocov:
   scope :search_query, lambda { |query|
     return nil  if query.blank?
     # condition query, parse into individual keywords
@@ -60,6 +61,7 @@ class Clinic < ActiveRecord::Base
   scope :order_by_name, -> {
     order(:name => :desc)
   }
+  # :nocov:
  def self.options_for_select_state
   order('LOWER(state)').group('clinics.id', 'clinics.state', 'state').map { |e| [e.state, e.state] }
  end

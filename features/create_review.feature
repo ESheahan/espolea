@@ -33,5 +33,3 @@ Scenario: Invalid review
     And I press "Create Review"
     Then I should not see "Test Review"
 
-
-

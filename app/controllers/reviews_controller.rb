@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-     @review = current_user.reviews.find(params[:id])
+     @review = Review.find(params[:id])
   end
 
   # GET /reviews/new
@@ -125,7 +125,12 @@ class ReviewsController < ApplicationController
               if _helpful
                   review.helpful_list_id.delete(user)
               end
-              review.unhelpful_list_id << user
+
+              if review.helpful_list_id
+                  review.unhelpful_list_id << user
+              else
+                  review.helpful_list_id = user
+              end
           end
       end
       redirect_to request.referer
@@ -144,9 +149,6 @@ class ReviewsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params[:id])
-    end
 
     def check_conflict
         if current_user

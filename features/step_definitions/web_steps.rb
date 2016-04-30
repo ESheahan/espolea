@@ -47,7 +47,8 @@ Given(/^the following users exist:$/) do |users_table|
 end
 Given(/^the following reviews exist:$/) do |reviews_table|
   reviews_table.hashes.each do |review|
-    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id],helpfulness: review[:helpfulness], created_at: review[:created_at])
+    review = Review.create!(id: review[:id],title: review[:title],rating: review[:rating],body: review[:body],clinic_id: review[:clinic_id],user_id: review[:user_id], helpfulness: review[:helpfulness], created_at: review[:created_at], 
+      helpful_list_id: review[:helpful_list], unhelpful_list_id: review[:unhelpful_list])
   end
   true
 end
@@ -110,6 +111,18 @@ Given(/^I login as "(.*)" with "(.*)"$/) do |email, password|
     fill_in("Email", :with => email)
     fill_in("Password", :with => password)
     click_button("Log In")
+end
+
+Given /^I wait for (\d+) seconds?$/ do |n|
+  sleep(n.to_i)
+end
+
+Given (/^I change the language to "(.*)"$/) do |language|
+  if language == "Spanish"
+    visit("/language/es")
+  else
+    visit("/language/en")
+  end
 end
 
 # Single-line step scoper
