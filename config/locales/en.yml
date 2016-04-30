@@ -47,6 +47,7 @@ en:
       gender: "Gender"
       email: "Email"
       editp: "Edit Profile: "
+      edit: "Edit"
       manage: "Manage"
       yrev: "Your Reviews"
       logout: "Log out"
@@ -121,12 +122,12 @@ en:
     muni: "Municipality"
     reset: "Reset filters"
     new: "New Clinic"
-    avg: "Average Review"
+    avg: "Average Rating"
   edit:
     editing: "Editing: "
     delete: "Delete Clinic"
   confirm:
-    header: "Are you sure you want to delete"
+    header: "Are you sure you want to delete "
     tag: "Confirm Deletion"
     cancel: "Cancel"
   list:
@@ -135,7 +136,7 @@ en:
     website: "Website"
     state: "State"
     muni: "Municipality"
-    avg: "Average Review"
+    avg: "Average Rating"
     nor: "No reviews"
     view: "View"
     write: "Write Review"

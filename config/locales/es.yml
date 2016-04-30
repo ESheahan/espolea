@@ -26,6 +26,7 @@ es:
       gender: "Género"
       email: "Correo Electrónico"
       editp: "Editar perfil: "
+      edit: "Editar"
       manage: "Gestionar"
       yrev: "Sus Críticas"
       logout: "Cerrar sesión"

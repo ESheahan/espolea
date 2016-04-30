@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428224417) do
+ActiveRecord::Schema.define(version: 20160429234615) do
 
   create_table "clinics", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160428224417) do
     t.float    "latitude"
     t.float    "longitude"
     t.float    "average_review"
+    t.boolean  "pending"
   end
 
   create_table "reviews", force: :cascade do |t|

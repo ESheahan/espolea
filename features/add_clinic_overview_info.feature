@@ -21,17 +21,14 @@ Background:
 Scenario: On the clinics listing page, should see overview info
 	Given I am on the clinics listing page
 	Then I should see "Average Rating"
-	And I should see "5"
+	And I should see "5.0"
 	And I should see "Reviews"
 	And I should see "2"
-	And I should see "Check-Ins"
 
 Scenario: On the individual clinics page, should see overview info
 	Given I am on the clinics listing page
 	And I follow "Clinic 1"
 	Then I should see "Average Rating"
-	And I should see "5"
+	And I should see "5.0"
 	And I should see "Reviews"
 	And I should see "2"
-	And I should see "Check-Ins"
-	And I should see "0"

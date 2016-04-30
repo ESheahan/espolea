@@ -32,6 +32,14 @@
         <span class="card-info-description"><%= I18n.t('show.muni')%></span>
         <span class="card-info-value"><%= @clinic.municipality %></span>
       </li>
+      <li>
+        <span class="card-info-description">Average Rating</span>
+        <% if @clinic.review_average == -1.0 %>
+          <span class="card-info-value">No Reviews</i></span>
+        <% else %>
+          <span class="card-info-value"><%= @clinic.review_average %> <i>(<%= @clinic.reviews.length %> reviews)</i></span>
+        <% end %>
+      </li>
     </ul>
     <div>
       <% if current_user and current_user.clinics_id != @clinic.id %>
@@ -40,7 +48,7 @@
           <% end %>
       <% end %>
 
-      <% if current_user and current_user.clinics_id == @clinic.id %>
+      <% if false and current_user and current_user.clinics_id == @clinic.id %>
           <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
             <%= I18n.t('.show.schedule') %><div class="ripple-container"></div>
           <% end %>
@@ -95,7 +103,7 @@
           <li>
             <span class="card-info-description"><%= I18n.t('.show.review.help')%></span>
             <span class="card-info-value">
-                <% if review.helpfulness and review.total_ratings > 0 %>
+                <% if review.helpfulness and review.total_ratings and review.total_ratings > 0 %>
                     <%= review.helpful %> <%= I18n.t('.show.review.of')%> <% review.total_ratings %> <%= I18n.t('.show.review.user')%>
                 <% else %>
                     <%= I18n.t('.show.review.nodisplay')%>
