@@ -21,12 +21,127 @@
 
 en:
   hello: "Hello_World"
+  reviews:
+    show:
+      title: "Title: "
+      rating: "Rating: "
+      body: "Body: "
+      edit: "Edit"
+      back: "Back"
+    index:
+      rating: "Rating"
+      comments: "Comments"
+      helpfulness: "Helpfulness"
+      confirm: "Are you sure?"
+      delete: "Delete"
+  user:
+    signin:
+      first: "First name: "
+      last: "Last name: "
+      email: "Email: "
+      admin: "Admin: "
+      edit: "Edit"
+      back: "Back"
+    show:
+      welcome: "Welcome, "
+      gender: "Gender"
+      email: "Email"
+      editp: "Edit Profile: "
+      manage: "Manage"
+      yrev: "Your Reviews"
+      logout: "Log out"
+      rating: "Rating"
+      comments: "Comments"
+      helpfulness: "Helpfulness"
+      confirm: "Are you sure?"
+      delete: "Delete"
+    register:
+      header: "Register to become a member of Espolea today!"
+      first: "First name"
+      last: "Last name"
+      email: "Email"
+      password: "Password"
+      pconfirm: "Confirm Password"
+      register: "Register"
+    new:
+      new: "New User"
+      back: "Back"
+    login:
+      email: "Email"
+      password: "Password"
+      submit: "Submit"
+      notmember: "Not a member? "
+      register: "Register here!"
   home:
     search: "I'm looking for a clinic in"
     write: "Write a Review"
     question: "Have you visited a Clinic recently?"
     zip: "Enter zip code or city"
     recent: "Recent Reviews"
+    bartext: "Enter zip code or city"
+    review:
+      rating: "Rating"
+      comments: "Comments"
+      helpfulness: "Helpfulness"
+      update: "Last Update"
+      confirm: "Are you sure?"
+      visit: "Visit Clinic"
+      delete: "Delete"
+  application:
+    title: "Find my Clinic"
+    clinic: "Clinic"
+    review: "Review"
+    schedule: "Schedule"
+    login: "Log-in"
+    welcome: "Welcome, "
+  show:
+    phone: "Phone Number"
+    email: "Email"
+    website: "Website"
+    state: "State"
+    muni: "Municipality"
+    schedule: "Add Scheduling Block"
+    review:
+      title: "Reviews for this clinic"
+      rating: "Rating"
+      comment: "Comments"
+      help: "Helpfulness"
+      of: "of"
+      user: "users found this review helpful"
+      nodisplay: "No Helpfulness Ratings to Display"
+      helpq: "Did this Review help you?"
+      y: "Yes"
+      n: "No"
+  new:
+    header: "New Clinic"
+  index:
+    header: "Listing Clinics"
+    search: "Search"
+    state: "State"
+    muni: "Municipality"
+    reset: "Reset filters"
+    new: "New Clinic"
+    avg: "Average Review"
+  edit:
+    editing: "Editing: "
+    delete: "Delete Clinic"
+  confirm:
+    header: "Are you sure you want to delete"
+    tag: "Confirm Deletion"
+    cancel: "Cancel"
+  list:
+    phone: "Phone Number"
+    email: "Email"
+    website: "Website"
+    state: "State"
+    muni: "Municipality"
+    avg: "Average Review"
+    nor: "No reviews"
+    view: "View"
+    write: "Write Review"
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
   will_paginate:
     page_entries_info:
       single_page:

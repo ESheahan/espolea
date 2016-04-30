@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clinics</h1>
+<h1><%= I18n.t('.index.header')%></h1>
  <%= form_for_filterrific @filterrific do |f| %>
   <div class="container-fluid">
     <div class="jumbotron row clinics-search">
       <div class="form-group">
-        Search
+        <%= I18n.t('.index.search')%>
         <%= f.text_field(
           :search_query,
           class: 'filterrific-periodically-observed',
@@ -13,7 +13,7 @@
         ) %>
       </div>
       <div class="form-group">
-        State
+        <%= I18n.t('.index.state')%>
         <%= f.select(
           :by_state,
           @filterrific.select_options[:by_state],
@@ -23,7 +23,7 @@
         ) %>
       </div>
       <div class="form-group">
-        Municipality
+        <%= I18n.t('.index.muni')%>
         <%= f.select(
           :by_municipality,
           @filterrific.select_options[:by_municipality],
@@ -34,11 +34,11 @@
       </div>
       <div >
         <%= link_to reset_filterrific_url, { :class=>"btn btn-warning" } do %>
-          Reset filters <div class="ripple-container"></div>
+          <%= I18n.t('.index.reset')%> <div class="ripple-container"></div>
         <% end -%>
 
         <!-- this button is just to improve the UX, simulates the search that is made with ajax-->
-        <button class="btn btn-success" id="search_button">Search<div class="ripple-container"></div></button>
+        <button class="btn btn-success" id="search_button"><%= I18n.t('.index.search')%><div class="ripple-container"></div></button>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
 <% end %>
 <% if current_user %>
 <%= link_to new_clinic_path, { :class=>"btn btn-raised btn-success" } do %>  
-    New Clinic <div class="ripple-container"></div>
+    <%= I18n.t('.index.nes')%> <div class="ripple-container"></div>
 <% end %>
 <% end %>
 <%= render(
@@ -74,7 +74,7 @@
       }
       
       radialProgress(document.getElementById(divId))
-                .label("Average Review")
+                .label(I18n.t('.index.avg'))
                 .diameter(150)
                 .value(percentage)
                 .render();

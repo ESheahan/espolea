@@ -18,38 +18,38 @@
             <ul>
               <% if clinic.phone_number and clinic.phone_number != "" %>
               <li>
-                <span class="card-info-description">Phone number</span>
+                <span class="card-info-description"><%=I18n.t('.list.phone')%></span>
                 <span class="card-info-value"><%= clinic.phone_number %></span>
               </li>
               <% end %>
               <% if clinic.email and clinic.email != "" %>
               <li>
-                <span class="card-info-description">Email</span>
+                <span class="card-info-description"><%= I18n.t('.list.email')%></span>
                 <span class="card-info-value"><%= link_to_unless(clinic.email.nil?, clinic.email, "mailto:#{clinic.email}", target: "_blank") %></span>
               </li>
               <% end %>
               <% if clinic.website and clinic.website != "" %>
               <li>
-                <span class="card-info-description">Website</span>
+                <span class="card-info-description"><%= I18n.t('.list.website')%></span>
                 <span class="card-info-value"><%= link_to_unless(clinic.website.nil?, clinic.website, "http://#{clinic.website}", target: "_blank") %></span>
               </li>
               <% end %>
               <% if clinic.state and clinic.state != "" %>
               <li>
-                <span class="card-info-description">State</span>
+                <span class="card-info-description"><%= I18n.t('.list.state')%></span>
                 <span class="card-info-value"><%= clinic.state %></span>
               </li>
               <% end %>
               <% if clinic.municipality and clinic.municipality != "" %>
               <li>
-                <span class="card-info-description">Municipality</span>
+                <span class="card-info-description"><%= I18n.t('.list.muni')%></span>
                 <span class="card-info-value"><%= clinic.municipality %></span>
               </li>
               <% end %>
               <li>
-                <span class="card-info-description">Average Score</span>
+                <span class="card-info-description"><%= I18n.t('.list.avg')%></span>
                 <% if clinic.review_average == -1.0 %>
-                  <span class="card-info-value">No Reviews</i></span>
+                  <span class="card-info-value"><%= I18n.t('.list.nor')%></i></span>
                 <% else %>
                   <span class="card-info-value"><%= clinic.review_average %> <i>(<%= clinic.reviews.length %> reviews)</i></span>
                 <% end %>
@@ -59,14 +59,14 @@
             <div class="row">
               <div class="col-sm-6 col-md-4">
                 <%= link_to clinic, { :class=>"btn btn-raised btn-success" } do %>
-                  View <div class="ripple-container"></div>
+                  <%= I18n.t('.list.view')%> <div class="ripple-container"></div>
                 <% end %>
               </div>
 
               <% if current_user and current_user.clinics_id != clinic.id %>
                 <div class="col-sm-6 col-md-4">
                 <%= link_to new_clinic_review_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
-                  Write Review <div class="ripple-container"></div>
+                  <%= I18n.t('.list.write')%> <div class="ripple-container"></div>
                 <% end %>
                 </div>
               <% end %>
@@ -74,13 +74,13 @@
               <% if current_user and current_user.clinics_id and current_user.clinics_id == clinic.id %>
                 <div class="col-sm-6 col-md-4">
                   <%= link_to edit_clinic_path(clinic), { :class=>"btn btn-raised btn-info" } do %>
-                    Edit <div class="ripple-container"></div>
+                    <%= I18n.t('.list.edit')%> <div class="ripple-container"></div>
                   <% end %>
                 </div>
 
                 <div class="col-sm-6 col-md-4">
-                  <%= link_to clinic, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                    Delete <div class="ripple-container"></div>
+                  <%= link_to clinic, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: I18n.t('.list.confirm') }  do %>
+                    <%= I18n.t('.list.delete')%> <div class="ripple-container"></div>
                   <% end %>
                 </div>
               <% end %>

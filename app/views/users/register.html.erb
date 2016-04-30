@@ -1,23 +1,23 @@
-<h1> Register to become a member of Espolea today! </h4>
+<h1> <%= I18n.t('user.register.header')%> </h4>
 
 <%= flash[:warning] %>
 
 <%= render 'form' %>
 <!-- <%= form_tag '/users' do %>
-    <%= label_tag(:first_name, 'First Name') %>
+    <%= label_tag(:first_name, I18n.t('user.register.first')) %>
     <%= text_field_tag(:first_name, :class => "form-control") %>
 
-    <%= label_tag(:last_name, 'Last Name') %>
+    <%= label_tag(:last_name, I18n.t('user.register.last')) %>
     <%= text_field_tag(:last_name, :class => "form-control") %>
 
-    <%= label_tag(:email, 'Email') %>
+    <%= label_tag(:email, I18n.t('user.register.email')) %>
     <%= text_field_tag(:email, :class => "form-control") %>
 
-    <%= label_tag(:password, 'Password') %>
+    <%= label_tag(:password, I18n.t('user.register.password')) %>
     <%= text_field_tag(:password, :class => "form-control") %>
 
-    <%= label_tag(:confirm_password, 'Confirm Password') %>
+    <%= label_tag(:confirm_password, I18n.t('user.register.pconfirm')) %>
     <%= text_field_tag(:confirm_password, :class => "form-control") %>
 
-    <%= submit_tag("Register", :class => "btn btn-default") %>
+    <%= submit_tag(I18n.t('user.register.register'), :class => "btn btn-default") %>
 <% end %> -->

@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= I18n.t('.reviews.show.title')%></strong>
   <%= @review.title %>
 </p>
 
 <p>
-  <strong>Rating:</strong>
+  <strong><%= I18n.t('.reviews.show.rating')%></strong>
   <%= @review.rating %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= I18n.t('.reviews.show.body')%></strong>
   <%= @review.body %>
 </p>
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+<%= link_to I18n.t('.reviews.show.edit'), edit_review_path(@review) %> |
+<%= link_to I18n.t('.reviews.show.back'), reviews_path %>
