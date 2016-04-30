@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def set_locale
-    I18n.locale = session[:locale] || 'es'
+    I18n.locale = session[:locale] || 'en'
   end
   
   def after_sign_in_path_for(resource)

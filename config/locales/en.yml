@@ -89,10 +89,10 @@ en:
       delete: "Delete"
   application:
     title: "Find my Clinic"
-    clinic: "Clinic"
-    review: "Review"
+    clinic: "Clinics"
+    review: "Reviews"
     schedule: "Schedule"
-    login: "Log-in"
+    login: "Log in"
     welcome: "Welcome, "
   show:
     phone: "Phone Number"
