@@ -13,23 +13,23 @@
     <h1 class="title-w-edit"><%= @clinic.name %></h1>
     <ul>
       <li>
-        <span class="card-info-description">Phone number</span>
+        <span class="card-info-description"><%= I18n.t('.show.phone')%></span>
         <span class="card-info-value"><%= @clinic.phone_number %></span>
       </li>
       <li>
-        <span class="card-info-description">Email</span>
+        <span class="card-info-description"><%= I18n.t('.show.email')%></span>
         <span class="card-info-value"><%= link_to_unless(@clinic.email.nil?, @clinic.email, "http://#{@clinic.email}", target: "_blank") %></span>
       </li>
       <li>
-        <span class="card-info-description">Website</span>
+        <span class="card-info-description"><%= I18n.t('.show.website')%></span>
         <span class="card-info-value"><%= link_to_unless(@clinic.website.nil?, @clinic.website, "http://#{@clinic.website}", target: "_blank") %></span>
       </li>
       <li>
-        <span class="card-info-description">State</span>
+        <span class="card-info-description"><%= I18n.t('show.state')%></span>
         <span class="card-info-value"><%= @clinic.state %></span>
       </li>
       <li>
-        <span class="card-info-description">Municipality</span>
+        <span class="card-info-description"><%= I18n.t('show.muni')%></span>
         <span class="card-info-value"><%= @clinic.municipality %></span>
       </li>
       <li>
@@ -50,7 +50,7 @@
 
       <% if false and current_user and current_user.clinics_id == @clinic.id %>
           <%= link_to "/schedule/new/#{@clinic.id}", { :class=>"btn btn-success " } do %>
-            Add Scheduling Block <div class="ripple-container"></div>
+            <%= I18n.t('.show.schedule') %><div class="ripple-container"></div>
           <% end %>
       <% end %>
     </div>
@@ -73,7 +73,7 @@
           {"lat":"<%= @clinic.latitude  %> ", "lng":"<%= @clinic.longitude  %>" }
       ],
       google_maps: {
-        zoom: 20
+        zoom: 10
       },
       markers_settings: {
         draggable: false,
@@ -83,7 +83,7 @@
 
 </script>
 
-<h1>Reviews for this clinic</h1>
+<h1><%= I18n.t('.show.review.title')%></h1>
 <div class="row">
 <% count = 1 %>
 <% @clinic.reviews.order("percent_helpful DESC").each do | review | %>
@@ -93,29 +93,29 @@
         <h2><%= review.title %></h2>
         <ul>
           <li>
-            <span class="card-info-description">Rating</span>
+            <span class="card-info-description"><%= I18n.t('.show.review.rating')%></span>
             <span class="card-info-value"><%= review.rating %></span>
           </li>
           <li>
-            <span class="card-info-description">Comments</span>
+            <span class="card-info-description"><%= I18n.t('.show.review.comment')%></span>
             <span class="card-info-value"><%= review.body %></span>
           </li>
           <li>
-            <span class="card-info-description">Helpfulness</span>
+            <span class="card-info-description"><%= I18n.t('.show.review.help')%></span>
             <span class="card-info-value">
                 <% if review.helpfulness and review.total_ratings and review.total_ratings > 0 %>
-                    <%= review.helpful %> of <% review.total_ratings %> users found this review helpful
+                    <%= review.helpful %> <%= I18n.t('.show.review.of')%> <% review.total_ratings %> <%= I18n.t('.show.review.user')%>
                 <% else %>
-                    No Helpfulness Ratings to Display
+                    <%= I18n.t('.show.review.nodisplay')%>
                 <% end %>
             </span>
             <% if current_user %>
             <span class="card-info-value">
-                <i>Did this review help you?</i><br />
+                <i><%= I18n.t('.show.review.helpq')%></i><br />
                 <% if review.user_voted(current_user.id) == 1 %>
 
                     <%= form_tag "/helpful/remove/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
-                        <% submit_tag "Yes", class: "btn btn-success" %>
+                        <% submit_tag  I18n.t('.show.review.y'), class: "btn btn-success" %>
                     <% end %>
                     <%= form_tag "/unhelpful/add/#{review.id}/#{current_user.id}", class: "helpfulness-button" do %>
                         <% submit_tag "No", class: "btn btn-secondary" %>

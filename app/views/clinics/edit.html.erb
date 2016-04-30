@@ -9,12 +9,12 @@
 
 <div class="well clinic-card edit-mode">
   <div class="panel-body left-info-container">
-    <h1>Editing: <%= @clinic.name %></h1>
+    <h1><%= I18n.t('edit.editing')%> <%= @clinic.name %></h1>
     <p class="error-message"><%= flash[:warning] %></p> <!-- For showing errors -->
     <%= render 'form' %>
 
     <%= form_tag("/clinics/confirm/#{@clinic.id}", method: "get") do %>
-	    <%= submit_tag "Delete Clinic", class: "btn btn-danger" %>
+	    <%= submit_tag I18n.t('.edit.delete'), class: "btn btn-danger" %>
 	<% end %>
   </div>
   <figure id="map" class="right-info-container map-container"></figure>
@@ -27,7 +27,7 @@
           {"lat":"<%= @clinic.latitude  %> ", "lng":"<%= @clinic.longitude  %>" }
       ],
       google_maps: {
-        zoom: 20
+        zoom: 10
       },
       markers_settings: {
         draggable: false,

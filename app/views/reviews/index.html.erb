@@ -12,15 +12,15 @@
         <h2 class="title-w-edit"><%= review.title %></h2>
         <ul>
           <li>
-            <span class="card-info-description">Rating</span>
+            <span class="card-info-description"><%= I18n.t('.reviews.index.rating')%></span>
             <span class="card-info-value"><%= review.rating %></span>
           </li>
           <li>
-            <span class="card-info-description">Comments</span>
+            <span class="card-info-description"><%= I18n.t('.reviews.index.comments')%></span>
             <span class="card-info-value"><%= review.body %></span>
           </li>
           <li>
-            <span class="card-info-description">Helpfulness</span>
+            <span class="card-info-description"><%= I18n.t('.reviews.index.helpfulness')%></span>
             <span class="card-info-value">
               <% if review.helpfulness %>
                 <%= review.helpfulness %>
@@ -33,8 +33,8 @@
         <% if current_user and current_user.id == review.user_id %>
           <div class="row">
             <div class="col-sm-6 col-md-4">
-              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                Delete <div class="ripple-container"></div>
+              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: I18n.t('.reviews.index.confirm') }  do %>
+                <%= I18n.t('.reviews.index.delete')%> <div class="ripple-container"></div>
               <% end %>
             </div>
           </div>

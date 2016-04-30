@@ -23,15 +23,17 @@
             <span class="icon-bar"></span>
           </button>
           <!--<a class="navbar-brand" href="#">Find My Clinic</a>-->
-          <%= link_to "Find My Clinic", root_path, :class => 'navbar-brand' %>
+          <%= link_to I18n.t('.application.title'), root_path, :class => 'navbar-brand' %>
         </div>
         
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
         
-            <li> <%= link_to "Clinics", clinics_path %></li>
-            <li> <%= link_to "Reviews", reviews_path %></li>
-            <%# <li> <%= link_to "Schedule Appointment", find_path %></li>
+            <li> <%= link_to I18n.t('.application.clinic'), clinics_path %></li>
+            <li> <%= link_to I18n.t('.application.review'), reviews_path %></li>
+            <!-- 
+            <li><%= link_to I18n.t('.application.schedule'), find_path %></li> 
+            -->
         </ul> 
 
         <ul class="nav navbar-nav navbar-right">
@@ -47,10 +49,10 @@
             
             <% if current_user == nil %>
                 <button type="button" class="btn btn-default navbar-btn">
-                    <%= link_to "Log in", new_user_session_path %>
+                    <%= link_to I18n.t('.application.login'), new_user_session_path %>
                 </button>
             <% else %>
-                <li> <%= link_to("Welcome, #{current_user.email}", "/profile/#{current_user.id}", class: "styled-submit") %></li>
+                <li> <%= link_to(I18n.t('.application.welcome') + "#{current_user.email}", "/profile/#{current_user.id}", class: "styled-submit") %></li>
             <% end %>
         </ul>
     </div>

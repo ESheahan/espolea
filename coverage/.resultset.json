@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/models/user.rb": [
+      "/home/ubuntu/workspace/espolea/app/models/user.rb": [
         1,
         1,
         1,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/models/clinic.rb": [
+      "/home/ubuntu/workspace/espolea/app/models/clinic.rb": [
         1,
         null,
         1,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/models/review.rb": [
+      "/home/ubuntu/workspace/espolea/app/models/review.rb": [
         1,
         1,
         1,
@@ -182,7 +182,7 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/controllers/clinics_controller.rb": [
+      "/home/ubuntu/workspace/espolea/app/controllers/clinics_controller.rb": [
         1,
         1,
         1,
@@ -282,7 +282,7 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/controllers/application_controller.rb": [
+      "/home/ubuntu/workspace/espolea/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -325,38 +325,38 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/application_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/clinics_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/clinics_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/pages_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/reviews_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/reviews_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/schedules_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/schedules_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/helpers/users_helper.rb": [
+      "/home/ubuntu/workspace/espolea/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/controllers/pages_controller.rb": [
+      "/home/ubuntu/workspace/espolea/app/controllers/pages_controller.rb": [
         1,
         1,
         20,
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/controllers/users_controller.rb": [
+      "/home/ubuntu/workspace/espolea/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -438,7 +438,7 @@
         null,
         null
       ],
-      "/Users/evansheahan/Documents/CS169/EspoleaProject/Project/espolea/app/controllers/reviews_controller.rb": [
+      "/home/ubuntu/workspace/espolea/app/controllers/reviews_controller.rb": [
         1,
         1,
         1,
@@ -610,6 +610,6 @@
         null
       ]
     },
-    "timestamp": 1461995454
+    "timestamp": 1461998039
   }
 }

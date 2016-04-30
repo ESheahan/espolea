@@ -22,15 +22,15 @@
         <h2 class="title-w-edit"><%= Clinic.find(review.clinic_id).name %></h2>
         <ul>
           <li>
-            <span class="card-info-description">Rating</span>
+            <span class="card-info-description"><%= I18n.t('.home.review.rating')%></span>
             <span class="card-info-value"><%= review.rating %></span>
           </li>
           <li>
-            <span class="card-info-description">Comments</span>
+            <span class="card-info-description"><%= I18n.t('.home.review.comments')%></span>
             <span class="card-info-value"><%= review.body %></span>
           </li>
           <li>
-            <span class="card-info-description">Helpfulness</span>
+            <span class="card-info-description"><%= I18n.t('.home.review.helpfulness')%></span>
             <span class="card-info-value">
               <% if review.helpfulness %>
                 <%= review.helpfulness %>
@@ -40,22 +40,22 @@
             </span>
           </li>
           <li>
-            <span class="card-info-description">Last update</span>
+            <span class="card-info-description"><%= I18n.t('.home.review.update')%></span>
             <span class="card-info-value"><%= review.updated_at.strftime("%m/%d/%Y") %></span>
           </li>
         </ul>
         <div class="row">
           <div class="col-sm-6 col-md-4">
             <%= link_to clinic_path(review.clinic_id), :class => 'btn btn-raised btn-success' do%>
-              Visit Clinic <div class="ripple-container"></div>
+              <%= I18n.t('.home.review.visit')%> <div class="ripple-container"></div>
             <% end -%>
           </div>
         </div>
         <% if current_user and current_user.id == review.user_id %>
           <div class="row">
             <div class="col-sm-6 col-md-4">
-              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: 'Are you sure?' }  do %>
-                Delete <div class="ripple-container"></div>
+              <%= link_to review, class: "btn btn-raised btn-danger", method: :delete, data: { confirm: I18n.t('.home.review.confirm') }  do %>
+                <%= I18n.t('.home.review.delete')%> <div class="ripple-container"></div>
               <% end %>
             </div>
           </div>

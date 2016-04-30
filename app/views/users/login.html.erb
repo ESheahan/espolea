@@ -6,19 +6,19 @@
     <form class="form-horizontal">
     <%= form_tag signin_path do %>
     <div class="form-group">
-        <%= label_tag(:email, "Email") %>
+        <%= label_tag(:email, I18n.t('.user.login.email')) %>
         <%= email_field(:user, :email, id: "Email", :class => "form-control") %>
     </div>
     <div class="form-group">
-        <%= label_tag(:password, "Password") %>
+        <%= label_tag(:password, I18n.t('.user.login.password')) %>
         <%= password_field(:user, :password, id: "Password", :class => "form-control") %>
     </div>
     
     <div class="form-group">
-        <%= submit_tag "Submit", :class => "btn btn-default" %>
+        <%= submit_tag I18n.t('.user.login.submit'), :class => "btn btn-default" %>
      </div>
     <% end %>
     </form>
     
-    <h4>Not a member? <%= link_to "Register here!", register_path %></h4>
+    <h4><%= I18n.t('.user.login.notmember')%> <%= link_to I18n.t('.user.login.register'), register_path %></h4>
 </div>
