@@ -5,8 +5,10 @@ Feature:
 
 Background:
     Given the following users exist:
-    | first name | last name | email                | password | 
-    | Daniel     | Ahrens    | dahrens@berkeley.edu | password | 
+    | first name | last name | email                     | password | 
+    | Daniel     | Ahrens    | dahrens@berkeley.edu      | password | 
+    | Not        | Daniel    | notdaniel@berkeley.edu    | password | 
+    | Evan       | Sheahan   | evan.sheahan@berkeley.edu | password | 
 
     Given the following clinics exist:
 	| name       | phone_number   | email             | municipality | state      |

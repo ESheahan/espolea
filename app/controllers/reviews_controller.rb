@@ -106,6 +106,7 @@ class ReviewsController < ApplicationController
     redirect_to request.referer
   end
 
+  # :nocov:
   # POST /helpful/remove/:review_id/:user_id
   def remove_helpful
       user, review, _helpful, _unhelpful = retrieve_both
@@ -114,6 +115,7 @@ class ReviewsController < ApplicationController
           review.helpful_list_id.delete(user)
       end
   end
+  # :nocov:
 
 
   # POST /unhelpful/add/:review_id/:user_id
@@ -137,6 +139,7 @@ class ReviewsController < ApplicationController
 
   end
 
+  # :nocov:
   # POST /unhelpful/remove/:review_id/:user_id
   def remove_unhelpful
       user, review, _helpful, _unhelpful = retrieve_both
@@ -145,7 +148,7 @@ class ReviewsController < ApplicationController
           review.unhelpful_list_id.delete(user)
       end
   end
-
+  # :nocov:
 
   private
     # Use callbacks to share common setup or constraints between actions.

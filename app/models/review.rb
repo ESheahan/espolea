@@ -39,6 +39,7 @@ class Review < ActiveRecord::Base
       end
   end
 
+  # :nocov:
   def total_ratings
       if self.helpful and self.unhelpful
           return self.helpful + self.unhelpful
@@ -60,4 +61,5 @@ class Review < ActiveRecord::Base
           return 0
       end
   end
+  # :nocov:
 end
