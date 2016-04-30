@@ -13,8 +13,13 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         36,
         24,
+=======
+        33,
+        21,
+>>>>>>> 772eeeb075a99e834685ea7d7ab3df3593232166
         12,
         0,
         12,
@@ -101,8 +106,8 @@
         null,
         1,
         null,
-        131,
-        105,
+        128,
+        102,
         null,
         26,
         26,
@@ -292,17 +297,15 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         235,
+=======
+        226,
+>>>>>>> 772eeeb075a99e834685ea7d7ab3df3593232166
         null,
         null,
         1,
-        34,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
+        31,
         null,
         null,
         1,
@@ -311,15 +314,28 @@
         0,
         null,
         null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         null,
         null,
         null,
         1,
+<<<<<<< HEAD
         90,
         2,
         null,
         90,
+=======
+        84,
+        2,
+        null,
+        84,
+>>>>>>> 772eeeb075a99e834685ea7d7ab3df3593232166
         0,
         null,
         null,
@@ -423,6 +439,7 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         37,
         37,
         null,
@@ -433,6 +450,18 @@
         36,
         36,
         36,
+=======
+        34,
+        34,
+        null,
+        34,
+        1,
+        1,
+        null,
+        33,
+        33,
+        33,
+>>>>>>> 772eeeb075a99e834685ea7d7ab3df3593232166
         null,
         null,
         null,
@@ -608,6 +637,7 @@
         3,
         null,
         null
+<<<<<<< HEAD
       ],
       "/home/ubuntu/workspace/espolea/app/models/schedule.rb": [
         1,
@@ -727,5 +757,10 @@
       ]
     },
     "timestamp": 1461997239
+=======
+      ]
+    },
+    "timestamp": 1461995454
+>>>>>>> 772eeeb075a99e834685ea7d7ab3df3593232166
   }
 }
