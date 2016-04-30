@@ -46,6 +46,9 @@ module NavigationHelpers
     when /^the "Add Clinic" Page$/
         "/clinics/new"
 
+    when /^the Suggest Clinic Page$/
+        "/clinics/new"
+
     when /^the edit clinics page for "(.*)"$/
         clinic_id = Clinic.find_by(name: $1).id
         "/clinics/#{clinic_id}/edit"

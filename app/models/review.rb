@@ -9,8 +9,17 @@ class Review < ActiveRecord::Base
   }
 
   def calc_helpfulness
-      hful = self.helpful_list_id.length
-      uhful = self.unhelpful_list_id.length
+      if self.helpful_list_id
+        hful = self.helpful_list_id.length
+      else
+        hful = 0
+      end
+
+      if self.unhelpful_list_id
+        uhful = self.unhelpful_list_id.length
+      else
+        uhful = 0
+      end
 
       if hful == 0 and uhful == 0
           self.percent_helpful = 0.0
@@ -31,7 +40,13 @@ class Review < ActiveRecord::Base
 
   def total_ratings
       if self.helpful and self.unhelpful
-        return self.helpful + self.unhelpful
+          return self.helpful + self.unhelpful
+      elsif self.helpful
+          return self.helpful
+      elsif self.unhelpful
+          return self.unhelpful
+      else
+          return 0
       end
   end
 

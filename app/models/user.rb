@@ -9,7 +9,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def full_name()
-    return self.first_name + " " + self.last_name 
+    if self.first_name and self.last_name
+        return self.first_name + " " + self.last_name 
+    elsif self.first_name
+        return self.first_name
+    elsif self.last_name
+        return self.last_name
+    else
+        return ""
+    end
   end
 
 end

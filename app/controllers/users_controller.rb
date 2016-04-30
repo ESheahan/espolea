@@ -69,14 +69,12 @@ class UsersController < ApplicationController
 
         if not @user
             flash[:warning] = "Unable to find user"
-            redirect_to '/' 
-        end
-
-        if @user
+            redirect_to '/' and return
+        else
             clinic_id = @user.clinics_id
             @clinic = Clinic.find_by(id: clinic_id)
+            @reviews = @user.reviews 
         end
 
-        @reviews = @user.reviews 
     end
 end

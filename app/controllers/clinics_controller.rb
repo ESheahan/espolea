@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
-  before_action :set_clinic, only: [:show, :edit, :update, :destroy]
+  before_action :set_clinic, only: [:show, :edit, :update, :destroy, :approve]
+  before_action :authenticate_user!, except: [:index, :show, :confirm]
 
   # GET /clinics
   # GET /clinics.json
@@ -42,6 +43,7 @@ class ClinicsController < ApplicationController
   # POST /clinics
   # POST /clinics.json
   def create
+    params[:clinic][:pending] = true
     @clinic = Clinic.new(clinic_params)
     if @clinic.save
       redirect_to clinics_path
@@ -53,8 +55,6 @@ class ClinicsController < ApplicationController
   # PATCH/PUT /clinics/1
   # PATCH/PUT /clinics/1.json
   def update
-
-    
     if @clinic.update(clinic_params)
       redirect_to @clinic
     else
@@ -76,6 +76,13 @@ class ClinicsController < ApplicationController
     end
   end
 
+  # POST /clinics/1/approve
+  def approve
+      @clinic.pending = false
+      @clinic.save!
+      redirect_to request.referer
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_clinic
@@ -86,6 +93,6 @@ class ClinicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clinic_params
-      params.require(:clinic).permit(:name, :phone_number, :email, :website, :state, :municipality)
+      params.require(:clinic).permit(:name, :phone_number, :email, :website, :state, :municipality, :pending)
     end
 end
